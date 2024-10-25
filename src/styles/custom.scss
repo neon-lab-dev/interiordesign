@@ -139,32 +139,6 @@ a{
   background: $bgSection2;
 }
 
-section{
-  display: flex;
-  flex-direction: column;
-  gap:40px;
-}
-
-@media (max-width: 1440px) {
-  section{
-    padding: 84px 80px;
-    gap:40px;
-  }
-}
-
-@media (max-width: 744px) {
-  section{
-    padding: 42px 27px;
-    gap:36px;
-  }
-}
-
-@media (max-width: 375px) {
-  section{
-    padding: 28px 16px;
-    gap:26px;
-  }
-}
 
 button,
 .btn{
