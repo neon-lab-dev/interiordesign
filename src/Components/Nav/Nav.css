@@ -30,7 +30,8 @@ nav.logo {
   border: none;
 }
 
-.search-container input::placeholder {
+.search-container input::placeholder,
+.search-container input {
   font-family: Verdana;
   font-size: 12px;
   font-weight: 400;

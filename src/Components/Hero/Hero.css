@@ -23,7 +23,7 @@
 }
 
 .hero-content h1 {
-  letter-spacing: 7%;
+  letter-spacing: calc(70px * 0.07);
 }
 .hero-content button {
   width: fit-content;
