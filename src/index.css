@@ -39,11 +39,9 @@ section {
   gap: 40px;
 }
 
-@media (max-width: 1440px) {
-  section {
-    padding: 84px 80px;
-    gap: 40px;
-  }
+section {
+  padding: 84px 80px;
+  gap: 40px;
 }
 
 @media (max-width: 744px) {
