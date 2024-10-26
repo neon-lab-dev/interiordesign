@@ -1,4 +1,5 @@
 import BestSellers from "./Components/BestSellers/BestSellers"
+import Footer from "./Components/Footer/Footer"
 import Hero from "./Components/Hero/Hero"
 import Nav from "./Components/Nav/Nav"
 
@@ -9,6 +10,7 @@ function App() {
       <Nav />
       <Hero />
       <BestSellers />
+      <Footer />
     </>
   )
 }
