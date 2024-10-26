@@ -1,16 +1,33 @@
 import BestSellers from "./Components/BestSellers/BestSellers"
-import Footer from "./Components/Footer/Footer"
 import Hero from "./Components/Hero/Hero"
-import Nav from "./Components/Nav/Nav"
+import { Route, Routes } from "react-router-dom"
+
+const Home = () => {
+  return (
+    <>
+      <Hero />
+      <BestSellers />
+    </>
+  )
+}
+
+const Login = () => {
+  return (
+    <>
+      Welcome to login page
+    </>
+  )
+}
+
 
 function App() {
 
   return (
     <>
-      <Nav />
-      <Hero />
-      <BestSellers />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </>
   )
 }
