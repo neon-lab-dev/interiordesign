@@ -28,6 +28,8 @@ const BestSellers = () => {
                     prevEl: '.swiper-button-prev',
                 }}
                 className="swiper-container"
+
+                scrollbar={{ draggable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
             >

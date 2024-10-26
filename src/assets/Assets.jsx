@@ -8,6 +8,7 @@ import rightArrowEnabled from "@/assets/Icons/rightArrowEnabled.svg";
 import chair1 from "@/assets/Images/Chair1.jpg";
 import share from "@/assets/Icons/Plain.svg"
 import cardOverlay from "@/assets/Images/card-overlay.png"
+import heartWhite from "@/assets/Icons/HeartWhite.svg"
 
 export const IMAGES = {
     logo,
@@ -22,5 +23,6 @@ export const ICONS = {
     heartIconGrey,
     leftArrowDisabled,
     rightArrowEnabled,
-    share
+    share,
+    heartWhite
 };
