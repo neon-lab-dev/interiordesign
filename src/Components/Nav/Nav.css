@@ -58,3 +58,43 @@ nav span {
     border-radius: 8px;
   }
 }
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .left-menus span {
+    display: none;
+  }
+
+  nav .left-menus {
+    gap: 12px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .horizontal-nav-links.nav-links {
+    display: none !important;
+  }
+
+  .left-menus .hamburgerMenu {
+    display: block !important;
+  }
+}
+
+@media (max-width: 834px) {
+  nav {
+    padding: 16px 33px;
+  }
+
+  .search-container {
+    width: 237px;
+  }
+}
+
+@media (max-width: 560px) {
+  nav {
+    padding: 14px 16px;
+  }
+  nav .search-container {
+    display: none !important;
+  }
+}

@@ -4,7 +4,7 @@ import './Footer.css'
 const Footer = () => {
     return (
         <footer className="w-100">
-            <div className="d-flex align-items-start justify-ceontent-between w-100 ">
+            <div className="d-flex align-items-start justify-content-between w-100 ">
                 <div className="footer-logo">
                     <img src={IMAGES.footerLogo} alt="" />
                 </div>

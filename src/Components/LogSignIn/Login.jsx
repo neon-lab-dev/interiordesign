@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import LoginImg from "../../assets/Images/loginimg.jpeg";
 import "./Login.css";
@@ -46,7 +45,7 @@ const Login = () => {
                   </button>
                 </form>
                 <p>
-                  Don't have an account ?
+                  Don&apos;t have an account ?
                   <Link className="create" to="/signup">
                     Create an Account
                   </Link>

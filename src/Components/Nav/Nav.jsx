@@ -8,18 +8,22 @@ const Nav = () => {
                 <div className="logo">
                     <img src={IMAGES.logo} alt="logo" />
                 </div>
-                <div className="nav-links d-flex align-items-center gap-3">
+                <div className="nav-links d-flex align-items-center gap-3 horizontal-nav-links">
                     <a href="#">Bedsheets</a>
                     <a href="#">Chairs</a>
                     <a href="#">Tables</a>
                 </div>
             </div>
-            <div className="d-flex align-items-center gap-4">
-                <div className="search-container">
+            <div className="search-container d-none d-md-none d-sm-flex">
+                <img src={ICONS.searchIconGrey} alt="" />
+                <input type="text" placeholder="What Are You Looking For?" />
+            </div>
+            <div className="d-flex align-items-center gap-4 left-container">
+                <div className="search-container d-md-flex d-sm-none">
                     <img src={ICONS.searchIconGrey} alt="" />
                     <input type="text" placeholder="What Are You Looking For?" />
                 </div>
-                <div className="d-flex align-items-center gap-4">
+                <div className="d-flex align-items-center gap-4 left-menus">
                     <div className="d-flex align-items-center gap-1">
                         <img src={ICONS.heartIconGrey} alt="" />
                         <span>Wishlist</span>
@@ -31,6 +35,9 @@ const Nav = () => {
                     <div className="d-flex align-items-center gap-1">
                         <img src={ICONS.profileIconGrey} alt="" />
                         <span>Profile</span>
+                    </div>
+                    <div className="d-flex align-items-center gap-1 d-none hamburgerMenu">
+                        <img src={ICONS.hamburgerMenu} alt="" />
                     </div>
                 </div>
             </div>

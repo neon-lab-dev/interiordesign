@@ -10,6 +10,7 @@ import share from "@/assets/Icons/Plain.svg"
 import cardOverlay from "@/assets/Images/card-overlay.png"
 import heartWhite from "@/assets/Icons/HeartWhite.svg"
 import footerLogo from "@/assets/Images/footerLogo.png"
+import hamburgerMenu from "@/assets/Icons/hamburgerMenu.svg"
 
 export const IMAGES = {
     logo,
@@ -26,5 +27,6 @@ export const ICONS = {
     leftArrowDisabled,
     rightArrowEnabled,
     share,
-    heartWhite
+    heartWhite,
+    hamburgerMenu
 };
