@@ -36,3 +36,67 @@
 .hero-content p {
   width: 655px;
 }
+
+/* Media Queries */
+@media (max-width: 1140px) {
+  .hero-content h1 {
+    width: 620px;
+    font-family: "Verdana Bold", sans-serif;
+    font-size: 37.5px;
+    line-height: 45.57px;
+    letter-spacing: 0.07em;
+    text-align: left;
+  }
+
+  .hero-content p {
+    width: 550px;
+    font-family: "Verdana Regular", sans-serif;
+    font-size: 16px;
+    line-height: 19.45px;
+    text-align: left;
+  }
+
+  section.hero {
+    padding-top: 40px !important;
+    padding-bottom: 75px !important;
+    height: fit-content;
+  }
+}
+
+@media (max-width: 834px) {
+  section.hero {
+    padding-inline: 33px;
+  }
+}
+
+@media (max-width: 600px) {
+  section.hero {
+    padding: 26px 16px !important;
+  }
+
+  section.hero .hero-content {
+    max-width: 337px;
+    width: 100%;
+    gap: 24px !important;
+  }
+
+  .hero-content h1 {
+    width: 100%;
+    font-size: 18px;
+    line-height: 21.88px;
+    letter-spacing: 0.07em;
+    text-align: left;
+  }
+
+  .hero-content p {
+    width: 100%;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12.15px;
+    text-align: left;
+  }
+
+  .hero-content .text {
+    gap: 14px !important;
+  }
+}
