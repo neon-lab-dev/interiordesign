@@ -57,3 +57,9 @@ section {
     gap: 26px;
   }
 }
+
+@media (max-width: 1280px) {
+  .home-sections-header .icons {
+    align-items: center !important;
+  }
+}

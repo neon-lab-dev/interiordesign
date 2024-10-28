@@ -9,6 +9,7 @@ import { ICONS } from "../../assets/Assets";
 import Card from "../Card/Card";
 
 const BestSellers = () => {
+
     return (
         <section className="home-sections d-flex flex-column bg-1">
             <div className="home-secitons-header d-flex align-items-center justify-content-between">
@@ -21,15 +22,37 @@ const BestSellers = () => {
 
             <Swiper
                 spaceBetween={32}
-                slidesPerView="3.5"
+                slidesPerView='auto'
                 modules={[Navigation]}
                 navigation={{
                     nextEl: '.swiper-button-next', // Reference custom buttons
                     prevEl: '.swiper-button-prev',
                 }}
                 className="swiper-container"
-
-                scrollbar={{ draggable: true }}
+                breakpoints={{
+                    // Responsive settings for different screen widths
+                    320: {
+                        slidesPerView: 1,
+                    },
+                    470: {
+                        slidesPerView: 1.4,
+                    },
+                    560: {
+                        slidesPerView: 1.6,
+                    },
+                    600: {
+                        slidesPerView: 1.8,
+                    },
+                    660: {
+                        slidesPerView: 2,
+                    },
+                    1100: {
+                        slidesPerView: 2.8,
+                    },
+                    1280: {
+                        slidesPerView: 3.5,
+                    }
+                }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
             >
