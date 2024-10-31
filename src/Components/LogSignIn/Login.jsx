@@ -37,7 +37,9 @@ const Login = () => {
                       placeholder="Enter Password"
                     />
                     <p>
-                      <Link className="create">Forget password</Link>
+                      <Link to="/forgetpassword" className="create">
+                        Forget password
+                      </Link>
                     </p>
                   </div>
 

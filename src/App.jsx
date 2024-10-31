@@ -4,6 +4,8 @@ import { Route, Routes } from "react-router-dom";
 import Login from "./Components/LogSignIn/Login";
 import SignUp from "./Components/LogSignIn/SignUp";
 import Error from "./Components/LogSignIn/Error";
+import ForgetPass from "./Components/LogSignIn/ForgetPass";
+import ChangePass from "./Components/LogSignIn/ChangePass";
 
 const Home = () => {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/forgetpassword" element={<ForgetPass />} />
+        <Route path="/changepassword" element={<ChangePass />} />
         <Route element={<Error />} />
       </Routes>
     </>

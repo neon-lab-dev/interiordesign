@@ -1,11 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import LoginImg from "../../assets/Images/loginimg.jpeg";
 import "./Login.css";
 
 const SignUp = () => {
-  const preventRefresh = (e) => {
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
     e.preventDefault();
+    navigate("/login");
   };
 
   return (
@@ -20,13 +22,14 @@ const SignUp = () => {
             <div className="logForm">
               <div className="form">
                 <div className="heading">Create an account</div>
-                <form action="">
+                <form action="" onSubmit={handleSubmit}>
                   <div className="inputField">
                     <label htmlFor="name">User name</label>
                     <input
                       type="text"
                       id="name"
                       placeholder="Enter your username"
+                      required
                     />
                   </div>
                   <div>
@@ -35,6 +38,7 @@ const SignUp = () => {
                       type="email"
                       id="email"
                       placeholder="Enter your Email"
+                      required
                     />
                   </div>
 
@@ -44,6 +48,7 @@ const SignUp = () => {
                       type="number"
                       id="number"
                       placeholder="Enter your number"
+                      required
                     />
                   </div>
                   <div>
@@ -52,6 +57,7 @@ const SignUp = () => {
                       type="password"
                       id="password"
                       placeholder="Enter Password"
+                      required
                     />
                   </div>
                   <div>
@@ -60,12 +66,11 @@ const SignUp = () => {
                       type="password"
                       id="password"
                       placeholder="Enter Password"
+                      required
                     />
                   </div>
 
-                  <button type="submit" onClick={preventRefresh}>
-                    Create
-                  </button>
+                  <button type="submit">Create</button>
                 </form>
                 <p>
                   Already have an account?
