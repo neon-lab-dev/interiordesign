@@ -12,9 +12,9 @@ const BestSellers = () => {
 
     return (
         <section className="home-sections d-flex flex-column bg-1">
-            <div className="home-secitons-header d-flex align-items-center justify-content-between">
+            <div className="home-sections-header d-flex align-items-center justify-content-between">
                 <h2>Our Best Sellers</h2>
-                <div className="d-flex align-items-start gap-1 icons">
+                <div className="d-flex gap-1 icons">
                     <img src={ICONS.rightArrowEnabled} alt="Left Arrow" className="swiper-button-prev" style={{ 'transform': 'rotate(180deg)' }} />
                     <img src={ICONS.rightArrowEnabled} alt="Right Arrow" className="swiper-button-next" />
                 </div>

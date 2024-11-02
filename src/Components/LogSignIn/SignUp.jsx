@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LoginImg from "../../assets/Images/loginimg.jpeg";
-import "./Login.css";
+import "./Login.css"; 
 
 const SignUp = () => {
   const preventRefresh = (e) => {
