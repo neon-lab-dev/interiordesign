@@ -123,3 +123,19 @@ footer .show-1024-flex {
     display: none !important;
   }
 }
+
+section {
+  padding-inline: 80px !important;
+}
+
+@media (max-width: 834px) {
+  section {
+    padding-inline: 33px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  section {
+    padding-inline: 16px !important;
+  }
+}

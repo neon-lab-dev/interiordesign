@@ -11,6 +11,10 @@ import cardOverlay from "@/assets/Images/card-overlay.png"
 import heartWhite from "@/assets/Icons/HeartWhite.svg"
 import footerLogo from "@/assets/Images/footerLogo.png"
 import hamburgerMenu from "@/assets/Icons/hamburgerMenu.svg"
+import sortIcon from "@/assets/Icons/Sort.svg"
+import checked from "@/assets/Icons/checked.svg"
+import unchecked from "@/assets/Icons/unchecked.svg"
+
 
 export const IMAGES = {
     logo,
@@ -28,5 +32,8 @@ export const ICONS = {
     rightArrowEnabled,
     share,
     heartWhite,
-    hamburgerMenu
+    hamburgerMenu,
+    sortIcon,
+    checked,
+    unchecked
 };
