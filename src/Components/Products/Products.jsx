@@ -7,10 +7,10 @@ import Card from "../Card/Card"
 const Products = () => {
     return (
         <section className="w-100">
-            <div className="d-flex align-items-start justify-content-start w-100 gap-3">
+            <div className="d-flex align-items-start justify-content-start gap-3">
                 <Filters />
-                <div className="d-flex flex-column" style={{ gap: '10px' }}>
-                    <div className="d-flex align-items-center justify-content-between w-100">
+                <div className="d-flex flex-column w-100" style={{ gap: '10px' }}>
+                    <div className="d-flex align-items-center justify-content-between">
                         <h4>Chairs</h4>
                         <div className="d-flex align-items-center gap-2">
                             <div className="d-flex align-items center gap-1">
@@ -20,7 +20,7 @@ const Products = () => {
                             <Dropdown />
                         </div>
                     </div>
-                    <div className="d-flex flex-wrap w-100 justify-content-between align-items-start gap-3">
+                    <div className="products-grid w-100 justify-content-evenly">
                         <Card />
                         <Card />
                         <Card />

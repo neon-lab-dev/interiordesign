@@ -38,12 +38,12 @@ const Filters = () => {
 
 
     return (
-        <div className="d-flex flex-column">
+        <div className="d-flex flex-column" id="filterDiv">
             <div className="d-flex align-items-center gap-1">
                 <span>Filters</span>
                 <img src={ICONS.sortIcon} alt="sort" />
             </div>
-            <div className="filters d-flex gap-2 flex-column">
+            <div className="d-flex gap-2 flex-column filters">
                 {filterOptions.map((option, index) => (
                     <div key={index} className="d-flex flex-column gap-2">
                         <span className="filter-title">{option.title}:</span>

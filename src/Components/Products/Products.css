@@ -25,3 +25,51 @@
   letter-spacing: 0.05em;
   text-align: left;
 }
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px; /* optional, for spacing between items */
+}
+
+@media (max-width: 1360px) {
+  #filterDiv {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1160px) {
+  .products-grid {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  #filterDiv {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  #filterDiv {
+    display: none !important;
+  }
+
+  .products-grid .card {
+    width: 330px !important;
+  }
+}
+
+@media (max-width: 740px) {
+  .products-grid {
+    grid-template-columns: repeat(1, auto);
+  }
+
+  .products-grid .card {
+    width: 320px !important;
+  }
+
+  #filterDiv {
+    display: flex !important;
+  }
+}
