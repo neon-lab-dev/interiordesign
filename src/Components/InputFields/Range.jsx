@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-const Range = () => {
-    const [value, setValue] = useState(0); // State to hold the slider value
-    const max = 100;
-    const min = 0;
-    const step = 10;
+const Range = ({ maxValue, minValue, stepJump, valueByDefault }) => {
+    const [value, setValue] = useState(valueByDefault); // State to hold the slider value
+    const max = maxValue; // Maximum value for the range input
+    const min = minValue; // Minimum value for the range input
+    const step = stepJump; // Step value for the range input
 
     // Handler for when the range input changes
     const handleChange = (e) => {

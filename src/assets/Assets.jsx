@@ -14,6 +14,7 @@ import hamburgerMenu from "@/assets/Icons/hamburgerMenu.svg"
 import sortIcon from "@/assets/Icons/Sort.svg"
 import checked from "@/assets/Icons/checked.svg"
 import unchecked from "@/assets/Icons/unchecked.svg"
+import sortBy from "@/assets/Icons/sortBy.svg"
 
 
 export const IMAGES = {
@@ -35,5 +36,6 @@ export const ICONS = {
     hamburgerMenu,
     sortIcon,
     checked,
-    unchecked
+    unchecked,
+    sortBy
 };

@@ -1,5 +1,6 @@
 import { ICONS } from "../../assets/Assets"
 import CheckBox from "../InputFields/CheckBox"
+import Range from "../InputFields/Range"
 
 const filterOptions = [
     {
@@ -37,7 +38,7 @@ const Filters = () => {
 
 
     return (
-        <section className="d-flex flex-column">
+        <div className="d-flex flex-column">
             <div className="d-flex align-items-center gap-1">
                 <span>Filters</span>
                 <img src={ICONS.sortIcon} alt="sort" />
@@ -52,11 +53,17 @@ const Filters = () => {
                                     <CheckBox label={checkBox} value={null} />
                                 </div>
                             ))}
+                            {option.slider && (
+                                <Range maxValue={2500} minValue={400} stepsJump={100} valueByDefault={2000} />
+                            )}
                         </div>
                     </div>
                 ))}
+                <button className="btn btn-products">
+                    Reset All
+                </button>
             </div>
-        </section>
+        </div>
     )
 }
 
