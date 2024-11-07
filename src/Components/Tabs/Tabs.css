@@ -1,0 +1,48 @@
+.nav-tabs {
+  background-color: #222121;
+  padding: 16px 64px !important;
+  justify-content: space-between;
+}
+.tab-content {
+  padding: 16px 64px !important;
+}
+
+.nav-tabs button {
+  border: none !important;
+  background-color: transparent !important;
+  color: #fff !important;
+}
+
+.nav-tabs button {
+  font-size: 24px;
+  line-height: 28.8px;
+  text-align: center;
+  color: rgba(225, 225, 225, 0.75);
+}
+
+.nav-tabs .nav-link.active {
+  font-weight: 600;
+}
+
+.average-rating span {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 28.8px;
+  text-align: center;
+}
+
+.ratings .progress {
+  background-color: #606060;
+  width: 200px;
+  height: 5px;
+}
+
+.ratings .progress-bar {
+  background-color: #d7b23d;
+}
+
+.ratings {
+  border-right: 1px solid #e4e4e44d;
+  padding-right: 40px;
+  width: 30%;
+}

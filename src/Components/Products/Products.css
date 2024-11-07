@@ -34,9 +34,24 @@
   gap: 20px; /* optional, for spacing between items */
 }
 
+#filer-btn {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+}
+
 @media (max-width: 1360px) {
   #filterDiv {
     display: none !important;
+  }
+
+  #current-product {
+    display: none;
+  }
+
+  #filter-btn {
+    display: flex !important;
   }
 }
 
@@ -48,6 +63,14 @@
   #filterDiv {
     display: flex !important;
   }
+
+  #filter-btn {
+    display: none !important;
+  }
+
+  #current-product {
+    display: block;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -57,6 +80,14 @@
 
   .products-grid .card {
     width: 330px !important;
+  }
+
+  #filter-btn {
+    display: flex !important;
+  }
+
+  #current-product {
+    display: none;
   }
 }
 
@@ -72,4 +103,65 @@
   #filterDiv {
     display: flex !important;
   }
+
+  #filter-btn {
+    display: none !important;
+  }
+
+  #products_flex {
+    justify-content: end !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .prodicts-grid {
+    grid-template-columns: repeat(1, auto);
+  }
+
+  #filterDiv {
+    display: none !important;
+  }
+
+  #filter-btn {
+    display: flex !important;
+  }
+
+  #products_flex {
+    justify-content: space-between !important;
+  }
+}
+
+@media (max-width: 500px) {
+  #filter-btn span {
+    font-size: 14px !important;
+  }
+
+  #sort-by {
+    font-size: 14px !important;
+  }
+
+  .dropdown-menu {
+    font-size: 14px !important;
+  }
+
+  .dropdown button {
+    font-size: 14px !important;
+    padding: 12px 16px !important;
+  }
+}
+
+.slidingDiv {
+  position: absolute;
+  top: 20px;
+  left: -300px;
+  z-index: 100;
+  transition: left 0.5s;
+}
+
+.slidingDiv.show {
+  left: 30px;
+}
+
+.slidingDiv #filterSort {
+  display: none !important;
 }

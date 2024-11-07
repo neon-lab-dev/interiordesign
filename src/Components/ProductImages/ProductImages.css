@@ -1,0 +1,35 @@
+.product-container {
+  background-color: #343539;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 14px;
+  position: relative;
+}
+
+.product-container .card-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.product-image {
+  border: 1px solid #232323;
+  padding: 11px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image img {
+  width: 133px;
+  height: 133px;
+}
+
+.product-image-big {
+  width: 500px;
+  height: 500px;
+}

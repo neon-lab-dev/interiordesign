@@ -15,13 +15,18 @@ import sortIcon from "@/assets/Icons/Sort.svg"
 import checked from "@/assets/Icons/checked.svg"
 import unchecked from "@/assets/Icons/unchecked.svg"
 import sortBy from "@/assets/Icons/sortBy.svg"
+import chair from "@/assets/Images/chair.png"
+import add from "@/assets/Icons/add.svg"
+import star from "@/assets/Icons/star.svg"
+import like from "@/assets/Icons/like.svg"
 
 
 export const IMAGES = {
     logo,
     chair1,
     cardOverlay,
-    footerLogo
+    footerLogo,
+    chair
 };
 
 export const ICONS = {
@@ -37,5 +42,8 @@ export const ICONS = {
     sortIcon,
     checked,
     unchecked,
-    sortBy
+    sortBy,
+    add,
+    star,
+    like
 };

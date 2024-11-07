@@ -38,8 +38,8 @@ const Filters = () => {
 
 
     return (
-        <div className="d-flex flex-column" id="filterDiv">
-            <div className="d-flex align-items-center gap-1">
+        <div className="d-flex flex-column" style={{ width: '222px' }}>
+            <div className="d-flex align-items-center gap-1" id="filterSort">
                 <span>Filters</span>
                 <img src={ICONS.sortIcon} alt="sort" />
             </div>
