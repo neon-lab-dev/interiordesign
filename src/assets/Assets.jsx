@@ -19,14 +19,18 @@ import chair from "@/assets/Images/chair.png"
 import add from "@/assets/Icons/add.svg"
 import star from "@/assets/Icons/star.svg"
 import like from "@/assets/Icons/like.svg"
-
+import profile from "@/assets/Images/profile.jpeg"
+import blue_chair from "@/assets/Images/blue_chair.png"
+import editSquare from "@/assets/Icons/edit_square.png"
 
 export const IMAGES = {
     logo,
     chair1,
     cardOverlay,
     footerLogo,
-    chair
+    chair,
+    profile,
+    blue_chair,
 };
 
 export const ICONS = {
@@ -45,5 +49,6 @@ export const ICONS = {
     sortBy,
     add,
     star,
-    like
+    like,
+    editSquare
 };
