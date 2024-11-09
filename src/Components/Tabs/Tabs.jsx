@@ -21,7 +21,7 @@ const Tabs = () => {
                 <div className="tab-pane fade" id="key-specification-tab-pane" role="tabpanel" aria-labelledby="key-specification-tab" tabIndex="0">...</div>
                 <div className="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabIndex="0">...</div>
                 <div className="tab-pane fade show active" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabIndex="0">
-                    <div className="d-flex items-center justify-between gap-2">
+                    <div className="d-flex items-center justify-between gap-2 customersTabContent w-100">
                         <div className="ratings d-flex flex-column gap-4">
                             <div className="average-rating d-flex flex-column gap-1 align-items-start justify-content-between">
                                 <div className="d-flex align-items-center gap-1">
@@ -30,7 +30,7 @@ const Tabs = () => {
                                 </div>
                                 <div className="reviews-count">50 Reviews</div>
                             </div>
-                            <div className="d-flex flex-column align-items-center gap-2">
+                            <div className="d-flex flex-column align-items-center gap-2 ratings-container">
                                 <div className="progress-container d-flex align-items-center gap-2">
                                     <div className="d-flex align-items-center gap-1">
                                         <img src={ICONS.star} alt="" style={{ width: "24px", height: "24px" }} />

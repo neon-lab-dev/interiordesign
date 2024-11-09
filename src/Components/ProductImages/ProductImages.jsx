@@ -7,7 +7,7 @@ const ProductImages = () => {
             <div className="card-badge">
                 <img src={ICONS.heartWhite} alt="" />
             </div>
-            <div className="d-flex flex-column align-items-start gap-2">
+            <div className="d-flex flex-column align-items-start gap-2 product-flex">
                 <div className="product-image">
                     <img src={IMAGES.chair} alt="" />
                 </div>

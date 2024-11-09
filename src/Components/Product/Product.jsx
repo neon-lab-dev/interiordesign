@@ -7,10 +7,10 @@ import Tabs from "../Tabs/Tabs"
 const Product = () => {
     return (
         <>
-            <section className="d-flex flex-row justify-content-between align-items-center justify-between py-3 gap-3">
+            <div className="product-section w-100 d-flex align-items-center py-3">
                 <ProductImages />
                 <ProductInfo />
-            </section>
+            </div>
             <OftenPurchased />
             <Tabs />
             <BestSellers />
