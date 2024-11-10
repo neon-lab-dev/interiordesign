@@ -6,6 +6,9 @@ import SignUp from "./Components/LogSignIn/SignUp";
 import Error from "./Components/LogSignIn/Error";
 import Products from "./Components/Products/Products";
 import Product from "./Components/Product/Product";
+import Cart from "./Components/Cart/Cart";
+import Payment from "./Components/Payment/Payment";
+
 
 const Home = () => {
   return (
@@ -27,6 +30,8 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/product" element={<Product />} />
+        <Route path="/cart" element={<  Cart />} />
+        <Route path="/payment" element={<Payment />} />
         <Route element={<Error />} />
       </Routes>
     </>
