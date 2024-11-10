@@ -496,6 +496,11 @@ h6 {
   border-radius: 8px;
 }
 
+.btn-base-transparent:hover{
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+}
+
 .btn img {
   width: 16px;
   height: 16px;
@@ -685,4 +690,33 @@ span.discount {
   line-height: 22px;
   letter-spacing: 0.05em;
   text-align: left;
+}
+
+
+.dropdown-menu {
+  background-color: #1c1c1c;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+}
+
+.dropdown-item {
+  color: rgba(255, 255, 255, 0.75);
+  font-family: "Nunito Regular", sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  padding: 8px 16px;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+form .text-danger,
+form .danger-text-neighbor{
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.52px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }

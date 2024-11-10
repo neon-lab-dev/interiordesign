@@ -12,10 +12,10 @@ import './styles/custom.scss'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Nav />
     <BrowserRouter>
+      <Nav />
       <App />
+      <Footer />
     </BrowserRouter>
-    <Footer />
   </StrictMode>,
 )

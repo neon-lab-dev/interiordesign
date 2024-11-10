@@ -4,6 +4,7 @@ import "./Products.css";
 import { ICONS } from "../../assets/Assets";
 import Card from "../Card/Card";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Products = () => {
     const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -43,15 +44,15 @@ const Products = () => {
                         </div>
                     </div>
                     <div className="products-grid w-100 justify-content-evenly">
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
+                        <Link to="/product"><Card /></Link>
+                        <Link to="/product"><Card /></Link>
+                        <Link to="/product"><Card /></Link>
+                        <Link to="/product"><Card /></Link>
+                        <Link to="/product"><Card /></Link>
+                        <Link to="/product"><Card /></Link>
+                        <Link to="/product"><Card /></Link>
+                        <Link to="/product"><Card /></Link>
+                        <Link to="/product"><Card /></Link>
                     </div>
                 </div>
             </div>

@@ -7,6 +7,7 @@ import 'swiper/css/navigation';
 
 import { ICONS } from "../../assets/Assets";
 import Card from "../Card/Card";
+import { Link } from 'react-router-dom';
 
 const BestSellers = () => {
 
@@ -32,7 +33,7 @@ const BestSellers = () => {
                 breakpoints={{
                     // Responsive settings for different screen widths
                     320: {
-                        slidesPerView: 1,
+                        slidesPerView: 1.1,
                     },
                     470: {
                         slidesPerView: 1.4,
@@ -40,10 +41,10 @@ const BestSellers = () => {
                     560: {
                         slidesPerView: 1.6,
                     },
-                    600: {
+                    700: {
                         slidesPerView: 1.8,
                     },
-                    660: {
+                    800: {
                         slidesPerView: 2,
                     },
                     1100: {
@@ -56,12 +57,46 @@ const BestSellers = () => {
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
             >
-                <SwiperSlide style={{ width: '320px' }}><Card /></SwiperSlide>
-                <SwiperSlide style={{ width: '320px' }}><Card /></SwiperSlide>
-                <SwiperSlide style={{ width: '320px' }}><Card /></SwiperSlide>
-                <SwiperSlide style={{ width: '320px' }}><Card /></SwiperSlide>
-                <SwiperSlide style={{ width: '320px' }}><Card /></SwiperSlide>
-                <SwiperSlide style={{ width: '320px' }}><Card /></SwiperSlide>
+                <SwiperSlide style={{ width: '320px' }}>
+                    <Link to="/product">
+                        <Card />
+                    </Link>
+                </SwiperSlide>
+                <SwiperSlide style={{ width: '320px' }}>
+                    <Link to="/product">
+                        <Card />
+                    </Link>
+                </SwiperSlide>
+                <SwiperSlide style={{ width: '320px' }}>
+                    <Link to="/product">
+                        <Card />
+                    </Link>
+                </SwiperSlide>
+                <SwiperSlide style={{ width: '320px' }}>
+                    <Link to="/product">
+                        <Card />
+                    </Link>
+                </SwiperSlide>
+                <SwiperSlide style={{ width: '320px' }}>
+                    <Link to="/product">
+                        <Card />
+                    </Link>
+                </SwiperSlide>
+                <SwiperSlide style={{ width: '320px' }}>
+                    <Link to="/product">
+                        <Card />
+                    </Link>
+                </SwiperSlide>
+                <SwiperSlide style={{ width: '320px' }}>
+                    <Link to="/product">
+                        <Card />
+                    </Link>
+                </SwiperSlide>
+                <SwiperSlide style={{ width: '320px' }}>
+                    <Link to="/product">
+                        <Card />
+                    </Link>
+                </SwiperSlide>
             </Swiper>
         </section>
     );

@@ -1,4 +1,4 @@
-import logo from "@/assets/Images/logo.png";
+import logo from "@/assets/Images/logo.jpg";
 import searchIconGrey from "@/assets/Icons/Magnifer.svg";
 import cartIconGrey from "@/assets/Icons/CartGrey.svg";
 import profileIconGrey from "@/assets/Icons/ProfileGrey.svg";
