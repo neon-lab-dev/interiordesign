@@ -1,0 +1,129 @@
+.nav-tabs {
+  background-color: #222121;
+  padding: 16px 64px !important;
+  justify-content: space-between;
+}
+.tab-content {
+  padding: 16px 64px !important;
+}
+
+.nav-tabs button {
+  border: none !important;
+  background-color: transparent !important;
+  color: #fff !important;
+}
+
+.nav-tabs button {
+  font-size: 24px;
+  line-height: 28.8px;
+  text-align: center;
+  color: rgba(225, 225, 225, 0.75);
+}
+
+.nav-tabs .nav-link.active {
+  font-weight: 600;
+}
+
+.average-rating span {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 28.8px;
+  text-align: center;
+}
+
+.ratings .progress {
+  background-color: #606060;
+  width: 140px;
+  height: 5px;
+}
+
+.ratings .progress-bar {
+  background-color: #d7b23d;
+}
+
+.ratings {
+  border-right: 1px solid #e4e4e44d;
+  padding-right: 40px;
+  width: 30%;
+}
+
+@media (max-width: 1024px) {
+  .nav-tabs button.nav-link {
+    font-size: 22px;
+    line-height: 28.8px;
+  }
+}
+
+@media (max-width: 834px) {
+  .nav-tabs {
+    padding: 24px 16px !important;
+  }
+
+  .tab-content {
+    padding-inline: 16px !important;
+  }
+
+  .nav-tabs button.nav-link {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav-tabs button.nav-link {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+@media (max-width: 470px) {
+  .nav-tabs button.nav-link {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav-tabs {
+    padding-inline: 8px !important;
+  }
+
+  .nav-tabs button.nav-link {
+    padding-inline: 4px !important;
+  }
+}
+
+.ratings {
+  width: 300px !important;
+}
+
+@media (max-width: 600px) {
+  .customersTabContent {
+    flex-direction: column !important;
+  }
+
+  .ratings {
+    width: 100% !important;
+    margin-inline: auto;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-right: 0px !important;
+    border-bottom: 1px solid #ffffff4d;
+    padding: 0px;
+    padding-bottom: 30px;
+  }
+
+  .progress-container {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .progress {
+    width: 300px !important;
+  }
+
+  .ratings-container {
+    width: 100%;
+  }
+}

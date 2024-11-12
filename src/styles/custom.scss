@@ -292,7 +292,6 @@ input[type="range"]::before {
   height: 12px;
   background-color: rgba(89, 89, 89, 1);
   width: var(--value-percent);
-  transition: width 0.2s;
   border-radius: 1rem;
   border-top-right-radius: var(--track-border-radius) !important;
   border-bottom-right-radius: var(--track-border-radius) !important;
@@ -485,7 +484,7 @@ h6 {
   border-radius: 5px;
 }
 
-.btn-base-trasparent {
+.btn-base-transparent {
   border: 1px solid rgba(255, 255, 255, 0.6);
   color: rgba(255, 255, 255, 1);
   font-size: 16px;
@@ -495,6 +494,11 @@ h6 {
   padding: 16px 64px;
   background-color: transparent;
   border-radius: 8px;
+}
+
+.btn-base-transparent:hover{
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
 }
 
 .btn img {
@@ -632,10 +636,20 @@ h6 {
 }
 
 span.price {
-  font-family: Nunito;
+  font-family: "Nunito Light";
   font-size: 14px;
   font-weight: 300;
   line-height: 21px;
+  text-align: left;
+}
+
+span.discount {
+  color: #4cec96;
+  font-family: "Verdana Regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+  letter-spacing: -0.2px;
   text-align: left;
 }
 
@@ -661,4 +675,48 @@ span.price {
 .card-badge img {
   width: 18px;
   height: 18px;
+}
+
+.btn-black {
+  border: 1px solid #232323;
+  padding: 11px 24px;
+  background-color: transparent !important;
+  border-radius: 5px;
+  color: #f2f2f2;
+
+  font-family: "Verdana Regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+
+
+.dropdown-menu {
+  background-color: #1c1c1c;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+}
+
+.dropdown-item {
+  color: rgba(255, 255, 255, 0.75);
+  font-family: "Nunito Regular", sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  padding: 8px 16px;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+form .text-danger,
+form .danger-text-neighbor{
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.52px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }

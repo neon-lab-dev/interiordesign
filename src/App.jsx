@@ -8,7 +8,7 @@ import ForgetPass from "./Components/LogSignIn/ForgetPass";
 import ChangePass from "./Components/LogSignIn/ChangePass";
 import AccountDashboard from "./Components/DashboardPages/Dashboard";
 import OrdersDesign from "./Components/DashboardPages/OrdersDesign";
-
+import Products from "./Components/Products/Products";
 const Home = () => {
   return (
     <>
@@ -24,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/dashboard" element={<AccountDashboard />} />
         <Route path="/orderdesign" element={<OrdersDesign />} />
