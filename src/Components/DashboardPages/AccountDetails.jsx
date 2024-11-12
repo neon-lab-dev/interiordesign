@@ -1,4 +1,3 @@
-import React from "react";
 import "./Dashboard.css";
 import { FaRegEdit } from "react-icons/fa";
 import ProfileImg from "../../assets/Images/profileimg.jpeg";
@@ -6,17 +5,18 @@ import ProfileImg from "../../assets/Images/profileimg.jpeg";
 const AccountDetails = () => {
   return (
     <div className="account-details-card">
-      <h3>Account Details</h3>
+      <h3 className="account-details-card-title">Account Details</h3>
       <span className="edit-icon">
         <FaRegEdit />
       </span>
       <div className="img-Name">
         <img src={ProfileImg} alt="Profile" className="profile-pic" />
-        <p>Kabir Sah</p>
+        <span className="c">Kabir Sah</span>
       </div>
-
-      <p>Email: www.kabirsah@gmail.com</p>
-      <p>Phone: 5824658726</p>
+      <div className="d-flex flex-column profileContacts gap-1">
+        <p>Email: www.kabirsah@gmail.com</p>
+        <p>Phone: 5824658726</p>
+      </div>
     </div>
   );
 };

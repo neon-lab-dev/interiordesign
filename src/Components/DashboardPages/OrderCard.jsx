@@ -1,30 +1,33 @@
-import React from "react";
 import ChairPic from "../../assets/Images/chairpic.png";
 
 const OrderCard = () => {
   return (
     <div>
-      <div className="order-card">
-        <div className="order-info">
-          <div>
-            <p>Date: 24-01-2024</p>
-            <p>Order ID: #2125465</p>
+      <div className="order-card border-bottom border-gray">
+        <div className="order-info d-flex items-center justify-between w-100">
+          <div className="d-flex flex-column gap-2">
+            <span>Date: <b>24-01-2024</b></span>
+            <span>Order ID: <b>#2125465</b></span>
           </div>
-          <p>Order Status: Shipped</p>
+          <span>Order Status: <b>Shipped</b></span>
         </div>
         <div className="order-details">
-          <img src={ChairPic} alt="Product" className="order-image" />
-          <div className="product-details">
-            <p>Product: Elite Series Kashmiri Willow Cricket Bat</p>
-            <p>Quantity: 1</p>
-            <p>Total Price: $149.99</p>
-            <p>Default Shipping Address 1</p>
-            <p>
-              123 Main Street, Apt 4B, Cityville, State 54321, United States
-            </p>
+          <div className="order-image-container">
+            <img src={ChairPic} alt="Product" className="order-image" />
+          </div>
+          <div className="product-details d-flex flex-column gap-2 w-100">
+            <span>Product: <span className="text-white">Elite Series Kashmiri Willow Cricket Bat</span></span>
+            <span>Quantity: <span className="text-white">1</span></span>
+            <span>Total Price: <span className="text-white"> $149.99</span></span>
+            <span>Default Shipping Address <span className="text-white"> 1</span></span>
+            <span className="text-white">
+              123 Main Street, Apt 4B, Cityville,<br /> State 54321,<br /> United States
+            </span>
+            <div className="w-100 d-flex align-items-center justify-content-end">
+              <span className="order-btn" style={{ backgroundColor: "#202020" }}>Cancel</span>
+            </div>
           </div>
         </div>
-        <button className="cancel-button">Cancel</button>
       </div>
     </div>
   );

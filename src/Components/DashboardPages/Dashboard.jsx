@@ -1,4 +1,3 @@
-import React from "react";
 import "./Dashboard.css";
 import Sidebar from "./Sidebar";
 import AccountDetails from "./AccountDetails";
@@ -7,9 +6,11 @@ import AddressCard from "./AddressCard";
 
 const Dashboard = () => {
   return (
-    <div className="dashboard-container">
+    <section className="dashboard-container">
       <div className="main-content">
-        <h2 className="welcome-text">Welcome, Kabir Sah</h2>
+        <div className="py-3 border-1 border-bottom border-gray d-flex align-items-center justify-content-center">
+          <span className="welcome-text">Welcome, Kabir Sah</span>
+        </div>
         <div>
           <div className="content-sections">
             <Sidebar />
@@ -24,7 +25,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

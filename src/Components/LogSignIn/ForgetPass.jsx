@@ -1,56 +1,45 @@
-import React from "react";
-import { useNavigate, Link } from "react-router-dom";
 import LoginImg from "../../assets/Images/loginimg.jpeg";
-import "./Forgetpass.css";
-import ChangePass from "./ChangePass";
+import { IMAGES } from "../../assets/Assets";
+import "./Login.css";
 
-const SignUp = () => {
-  const navigate = useNavigate();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    navigate("/changepassword");
-  };
-
+const Login = () => {
   return (
-    <>
-      <div className="page-container">
-        <div className="content-container">
-          <div className="LoginPage">
-            <div className="LogImg">
-              <img src={LoginImg} alt="Description" />
-              <h5 className="overlay-text">We Create Your Dream Home</h5>
-            </div>
-            <div className="logForm">
-              <div className="form">
-                <div className="heading">Forget Password</div>
-                <form action="" onSubmit={handleSubmit}>
-                  <div className="inputField">
-                    <label htmlFor="name">
-                      Enter the email or phone number
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      placeholder="Enter your email or phone number"
-                      required
-                    />
-                  </div>
-
-                  <button type="submit">Submit</button>
-                </form>
-                <p>
-                  Don&apos;t receive?
-                  <Link className="create" to="/forgetpassword">
-                    Sent again
-                  </Link>
-                </p>
-              </div>
-            </div>
+    <section className="">
+      <div className="login-container d-flex  items-center justify-between login-section w-100">
+        <div className="login-image-container">
+          <img src={LoginImg} alt="login" className="login-image" />
+          <img src={IMAGES.logo} alt="" className="logo-top" />
+          <div className="image-overlay">
+            <span className="logo-text">We Create Your Dream Home</span>
           </div>
         </div>
+        <form action="" className="login-form justify-content-start py-5">
+          <div className="form-title">Forgot Password</div>
+          <div className="inp-grp">
+            <label htmlFor="emailOrPhone">Enter the email or phone number</label>
+            <input
+              type="text"
+              id="emailOrPhone"
+              placeholder="Enter The Email or Phone Number"
+            />
+          </div>
+
+          <button type="submit" className="btn btn-base-transparent">
+            Submit
+          </button>
+          <div className="d-flex justify-content-center ">
+            <span
+              className="danger-text-neighbor"
+              style={{ marginRight: "2px" }}
+            >
+              Didn&apos;t received? <span className="text-danger">Send again</span>
+            </span>
+
+          </div>
+        </form>
       </div>
-    </>
+    </section>
   );
 };
 
-export default SignUp;
+export default Login;

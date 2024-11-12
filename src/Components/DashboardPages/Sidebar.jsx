@@ -1,4 +1,3 @@
-import React from "react";
 import "./Dashboard.css";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -10,7 +9,7 @@ const Sidebar = () => {
     navigate("/orderdesign");
   };
   return (
-    <div className="sidebar">
+    <div className="sidebar pe-2">
       <NavLink
         to="/dashboard"
         className="sidebar-button active"

@@ -12,6 +12,10 @@ import Products from "./Components/Products/Products";
 import Product from "./Components/Product/Product";
 import Cart from "./Components/Cart/Cart";
 import Payment from "./Components/Payment/Payment";
+import Wishlist from "./Components/Wishlist/Wishlist";
+import OrderHistory from "./Components/DashboardPages/OrderHistory";
+import ChangePassWord from "./Components/DashboardPages/ChangePassword";
+
 const Home = () => {
   return (
     <>
@@ -29,6 +33,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/products" element={<Products />} />
         <Route path="/product" element={<Product />} />
+        <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/payment" element={<Payment />} />
@@ -36,6 +41,8 @@ function App() {
         <Route path="/orderdesign" element={<OrdersDesign />} />
         <Route path="/forgetpassword" element={<ForgetPass />} />
         <Route path="/changepassword" element={<ChangePass />} />
+        <Route path="/orderhistory" element={<OrderHistory />} />
+        <Route path="/changepass" element={<ChangePassWord />}></Route>
         <Route element={<Error />} />
       </Routes>
     </>
