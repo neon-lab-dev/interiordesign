@@ -9,6 +9,9 @@ import ChangePass from "./Components/LogSignIn/ChangePass";
 import AccountDashboard from "./Components/DashboardPages/Dashboard";
 import OrdersDesign from "./Components/DashboardPages/OrdersDesign";
 import Products from "./Components/Products/Products";
+import Product from "./Components/Product/Product";
+import Cart from "./Components/Cart/Cart";
+import Payment from "./Components/Payment/Payment";
 const Home = () => {
   return (
     <>
@@ -25,7 +28,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/product" element={<Product />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/payment" element={<Payment />} />
         <Route path="/dashboard" element={<AccountDashboard />} />
         <Route path="/orderdesign" element={<OrdersDesign />} />
         <Route path="/forgetpassword" element={<ForgetPass />} />

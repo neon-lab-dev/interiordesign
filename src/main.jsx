@@ -9,12 +9,9 @@ import "./index.css";
 import "./styles/custom.scss";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <BrowserRouter>
-      <Nav />
-      <App />
-      <Footer />
-    </BrowserRouter>
+  <BrowserRouter>
+    <Nav />
+    <App />
     <Footer />
-  </StrictMode>
+  </BrowserRouter>
 );
