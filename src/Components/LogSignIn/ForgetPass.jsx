@@ -39,7 +39,7 @@ const SignUp = () => {
                   <button type="submit">Submit</button>
                 </form>
                 <p>
-                  Don't receive?
+                  Don&apos;t receive?
                   <Link className="create" to="/forgetpassword">
                     Sent again
                   </Link>
