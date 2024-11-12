@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import LoginImg from "../../assets/Images/loginimg.jpeg";
 import { IMAGES } from "../../assets/Assets";
-import "./Login.css"
+import "./Login.css";
 
 const SignUp = () => {
   return (
@@ -15,9 +15,7 @@ const SignUp = () => {
           </div>
         </div>
         <form action="" className="login-form">
-          <div className="form-title">
-            Create an Account
-          </div>
+          <div className="form-title">Create an Account</div>
           <div className="inp-grp">
             <label htmlFor="username">User Name</label>
             <input type="text" id="username" placeholder="Enter Username" />
@@ -32,16 +30,33 @@ const SignUp = () => {
           </div>
           <div className="inp-grp">
             <label htmlFor="password">Create Password</label>
-            <input type="password" id="password" placeholder="Create Strong Password" />
+            <input
+              type="password"
+              id="password"
+              placeholder="Create Strong Password"
+            />
           </div>
           <div className="inp-grp">
             <label htmlFor="confirmPassword">Confirm Password</label>
-            <input type="password" id="confirmPassword" placeholder="Re-Enter Password" />
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="Re-Enter Password"
+            />
           </div>
-          <button type="submit" className="btn btn-base-transparent">Login</button>
+          <button type="submit" className="btn btn-base-transparent">
+            Login
+          </button>
           <div className="d-flex justify-content-center ">
-            <span className="danger-text-neighbor" style={{ marginRight: '2px' }}>Already have an account?</span>
-            <Link to="/signup" className="text-danger">login</Link>
+            <span
+              className="danger-text-neighbor"
+              style={{ marginRight: "2px" }}
+            >
+              Already have an account?
+            </span>
+            <Link to="/signup" className="text-danger">
+              login
+            </Link>
           </div>
         </form>
       </div>
