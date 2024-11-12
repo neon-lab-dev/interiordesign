@@ -1,8 +1,14 @@
 import React from "react";
 import "./Dashboard.css";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+  const handleOrders = (e) => {
+    e.preventDefault();
+    navigate("/orderdesign");
+  };
   return (
     <div className="sidebar">
       <NavLink
@@ -13,7 +19,12 @@ const Sidebar = () => {
         Account Dashboard
       </NavLink>
 
-      <NavLink to="/orders" className="sidebar-button" activeClassName="active">
+      <NavLink
+        to="/orders"
+        className="sidebar-button"
+        activeClassName="active"
+        onClick={handleOrders}
+      >
         Orders
       </NavLink>
 

@@ -1,6 +1,6 @@
 import React from "react";
 import LoginImg from "../../assets/Images/loginimg.jpeg";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Forgetpass.css";
 
 const ChangePass = () => {

@@ -8,16 +8,18 @@ import AddressCard from "./AddressCard";
 const Dashboard = () => {
   return (
     <div className="dashboard-container">
-      <Sidebar />
       <div className="main-content">
         <h2 className="welcome-text">Welcome, Kabir Sah</h2>
         <div>
           <div className="content-sections">
-            <AccountDetails />
-            <RecentOrders />
-            <div className="address-cards">
-              <AddressCard />
-              <AddressCard />
+            <Sidebar />
+            <div className="Dashcard-section">
+              <AccountDetails />
+              <RecentOrders />
+              <div className="address-cards">
+                <AddressCard />
+                <AddressCard />
+              </div>
             </div>
           </div>
         </div>
