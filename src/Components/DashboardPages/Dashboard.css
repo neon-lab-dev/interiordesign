@@ -251,3 +251,10 @@ span.edit-icon {
   background: #008dd3;
   margin-left: 25px;
 }
+
+.detailaddress {
+  display: flex;
+  margin: 10px;
+  align-items: center;
+  padding: 5px;
+}

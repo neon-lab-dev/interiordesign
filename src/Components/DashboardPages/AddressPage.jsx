@@ -1,4 +1,5 @@
 import React from "react";
+import "./Dashboard.css";
 import Sidebar from "./Sidebar";
 import AddressCard from "./AddressCard";
 
