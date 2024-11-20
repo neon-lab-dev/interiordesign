@@ -164,3 +164,19 @@ section {
 .dropdown-menu li a {
 } */
 
+.btn-blue {
+  background: #008dd3;
+  font-family: "Verdana Regular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  padding: 16px 64px;
+  border: none;
+}
+
+.content-sections {
+  min-height: 1083px;
+}

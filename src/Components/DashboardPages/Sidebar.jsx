@@ -12,7 +12,7 @@ const Sidebar = () => {
     <div className="sidebar pe-2">
       <NavLink
         to="/dashboard"
-        className="sidebar-button active"
+        className="sidebar-button"
         activeClassName="active"
       >
         Account Dashboard
@@ -36,7 +36,7 @@ const Sidebar = () => {
       </NavLink>
 
       <NavLink
-        to="/adress-book"
+        to="/address"
         className="sidebar-button"
         activeClassName="active"
       >
