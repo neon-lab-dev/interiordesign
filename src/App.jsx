@@ -16,9 +16,7 @@ import Wishlist from "./Components/Wishlist/Wishlist";
 import OrderHistory from "./Components/DashboardPages/OrderHistory";
 import ChangePassWord from "./Components/DashboardPages/ChangePassword";
 import Address from "./Components/DashboardPages/Address";
-
-import AddressPage from "./Components/DashboardPages/AddressPage";
-import AddingNewAddress from "./Components/DashboardPages/AddingNewAddress";
+import AccountDetailsPage from "./Components/DashboardPages/AccountDetailsPage";
 const Home = () => {
   return (
     <>
@@ -45,8 +43,9 @@ function App() {
         <Route path="/forgetpassword" element={<ForgetPass />} />
         <Route path="/changepassword" element={<ChangePass />} />
         <Route path="/orderhistory" element={<OrderHistory />} />
-        <Route path="/changepass" element={<ChangePassWord />} />
+        <Route path="/password-reset" element={<ChangePassWord />} />
         <Route path="/address" element={<Address />} />
+        <Route path="/account-details" element={<AccountDetailsPage />} />
         <Route element={<Error />} />
       </Routes>
     </>

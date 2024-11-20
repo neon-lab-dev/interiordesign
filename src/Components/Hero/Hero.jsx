@@ -10,8 +10,8 @@ const Hero = () => {
                     <h1>Build Your Elegant Dream Home Interior</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
                 </div>
-                <Link to="/product">
-                    <button className="btn btn-primary">Our Product</button>
+                <Link to="/products">
+                    <button className="btn btn-primary">Our Products</button>
                 </Link>
             </div>
         </section>
