@@ -17,7 +17,6 @@ import OrderHistory from "./Components/DashboardPages/OrderHistory";
 import ChangePassWord from "./Components/DashboardPages/ChangePassword";
 import AddressPage from "./Components/DashboardPages/AddressPage";
 import AddingNewAddress from "./Components/DashboardPages/AddingNewAddress";
-
 const Home = () => {
   return (
     <>
@@ -47,7 +46,8 @@ function App() {
         <Route path="/changepass" element={<ChangePassWord />}></Route>
         <Route path="/addresspage" element={<AddressPage />} />
         <Route path="/addaddress" element={<AddingNewAddress />} />
-        <Route element={<Error />} />
+        <Route path="/changepass" element={<ChangePassWord />}/>
+        <Route path="/account-details" element={<AccountDetailsPage />} />
       </Routes>
     </>
   );
