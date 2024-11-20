@@ -1,8 +1,14 @@
 import LoginImg from "../../assets/Images/loginimg.jpeg";
 import { IMAGES } from "../../assets/Assets";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/changepassword");
+  };
   return (
     <section className="">
       <div className="login-container d-flex  items-center justify-between login-section w-100">
@@ -13,10 +19,16 @@ const Login = () => {
             <span className="logo-text">We Create Your Dream Home</span>
           </div>
         </div>
-        <form action="" className="login-form justify-content-start py-5">
+        <form
+          action=""
+          onSubmit={handleSubmit}
+          className="login-form justify-content-start py-5"
+        >
           <div className="form-title">Forgot Password</div>
           <div className="inp-grp">
-            <label htmlFor="emailOrPhone">Enter the email or phone number</label>
+            <label htmlFor="emailOrPhone">
+              Enter the email or phone number
+            </label>
             <input
               type="text"
               id="emailOrPhone"
@@ -32,9 +44,9 @@ const Login = () => {
               className="danger-text-neighbor"
               style={{ marginRight: "2px" }}
             >
-              Didn&apos;t received? <span className="text-danger">Send again</span>
+              Didn&apos;t received?{" "}
+              <span className="text-danger">Send again</span>
             </span>
-
           </div>
         </form>
       </div>

@@ -47,6 +47,7 @@ const Sidebar = () => {
         to="/account-details"
         className="sidebar-button"
         activeClassName="active"
+        
       >
         Account Details
       </NavLink>

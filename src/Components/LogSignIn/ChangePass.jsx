@@ -1,8 +1,14 @@
 import LoginImg from "../../assets/Images/loginimg.jpeg";
 import { IMAGES } from "../../assets/Assets";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/login");
+  };
   return (
     <section className="">
       <div className="login-container d-flex  items-center justify-between login-section w-100">
@@ -13,7 +19,11 @@ const Login = () => {
             <span className="logo-text">We Create Your Dream Home</span>
           </div>
         </div>
-        <form action="" className="login-form justify-content-start py-5">
+        <form
+          action=""
+          onSubmit={handleSubmit}
+          className="login-form justify-content-start py-5"
+        >
           <div className="form-title">Change Password</div>
           <div className="inp-grp">
             <label htmlFor="password">Enter the new password</label>
@@ -35,8 +45,7 @@ const Login = () => {
           <button type="submit" className="btn btn-base-transparent">
             Submit
           </button>
-          <div className="d-flex justify-content-center ">
-          </div>
+          <div className="d-flex justify-content-center "></div>
         </form>
       </div>
     </section>

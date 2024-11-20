@@ -32,7 +32,9 @@ const Login = () => {
             className="d-flex w-100 align-items-center justify-content-end text-danger"
             style={{ marginTop: "-14px" }}
           >
-            Forgot Password?
+            <Link to="/forgetpassword" className="text-danger">
+              Forgot Password?
+            </Link>
           </div>
           <button type="submit" className="btn btn-base-transparent">
             Login

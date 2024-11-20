@@ -17,6 +17,8 @@ import OrderHistory from "./Components/DashboardPages/OrderHistory";
 import ChangePassWord from "./Components/DashboardPages/ChangePassword";
 import Address from "./Components/DashboardPages/Address";
 
+import AddressPage from "./Components/DashboardPages/AddressPage";
+import AddingNewAddress from "./Components/DashboardPages/AddingNewAddress";
 const Home = () => {
   return (
     <>
