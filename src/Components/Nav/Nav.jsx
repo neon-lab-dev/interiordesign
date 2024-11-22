@@ -11,7 +11,7 @@ const Nav = () => {
                         <img src={IMAGES.logo} alt="logo" />
                     </Link>
                     <div className="nav-links d-flex align-items-center gap-3 horizontal-nav-links">
-                        <Link to="/products">Bedsheets</Link>
+                        <Link to="/bedsheets">Bedsheets</Link>
                         <Link to="/products">Chairs</Link>
                         <Link to="/products">Tables</Link>
                     </div>
