@@ -1,5 +1,3 @@
-import BestSellers from "./Components/BestSellers/BestSellers";
-import Hero from "./Components/Hero/Hero";
 import { Route, Routes } from "react-router-dom";
 import Login from "./Components/LogSignIn/Login";
 import SignUp from "./Components/LogSignIn/SignUp";
@@ -16,21 +14,16 @@ import Wishlist from "./Components/Wishlist/Wishlist";
 import OrderHistory from "./Components/DashboardPages/OrderHistory";
 import ChangePassWord from "./Components/DashboardPages/ChangePassword";
 import Address from "./Components/DashboardPages/Address";
-import AccountDetailsPage from "./Components/DashboardPages/AccountDetailsPage";
-const Home = () => {
-  return (
-    <>
-      <Hero />
-      <BestSellers />
-    </>
-  );
-};
+import AccountDetailsPage from "./Components/DashboardPages/AccountDetailsPage"
+import Home from "./pages/Home/Home";
+import BedSheets from "./pages/BedSheets/BedSheets";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/bedsheets" element={<BedSheets />} />
         <Route path="/login" element={<Login />} />
         <Route path="/products" element={<Products />} />
         <Route path="/product" element={<Product />} />
