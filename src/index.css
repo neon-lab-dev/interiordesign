@@ -180,3 +180,23 @@ section {
 .content-sections {
   min-height: 1083px;
 }
+
+
+.subHeading {
+  color: rgba(200, 200, 200, 0.6);
+  font: Verdana;
+  font-size: 16px;
+  letter-spacing: "1.12px";
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.heading {
+color: rgba(255, 255, 255, 0.75);
+font-family: Verdana;
+font-size: 36px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-transform: capitalize;
+}
