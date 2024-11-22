@@ -22,6 +22,8 @@ import like from "@/assets/Icons/like.svg"
 import profile from "@/assets/Images/profile.jpeg"
 import blue_chair from "@/assets/Images/blue_chair.png"
 import editSquare from "@/assets/Icons/edit_square.png"
+import bedsheet from "@/assets/Images/bedsheet.png"
+import ArrowRightUp from "@/assets/Icons/ArrowRightUp.png"
 
 export const IMAGES = {
     logo,
@@ -31,6 +33,7 @@ export const IMAGES = {
     chair,
     profile,
     blue_chair,
+    bedsheet
 };
 
 export const ICONS = {
@@ -50,5 +53,6 @@ export const ICONS = {
     add,
     star,
     like,
-    editSquare
+    editSquare,
+    ArrowRightUp
 };

@@ -123,4 +123,16 @@
   .login .login-section .login-form {
     padding-inline: 16px;
   }
+
+  
+}
+
+@media (max-width: 500px) {
+  .logo-text{
+    font-size: 24px !important;
+    padding: 248px 5px 52px !important;
+  }
+  .form-title{
+    font-size: 28px !important;
+  }
 }

@@ -13,7 +13,7 @@ const Address = () => {
                 <div>
                     <div className="content-sections">
                         <Sidebar />
-                        <div className="d-flex flex-column gap-2" style={{ width: "400px" }}>
+                        <div className="d-flex flex-column gap-4" style={{ width: "400px" }}>
                             <AddressCard />
                             <button className="btn-blue">Add a new Address</button>
                         </div>

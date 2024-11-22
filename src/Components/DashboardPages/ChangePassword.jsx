@@ -13,8 +13,8 @@ const OrderDesign = () => {
                     <div className="content-sections">
                         <Sidebar />
                         <div className="d-flex flex-column gap-2 w-100">
-                            <div className="login-container d-flex  items-center justify-between login-section w-100" style={{ height: "fit-content !important" }}>
-                                <form action="" className="login-form justify-content-start py-5" >
+                            <div className="login-container-pass d-flex  items-center justify-between login-section w-100" style={{ height: "fit-content !important" }}>
+                                <form action="" className="login-form-pass justify-content-start " >
                                     <div className="form-title">Change Password</div>
                                     <div className="inp-grp">
                                         <label htmlFor="password">Enter the new password</label>
@@ -33,8 +33,8 @@ const OrderDesign = () => {
                                         />
                                     </div>
 
-                                    <div className="" style={{ width: "200px" }}>
-                                        <button type="submit" className="btn btn-lg-colored py-2 bg-colored" style={{ width: "200px !important" }}>
+                                    <div className="submit-btn" >
+                                        <button type="submit" className=" btn-blue py-2 bg-colored" >
                                             Submit
                                         </button>
                                     </div>

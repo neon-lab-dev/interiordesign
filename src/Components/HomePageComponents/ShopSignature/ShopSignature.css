@@ -1,0 +1,67 @@
+.shopsignature-container{
+    background-color: #1c1c1c;
+}
+.shops-header{
+    text-align: center;
+}
+
+.shops-content{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.bedsheetcard-container{
+    
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+.bedsheet-image-cont{
+    position: relative;
+    margin-bottom: 32px;
+}
+.bedsheet-image-cont img{
+    width: 400px;
+    height: 500px;
+    border-radius: 16px;
+}
+.shopnow-btn{
+    position: absolute;
+    display: flex;
+    bottom: 20px;
+    left: 20px;
+    display: inline-flex;
+    padding: 6px 6px 6px 14px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 66px;
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.00);
+    background: rgba(212, 212, 212, 0.10);
+    backdrop-filter: blur(12px);
+}
+.shopnow-btn-arrow{
+    display: flex;
+    height: 32px;
+    padding: 6px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 16px;
+    background: #8881EA;
+}
+.shopnow-btn-arrow img{
+    width: 20px;
+    height: 20px;
+}
+.bedsheet-desc{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.bedsheet-desc h4{
+    font-size: 24px;
+    font-weight: 400;
+}
+.bedsheet-desc p{
+    font-family: "Verdana", sans-serif;
+}

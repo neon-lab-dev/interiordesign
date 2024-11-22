@@ -1,6 +1,5 @@
 .dashboard-container {
   display: flex;
-
   color: #e0e0e0;
 }
 
@@ -22,9 +21,12 @@
   position: relative;
   margin-top: 30px;
 }
-
+.sidebar-largescreen{
+  display: flex;
+}
 .sidebar {
-  width: 270px;
+  width: 250px ;
+  min-width: 250px;
   min-height: 100%;
   padding: 10px;
   display: flex;
@@ -65,7 +67,8 @@
 }
 
 .account-details-card {
-  width: 50%;
+  width: 100%;
+  max-width: 400px;
   margin: 30px;
 }
 
@@ -101,7 +104,7 @@
 }
 
 .recent-orders {
-  width: 80%;
+  width: 95%;
   margin: 30px;
 }
 
@@ -195,7 +198,12 @@ span.edit-icon {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
-
+.recent-bigscreen{
+  display: flex;
+}
+.recent-smallscreen{
+  display: none;
+}
 .recent-orders-head {
   font-family: "Verdana Regular", sans-serif;
   font-size: 24px;
@@ -234,9 +242,8 @@ span.edit-icon {
 
 .order-btn {
   background-color: #262626;
-  padding: 10px 20px;
+  padding: 5px;
   border-radius: 5px;
-
   font-family: "Lato Regular", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -257,4 +264,217 @@ span.edit-icon {
   margin: 10px;
   align-items: center;
   padding: 5px;
+}
+
+
+.right-section{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.name-phone{
+  display: flex;
+  justify-content: space-between;
+  gap: 36px;
+  width: 100%;
+  margin-bottom: 45px;
+}
+.edit-form {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.edit-form h3 {
+  color: #fff;
+  font-family: Verdana;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.form-group-upload{
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 47%;
+}
+.form-group-upload label {
+  font-family: Verdana;
+  font-size: 16px;
+  color: #aaa;
+  margin-bottom: 5px;
+}
+.choose-text{
+  font-size: 18px !important;
+  background-color: #fff;
+  color:#666666;
+  padding: 5px;
+}
+.form-group label {
+  font-family: Verdana;
+  font-size: 16px;
+  color: #aaa;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  padding: 10px;
+  border-radius: 4px;
+  border: none !important;
+  background-color: #353434 !important;
+  color: #999 !important;
+  font-family: Verdana;
+  font-size: 16px !important;
+}
+
+.save-btn {
+  font-family: Verdana;
+  border-radius: 10px;
+  border: 1px solid #A6A6A6;
+  color: #fff;
+  width: 275px !important;
+  background: none;
+  padding: 16px 64px;
+  cursor: pointer;
+}
+@media screen and (max-width: 1100px) {
+  .address-cards{
+    gap: 28px !important;
+  }
+  .address-card{
+    margin: 0px;
+  }
+  .form-group{
+    width: 25vw;
+  }
+  .form-group-upload{
+    width: 25vw;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .main-content{
+    padding: 0;
+  }
+  .dashboard-container{
+    padding: 27px !important;
+  }
+  .content-sections{
+    padding: 20px;
+  }
+  .sidebar-largescreen{
+    display: none;
+  }
+  .account-details-card{
+    margin: 30px 20px;
+  }
+  .address-cards{
+    grid-template-columns: 1fr;
+    gap: 20px !important;
+  }
+
+  .recent-orders{
+    width: 650px !important;
+    margin: 30px 20px;
+  }
+  .recent-bigscreen{
+    width: 600px !important;
+  }
+
+  .name-phone{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .form-group{
+    width: 100%;
+  }
+  .form-group-upload{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .recent-bigscreen{
+    display: none;
+  }
+  .recent-smallscreen{
+    display: flex;
+  }
+  .recent-orders{
+    width: 500px !important;
+    margin: 30px 20px;
+  }
+  .order-inside{
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width:550px) {
+  .content-sections{
+    /* min-height: 1000px !important; */
+    padding: 10px;
+    margin-top: 10px;
+  }
+  .dashboard-container{
+    padding: 16px !important;
+  }
+  .account-details-card{
+    width: 320px;
+    margin: 0px;
+  }
+  .edit-form{
+    padding: 0px;
+  }
+  .recent-orders{
+    width: 320px !important;
+    margin: 20px 0px;
+  }
+  .recent-bigscreen{
+    display: none;
+  }
+  .recent-smallscreen{
+    display: flex;
+  }
+  .order-inside{
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .address-card{
+    margin: 10px 0px;
+    padding: 10px;
+  }
+  .address-card-head{
+    font-size: 16px;
+  }
+  .address-card-name{
+    font-size: 16px;
+  }
+  .address-card-details span{
+    font-size: 14px;
+  }
+  .edit-icon{
+    top: 5px !important;
+    right: 10px !important;
+  }
+}
+
+@media screen and (max-width:350px){
+  .account-details-card{
+    width: 270px;
+    padding: 10px;
+  }
+  .recent-orders{
+    width: 270px !important;
+    padding: 10px;
+  }
+  
+  
 }
