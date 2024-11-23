@@ -181,6 +181,7 @@ section {
   min-height: 900px;
 }
 
+
 .subHeading {
   color: rgba(200, 200, 200, 0.6);
   font: Verdana;
@@ -189,6 +190,7 @@ section {
   line-height: 24px;
   text-transform: uppercase;
 }
+
 .heading {
 color: rgba(255, 255, 255, 0.75);
 font-family: Verdana;

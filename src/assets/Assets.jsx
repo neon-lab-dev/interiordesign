@@ -22,6 +22,16 @@ import like from "@/assets/Icons/like.svg"
 import profile from "@/assets/Images/profile.jpeg"
 import blue_chair from "@/assets/Images/blue_chair.png"
 import editSquare from "@/assets/Icons/edit_square.png"
+import logo1 from "../assets/Images/logo1.png"
+import whoWeAre from "../assets/Images/who-we-are.png"
+
+// Our service images
+import interiorDesign from "../assets/Images/interior-design.png";
+import turnkeyProjects from "../assets/Images/turnkey-projects.png";
+import civil from "../assets/Images/civil.png";
+import modularFurniture from "../assets/Images/modular-furniture.png";
+import looseFurniture from "../assets/Images/loose-furniture.png";
+import officeFurniture from "../assets/Images/office-furniture.png";
 import bedsheet from "@/assets/Images/bedsheet.png"
 import ArrowRightUp from "@/assets/Icons/ArrowRightUp.png"
 import SimpleArrowRightEnable from "@/assets/Icons/SimpleArrowRightEnable.png"
@@ -37,6 +47,14 @@ export const IMAGES = {
     chair,
     profile,
     blue_chair,
+    logo1,
+    whoWeAre,
+    interiorDesign,
+    turnkeyProjects,
+    civil,
+    modularFurniture,
+    looseFurniture,
+    officeFurniture,
     bedsheet
 };
 
