@@ -1,7 +1,8 @@
-import "./OrderCard.css"
+import "./OrderCard.css";
 import "./Dashboard.css";
 import Sidebar from "./Sidebar";
 import OrderCard from "./OrderCard";
+import { NavLink } from "react-router-dom";
 
 const OrderDesign = () => {
   return (
@@ -15,8 +16,12 @@ const OrderDesign = () => {
             <Sidebar />
             <div className="d-flex flex-column gap-2 w-100">
               <div className="orders-header border-gray">
-                <span className="orders-tab active">Recent Orders</span>
-                <span className="orders-tab">Order History</span>
+              <NavLink to="/orderdesign" className="orders-tab" activeClassName="active">
+                                Recent Orders 
+                            </NavLink>
+                            <NavLink to="/orderhistory"  className="orders-tab" activeClassName="active">
+                                Order History
+                            </NavLink>
               </div>
               <OrderCard />
               <OrderCard />

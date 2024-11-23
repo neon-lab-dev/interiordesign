@@ -3,8 +3,23 @@ import Sidebar from "./Sidebar";
 import AccountDetails from "./AccountDetails";
 import RecentOrders from "./RecentOrders";
 import AddressCard from "./AddressCard";
+import React, { useState, useEffect } from "react";
+
 
 const Dashboard = () => {
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 900);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 900);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <section className="dashboard-container">
       <div className="main-content">
@@ -13,7 +28,7 @@ const Dashboard = () => {
         </div>
         <div>
           <div className="content-sections">
-            <Sidebar />
+          {isLargeScreen && <Sidebar />}
             <div className="Dashcard-section">
               <AccountDetails />
               <RecentOrders />
