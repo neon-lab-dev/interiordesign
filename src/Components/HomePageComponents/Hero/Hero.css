@@ -1,0 +1,117 @@
+.hero-container {
+  position: relative;
+  background-image: url("./../../../assets/Images/BG.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+}
+.gradient-overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(47, 47, 47, 0) 0%, #2f2f2f 100%);
+  z-index: 2; /* Ensure this overlay is above the background image */
+}
+
+.row.align-items-center {
+  z-index: 3; /* Ensure that text and form content stay above gradient overlay */
+}
+
+.custom-heading {
+  font-family: Verdana, sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 72.92px;
+  letter-spacing: -0.005em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: white;
+}
+
+.blurred-bg {
+  background: #1c1c1c; /* Dark background color */
+  backdrop-filter: blur(75px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(75px); /* Safari compatibility */
+  color: white; /* Ensure text is visible on dark background */
+  padding: 20px; /* Add spacing inside */
+  border-radius: 8px; /* Rounded corners for aesthetics */
+}
+.blurred-element {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.3
+  ); /* Optional: Adds a semi-transparent background */
+  backdrop-filter: blur(150px); /* Apply the blur effect */
+  -webkit-backdrop-filter: blur(150px); /* Safari support */
+  padding: 20px;
+  border-radius: 10px;
+}
+.custom-text-2 {
+  font-family: Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.45px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+.btn-bg {
+  background-color: #8881ea;
+  text-align: center;
+  border: 0;
+  margin-bottom: 50px;
+}
+.section-spacer {
+  margin-bottom: 500px; /* Add some spacing between the Hero section and the following sections */
+}
+
+.input-text-style {
+  font-family: Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #ffffffbf;
+  margin-bottom: 5px;
+}
+.input-box {
+  border-radius: 10px 10px 10px 10px;
+  border: 1px solid #202020;
+  background: #353434;
+  opacity: 1;
+}
+.input-box-height {
+  height: 48px;
+}
+.form-check-input {
+  width: 30px;
+}
+.hero-text-card {
+  width: 241px;
+  height: 51px;
+  padding: 10px 16px 10px 16px;
+  border-radius: 8px;
+  opacity: 1;
+  text-align: center;
+  margin-right: 10px;
+}
+.hero-card-text-style {
+  font-family: Verdana, sans-serif; 
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 34.77px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}

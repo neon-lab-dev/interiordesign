@@ -16,6 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .btnContainer button {
@@ -34,5 +35,6 @@
     font-weight: 400;
     line-height: normal;
     text-transform: capitalize;
+    border:0;
 }
 
