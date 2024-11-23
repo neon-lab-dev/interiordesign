@@ -7,8 +7,8 @@
 .orders-header {
   display: flex;
   gap: 60px;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
+  padding-bottom: 30px;
+  margin-bottom: 10px;
   border-bottom: 1px solid white;
 }
 
@@ -21,7 +21,9 @@
   text-decoration-style: solid;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
+  cursor: pointer;
 }
+
 
 .orders-tab.active {
   text-decoration-line: underline;
@@ -99,4 +101,141 @@
 
 .dwn-btn{
   background-color: #33333F;
+}
+
+.submit-btn{
+  width: 300px;
+}
+.login-form-pass{
+  justify-content: flex-start;
+  background: #202020 !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  display: flex;
+  flex: 1 !important;
+  gap: 32px;
+  flex-direction: column;
+  padding-inline: 32px;
+}
+.login-container-pass{
+  background-color: #202020 !important;
+width: 100%;
+border-radius: 16px;
+background: #202020 !important;
+
+display: flex;
+flex: 1 !important;
+justify-content: center;
+gap: 32px;
+flex-direction: column;
+padding-inline: 32px;
+margin-top: 30px;
+}
+.login-container-pass form .form-title {
+  font-family: "Verdana Regular", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+.login-container-pass form .inp-grp {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inp-grp label{
+  font-size: 18px;
+  font-weight: 400;
+  color: #C8C8C8;
+  font-family: Verdana;
+
+}
+
+@media screen and (max-width: 900px) {
+  .orders-header{
+    justify-content: center;
+  }
+  .login-form-pass{
+    padding-inline: 0px;
+  }
+  
+}
+@media screen and (max-width: 500px) {
+
+  .order-details {
+    flex-direction: column;
+  }
+  .orders-header{
+    gap: 20px;
+    padding-bottom: 30px ;
+  }
+  .orders-tab{
+    font-size: 16px;
+  }
+  .submit-btn{
+    width: 300px;
+  }
+  .order-card{
+    padding: 0px 0px 30px 0px;
+  }
+  .order-info{
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .order-image-container{
+    padding: 50px 100px;
+  }
+  .order-image{
+    width: 170px;
+    height: 170px;
+    
+  }
+  .login-form-pass{
+    padding-inline: 0px;
+  }
+  .login-container-pass{
+  
+  width: 100%;
+  border-radius: 16px;
+  background: #202020 !important;
+  display: flex;
+  flex: 1 !important;
+  justify-content: center;
+  gap: 32px;
+  flex-direction: column;
+  padding-inline: 0px;
+  }
+  .login-container-pass form .form-title {
+    font-family: "Verdana Regular", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+}
+@media screen and (max-width: 450px) {
+  .order-image-container{
+    padding: 50px 90px;
+  }
+  
+}
+@media screen and (max-width: 400px) {
+  .order-image-container{
+    padding: 50px 70px;
+  }
+  
+  
+}
+@media screen and (max-width: 350px) {
+  .order-image-container{
+    padding: 50px 45px;
+  }
+  .submit-btn{
+    width: 260px;
+  }
 }

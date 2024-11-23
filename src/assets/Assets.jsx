@@ -35,6 +35,12 @@ import civil from "../assets/Images/civil.png";
 import modularFurniture from "../assets/Images/modular-furniture.png";
 import looseFurniture from "../assets/Images/loose-furniture.png";
 import officeFurniture from "../assets/Images/office-furniture.png";
+import bedsheet from "@/assets/Images/bedsheet.png"
+import ArrowRightUp from "@/assets/Icons/ArrowRightUp.png"
+import SimpleArrowRightEnable from "@/assets/Icons/SimpleArrowRightEnable.png"
+import SimpleArrowRightDisable from "@/assets/Icons/SimpleArrowRightDisable.png"
+import SimpleArrowLeftEnable from "@/assets/Icons/SimpleArrowLeftEnable.png"
+import SimpleArrowLeftDisable from "@/assets/Icons/SimpleArrowLeftDisable.svg"
 
 // explore design images
 import explore1 from "../assets/Images/explore1.jpg";
@@ -63,6 +69,7 @@ export const IMAGES = {
   modularFurniture,
   looseFurniture,
   officeFurniture,
+  bedsheet,
   explore1,
   explore2,
   explore3,
@@ -91,4 +98,10 @@ export const ICONS = {
   star,
   like,
   editSquare,
+  editSquare,
+    ArrowRightUp,
+    SimpleArrowLeftDisable,
+    SimpleArrowRightEnable,
+    SimpleArrowRightDisable,
+    SimpleArrowLeftEnable,
 };

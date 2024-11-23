@@ -9,7 +9,7 @@ const Sidebar = () => {
     navigate("/orderdesign");
   };
   return (
-    <div className="sidebar pe-2">
+    <div className="sidebar pe-2 sidebar-largescreen">
       <NavLink
         to="/dashboard"
         className="sidebar-button"
@@ -19,10 +19,10 @@ const Sidebar = () => {
       </NavLink>
 
       <NavLink
-        to="/orders"
+        to="/orderdesign"
         className="sidebar-button"
         activeClassName="active"
-        onClick={handleOrders}
+        //onClick={handleOrders}
       >
         Orders
       </NavLink>

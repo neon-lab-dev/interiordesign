@@ -1,47 +1,6 @@
-// import React from "react";
-// import AccountDetails from "./AccountDetails";
-// import Sidebar from "./Sidebar";
-// import "./AccountDetailsPage.css";
-// import "./Dashboard.css";
-// import { FaRegEdit } from "react-icons/fa";
-// import ProfileImg from "../../assets/Images/profileimg.jpeg";
-
-// const AccountDetailsPage = () => {
-//   return (
-//     <section className="dashboard-container">
-//       <div className="main-content">
-//         <div className="py-3 border-1 border-bottom border-gray d-flex align-items-center justify-content-center">
-//           <span className="welcome-text">Welcome, Kabir Sah</span>
-//         </div>
-//         <div>
-//           <div className="content-sections">
-//             <Sidebar />
-//             <div className="account-details-card">
-//               <h3 className="account-details-card-title">Account Details</h3>
-//               <span className="edit-icon">
-//                 <FaRegEdit />
-//               </span>
-//               <div className="img-Name">
-//                 <img src={ProfileImg} alt="Profile" className="profile-pic" />
-//                 <span className="c">Kabir Sah</span>
-//               </div>
-//               <div className="d-flex flex-column profileContacts gap-1">
-//                 <p>Email: www.kabirsah@gmail.com</p>
-//                 <p>Phone: 5824658726</p>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default AccountDetailsPage;
 
 import React, { useState } from "react";
 import Sidebar from "./Sidebar";
-import "./AccountDetailsPage.css";
 import "./Dashboard.css";
 import { FaRegEdit } from "react-icons/fa";
 import ProfileImg from "../../assets/Images/profileimg.jpeg";
@@ -145,10 +104,10 @@ const AccountDetailsPage = () => {
                       />
                     </div>
 
-                    <div className="form-group">
+                    <div className="form-group-upload">
                       <label>Upload pic</label>
                       <div className="input-field-container d-flex gap-1 align-items-center">
-                        <label htmlFor="profilePic">Choose File</label>
+                        <label htmlFor="profilePic" className="choose-text">Choose File</label>
                         <span>No file chosen</span>
                       </div>
                       <input
