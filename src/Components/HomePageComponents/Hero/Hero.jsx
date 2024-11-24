@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Hero.css";
 const Hero = () => {
   const [formData, setFormData] = useState({
@@ -13,7 +13,7 @@ const Hero = () => {
   };
 
   return (
-    <div class="position-relative hero-container">
+    <div className="position-relative hero-container">
       <div className="container-fluid  text-white gradient-overlay">
         <div className="row align-items-center">
           {/* Left Section */}
@@ -100,7 +100,7 @@ const Hero = () => {
                     </label>
                     <textarea
                       id="purpose"
-                      className="input-box"
+                      className="input-box p-1"
                       rows="3"
                       placeholder="Want to know about 500 office chair cost"
                     ></textarea>

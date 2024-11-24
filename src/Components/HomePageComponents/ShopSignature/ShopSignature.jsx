@@ -1,4 +1,3 @@
-import React from "react";
 import "./ShopSignature.css";
 import { ICONS, IMAGES } from "../../../assets/Assets";
 
@@ -24,7 +23,7 @@ const ShopSignature = () => {
     <section className="w-100 shopsignature-container">
       <div className="shops-header">
         <p className="subHeading">OUR PRODUCTS</p>
-        <h3 className="heading">Shop Our Signature Design Products</h3>
+        <h3 className="heading text-center">Shop Our Signature Design Products</h3>
       </div>
       <div className="shops-content">
         {bedsheet.map((item, index) => (
