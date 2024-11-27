@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 30px;
+  width: 100%;
 }
 .gradient-overlay {
   top: 0;
@@ -33,6 +33,31 @@
   text-decoration-skip-ink: none;
   color: white;
 }
+
+@media (max-width: 992px) {
+  /* For medium screens (tablets, small desktops) */
+  .custom-heading {
+    font-size: 48px;
+    line-height: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* For small screens (landscape tablets, large phones) */
+  .custom-heading {
+    font-size: 42px;
+    line-height: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* For extra small screens (portrait phones) */
+  .custom-heading {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
 
 .blurred-bg {
   background: #1c1c1c; /* Dark background color */

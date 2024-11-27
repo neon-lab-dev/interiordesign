@@ -17,10 +17,11 @@ const Home = () => {
             <OurServices/>
 
             <ExploreDesign/>
-            <ContactUs/>
+           
 
             <ShopSignature />
             <Testimonials />
+            <ContactUs/>
         </div>
     );
 };

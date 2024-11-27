@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Hero.css";
+import { auto } from "@popperjs/core";
 const Hero = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -14,44 +15,49 @@ const Hero = () => {
 
   return (
     <div className="position-relative hero-container">
-      <div className="container-fluid  text-white gradient-overlay">
+      <section className="container-fluid text-white gradient-overlay">
         <div className="row align-items-center">
           {/* Left Section */}
-          <div className="col-md-7 p-5 " style={{ margin: "40px" }}>
+          <div
+            className="col-md-7  "
+            style={{ margin: auto }}
+          >
             <h1 className="custom-heading">
-              Transforming Spaces, <br></br>
+              Transforming Spaces, <br />
               <span className="custom-heading">Elevating Lifestyles</span>
             </h1>
             <p className="custom-text-2">
               Experience the art of thoughtful design, where every detail is
               tailored to reflect your style and aspirations.
             </p>
-            <div className="d-flex justify-content-start mt-4">
-            <span
-                className=" hero-text-card hero-card-text-style"
+            <div className="d-flex flex-wrap justify-content-start mt-4">
+              <span
+                className="hero-text-card hero-card-text-style mb-2"
                 style={{
-                  backgroundColor: "hsl(0, 0%, 100%)", // Base white background
+                  backgroundColor: "hsl(0, 0%, 100%)",
                   backgroundImage:
-                    "radial-gradient(circle farthest-side at center, hsl(0, 0%, 0%) 60%, hsl(0, 0%, 10%) 100%)", // Radial gradient
+                    "radial-gradient(circle farthest-side at center, hsl(0, 0%, 0%) 60%, hsl(0, 0%, 10%) 100%)",
                 }}
-              >BESPOKE INTERIOR DESIGN</span>
-                
-                <span
-                className=" hero-text-card hero-card-text-style"
+              >
+                BESPOKE INTERIOR DESIGN
+              </span>
+
+              <span
+                className="hero-text-card hero-card-text-style mb-2"
                 style={{
-                  backgroundColor: "hsl(0, 0%, 100%)", // Base white background
+                  backgroundColor: "hsl(0, 0%, 100%)",
                   backgroundImage:
-                    "radial-gradient(circle farthest-side at center, hsl(0, 0%, 0%) 60%, hsl(0, 0%, 10%) 100%)", // Radial gradient
+                    "radial-gradient(circle farthest-side at center, hsl(0, 0%, 0%) 60%, hsl(0, 0%, 10%) 100%)",
                 }}
               >
                 Hassle-Free Process
               </span>
               <span
-                className=" hero-text-card hero-card-text-style"
+                className="hero-text-card hero-card-text-style mb-2"
                 style={{
-                  backgroundColor: "hsl(0, 0%, 100%)", // Base white background
+                  backgroundColor: "hsl(0, 0%, 100%)",
                   backgroundImage:
-                    "radial-gradient(circle farthest-side at center, hsl(0, 0%, 0%) 60%, hsl(0, 0%, 10%) 100%)", // Radial gradient
+                    "radial-gradient(circle farthest-side at center, hsl(0, 0%, 0%) 60%, hsl(0, 0%, 10%) 100%)",
                 }}
               >
                 A-Z Execution & Services
@@ -60,20 +66,20 @@ const Hero = () => {
           </div>
 
           {/* Right Section */}
-          <div className="col-md-4 p-3">
+          <div className="col-md-4 p-3 mr-auto">
             <div className="">
               <div
-                className="p-4  rounded-3 shadow "
+                className="p-4 rounded-3 shadow"
                 style={{
-                  backgroundColor: "hsl(0, 0%, 100%)", // Base white background
+                  backgroundColor: "hsl(0, 0%, 100%)",
                   backgroundImage:
-                    "radial-gradient(circle farthest-side at center, hsl(0, 0%, 0%) 60%, hsl(0, 0%, 10%) 100%)", // Radial gradient
+                    "radial-gradient(circle farthest-side at center, hsl(0, 0%, 0%) 60%, hsl(0, 0%, 10%) 100%)",
                 }}
               >
                 <h2 className="mb-4 text-style">Your Dream Our Design</h2>
                 <form>
                   <div className="mb-3">
-                    <label htmlFor="name" className="input-text-style ">
+                    <label htmlFor="name" className="input-text-style">
                       Enter your name
                     </label>
                     <input
@@ -105,11 +111,11 @@ const Hero = () => {
                       placeholder="Want to know about 500 office chair cost"
                     ></textarea>
                   </div>
-                  <button type="submit" className=" w-100 custom-text-2 btn-bg">
+                  <button type="submit" className="w-100 custom-text-2 btn-bg">
                     Get Free Quote
                   </button>
 
-                  <p className="custom-text">  
+                  <p className="custom-text">
                     By submitting this form, you agree to our{" "}
                     <a href="#privacy" className="warning-text">
                       Privacy Policy
@@ -126,7 +132,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

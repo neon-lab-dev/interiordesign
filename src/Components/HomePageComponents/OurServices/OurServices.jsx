@@ -18,7 +18,7 @@ const OurServices = () => {
             className="container-fluid d-flex justify-content-center"
             style={{
                 backgroundColor: "#1C1C1C",
-                padding: "40px 40px 80px 80px",
+                padding: "40px 0 80px 0",
             }}
         >
             <div style={{ width: "784px" }}>

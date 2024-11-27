@@ -6,11 +6,10 @@ const WinningCollaborators = () => {
     const collaboratorsLogos = [IMAGES.logo1, IMAGES.logo1, IMAGES.logo1, IMAGES.logo1];
 
     return (
-        <div
+        <section
             className="container-fluid"
             style={{ backgroundColor: "#181818", padding: "89px 80px 85px 80px" }}
         >
-
             <SectionHeading
                 subHeading="Our beloved clients"
                 heading="Winning collaborations"
@@ -29,7 +28,7 @@ const WinningCollaborators = () => {
                     />
                 ))}
             </Marquee>
-        </div>
+        </section>
     );
 };
 
