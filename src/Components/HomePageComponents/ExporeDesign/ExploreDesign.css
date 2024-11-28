@@ -1,29 +1,92 @@
 .heading-1 {
-    font-family: "Verdana"; 
-    font-size: 16px; 
-    font-weight: 400;
-    line-height: 19.45px;
-    letter-spacing: 0.07em; 
-    text-underline-position: from-font; 
-    text-decoration-skip-ink: none;
-    margin-bottom: 15px;
-  }
-  
-  .heading-2 {
-    font-family: "Verdana"; 
-    font-size: 36px; 
-    font-weight: 400;
-    line-height: 43.75px;
-    letter-spacing: 0.07em; 
-    text-underline-position: from-font; 
-    text-decoration-skip-ink: none;
-    color: #FFFFFFBF;
+  font-family: "Verdana"; 
+  font-size: 16px; 
+  font-weight: 400;
+  line-height: 19.45px;
+  letter-spacing: 0.07em; 
+  text-underline-position: from-font; 
+  text-decoration-skip-ink: none;
+  margin-bottom: 15px;
+}
 
+.heading-2 {
+  font-family: "Verdana"; 
+  font-size: 36px; 
+  font-weight: 400;
+  line-height: 43.75px;
+  letter-spacing: 0.07em; 
+  text-underline-position: from-font; 
+  text-decoration-skip-ink: none;
+  color: #FFFFFFBF;
+
+}
+.images-style {
+  border-radius: 16px 16px;
+  object-fit: cover;
+  width:max-content;
+}
+
+.responsive-row {
+  display: flex;
+  gap: 16px; /* Space between columns */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  padding: 16px; /* Add padding around the container */
+  flex-wrap: nowrap; /* Prevent wrapping of columns */
+}
+
+.image-column {
+  flex: 0 0 auto; /* Ensure columns don’t shrink or grow */
+  max-width: 33.33%; /* For `md` and larger screens */
+}
+
+.images-style {
+  width: 100%; /* Ensure images fill the column width */
+  object-fit: cover; /* Maintain image proportions */
+}
+
+@media (max-width: 768px) {
+  .responsive-row {
+    flex-wrap: nowrap; /* Ensure all columns are in one row */
   }
+
+  .image-column {
+    max-width: 80%; /* Adjust column width for smaller screens */
+    flex: 0 0 auto; /* Prevent shrinking */
+  }
+
   .images-style {
-    border-radius: 16px 16px;
-    object-fit: cover;
-    width: 100%;
+    height: auto; /* Allow images to adapt */
   }
-  
+}
+
+
+.margint-top{
+  margin-top: 16px;
+}
+
+
+@media (max-width: 768px) {
+  .row.g-4 {
+    flex-wrap: nowrap; /* Prevent wrapping for smaller screens */
+    overflow-x: auto; /* Enable horizontal scrolling */
+  }
+  .margint-top{
+    margin-top:0;
+  }
+
+  .col-md-4 {
+    flex: 0 0 auto; /* Prevent shrinking and maintain column width */
+    width: auto; /* Adapt width based on content */
+    display: flex; /* Align images in each column */
+    flex-direction: row;
+    gap: 16px;
+    align-items: center; /* Center images horizontally */
+  }
+
+  .images-style {
+    max-width: 100%; /* Prevent images from exceeding the column */
+  }
+}
+
+
 

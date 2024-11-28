@@ -44,7 +44,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex-column align-items-center justify-content-between w-100 show-1024-flex">
+            <div className="flex-column align-items-start justify-content-between w-100 show-1024-flex">
                 <div className="footer-logo mb-2" style={{ marginRight: 0 }}>
                     <Link to="/">
                         <img src={IMAGES.footerLogo} alt="" />
