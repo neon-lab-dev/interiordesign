@@ -15,10 +15,10 @@ const Hero = () => {
 
   return (
     <div className="position-relative hero-container">
-      <section className="container-fluid text-white gradient-overlay">
+      < div className="container-fluid text-white gradient-overlay">
         <div className="row align-items-center">
           {/* Left Section */}
-          <div
+          <section
             className="col-md-7  "
             style={{ margin: auto }}
           >
@@ -63,10 +63,10 @@ const Hero = () => {
                 A-Z Execution & Services
               </span>
             </div>
-          </div>
+          </section>
 
           {/* Right Section */}
-          <div className="col-md-4 p-3 mr-auto">
+          <section className="col-md-4 p-3 mr-auto">
             <div className="">
               <div
                 className="p-4 rounded-3 shadow"
@@ -86,7 +86,6 @@ const Hero = () => {
                       type="text"
                       id="name"
                       className="input-box input-box-height"
-                      placeholder="Kabir Sah"
                     />
                   </div>
                   <div className="mb-3">
@@ -97,7 +96,6 @@ const Hero = () => {
                       type="text"
                       id="phone"
                       className="input-box input-box-height"
-                      placeholder="Enter your mobile number"
                     />
                   </div>
                   <div className="mb-3">
@@ -108,7 +106,6 @@ const Hero = () => {
                       id="purpose"
                       className="input-box p-1"
                       rows="3"
-                      placeholder="Want to know about 500 office chair cost"
                     ></textarea>
                   </div>
                   <button type="submit" className="w-100 custom-text-2 btn-bg">
@@ -130,9 +127,9 @@ const Hero = () => {
                 </form>
               </div>
             </div>
-          </div>
+          </section>
         </div>
-      </section>
+      </div>
     </div>
   );
 };

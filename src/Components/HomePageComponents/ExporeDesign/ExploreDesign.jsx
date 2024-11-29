@@ -5,7 +5,7 @@ import { IMAGES } from "../../../assets/Assets";
 
 const ExploreDesign = () => {
   return (
-    <div
+    <section
       className="container-fluid py-5"
       style={{ backgroundColor: "#181818", padding: "80px" }}
     >
@@ -23,7 +23,7 @@ const ExploreDesign = () => {
       </div>
       <div className="row g-4">
         {/* First Column */}
-        <div className="col-md-4">
+        <div className="col-md">
           <div className=" border-0">
             <img
               src={IMAGES.explore1}
@@ -32,7 +32,7 @@ const ExploreDesign = () => {
               alt="Yellow Chair Design"
             />
           </div>
-          <div className=" border-0 mt-4">
+          <div className=" border-0 margint-top">
             <img
               src={IMAGES.explore2}
               className="images-style "
@@ -43,7 +43,7 @@ const ExploreDesign = () => {
         </div>
 
         {/* Second Column */}
-        <div className="col-md-4">
+        <div className="col-md">
           <div className=" border-0">
             <img
               src={IMAGES.explore3}
@@ -52,7 +52,7 @@ const ExploreDesign = () => {
               alt="Terracotta Hallway"
             />
           </div>
-          <div className=" border-0 mt-4">
+          <div className=" border-0 margint-top">
             <img
               src={IMAGES.explore4}
               className="images-style "
@@ -63,7 +63,7 @@ const ExploreDesign = () => {
         </div>
 
         {/* Third Column */}
-        <div className="col-md-4">
+        <div className="col-md">
           <div className=" border-0">
             <img
               src={IMAGES.explore5}
@@ -72,7 +72,7 @@ const ExploreDesign = () => {
               alt="White Kitchen"
             />
           </div>
-          <div className=" border-0 mt-4">
+          <div className=" border-0 margint-top">
             <img
               src={IMAGES.explore6}
               className="images-style "
@@ -82,7 +82,7 @@ const ExploreDesign = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

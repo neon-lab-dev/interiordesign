@@ -74,9 +74,9 @@
     margin-top:0;
   }
 
-  .col-md-4 {
+  .col-md {
     flex: 0 0 auto; /* Prevent shrinking and maintain column width */
-    width: auto; /* Adapt width based on content */
+    min-width:632px ; /* Adapt width based on content */
     display: flex; /* Align images in each column */
     flex-direction: row;
     gap: 16px;
@@ -84,7 +84,7 @@
   }
 
   .images-style {
-    max-width: 100%; /* Prevent images from exceeding the column */
+    width: 300px; /* Prevent images from exceeding the column */
   }
 }
 
