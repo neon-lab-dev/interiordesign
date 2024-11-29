@@ -58,33 +58,13 @@ const Nav = () => {
       </div>
       {/* Sidebar */}
       <div className={`sidebar-ham ${isSidebarOpen ? "open" : ""}`}>
-        <div>
-          <div className="img-Name">
-            <img src={ProfileImg} alt="Profile" className="profile-pic" />
-            <span className="c">Kabir Sah</span>
-          </div>
-          <div className="d-flex flex-column profileContacts-nav gap-1">
-            <p>Email: www.kabirsah@gmail.com</p>
-            <p>Phone: 5824658726</p>
-          </div>
-        </div>
+        
         <div className="sidebar-links">
           <Link to="/">Home</Link>
           <Link to="/products">Bedsheets</Link>
-          <Link to="/products">Tables</Link>
-          <Link to="/products">Chairs</Link>
         </div>
-        <div className="sidebar-account">
-          <Link to="/">Profile</Link>
-          <Link to="/dashboard">Account Dashboard</Link>
-          <Link to="/orderdesign">Orders</Link>
-          <Link to="/password-reset">Password Reset</Link>
-          <Link to="/address">Address Book</Link>
-          <Link to="/account-details">Account Details</Link>
-        </div>
-        <div className="logout">
-          <Link to="/logout">Logout</Link>
-        </div>
+        
+        
       </div>
       <div
         className={`backdrop ${isSidebarOpen ? "active" : ""}`}

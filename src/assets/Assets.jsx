@@ -53,6 +53,14 @@ import explore6 from "../assets/Images/explore6.jpg";
 // contact
 import contact from "../assets/Images/contact.jpg";
 
+// Winning collabratoes-home
+import overlay from"../assets/Icons/blackRocks.svg"
+import blackRocks from "../assets/Images/blackRock logo.png"
+import clearWater from "../assets/Images/water.png"
+import cevnt from "../assets/Images/cevnt.png"
+import berkdia from "../assets/Images/berkadia.png"
+import baker from "../assets/Images/baker.png"
+
 export const IMAGES = {
   logo,
   chair1,
@@ -77,7 +85,13 @@ export const IMAGES = {
   explore5,
   explore6,
   contact,
-  bg
+  bg,
+  blackRocks,
+  clearWater,
+  cevnt,
+  berkdia,
+  baker
+  
 };
 
 export const ICONS = {
@@ -104,4 +118,5 @@ export const ICONS = {
     SimpleArrowRightEnable,
     SimpleArrowRightDisable,
     SimpleArrowLeftEnable,
+    overlay
 };

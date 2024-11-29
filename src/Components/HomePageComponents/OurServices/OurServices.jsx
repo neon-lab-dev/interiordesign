@@ -35,39 +35,49 @@ const OurServices = () => {
                             key={index}
                             className="col-lg-4 col-md-6 mb-4 d-flex justify-content-center"
                         >
-                            <div className="position-relative" style={{ width: "240px", height: "240px" }}>
-                                {/* Image */}
-                                <img
-                                    src={service.imgSrc}
-                                    alt={service.title}
-                                    style={{
-                                        width: "100%",
-                                        height: "100%",
-                                        borderRadius: "12px",
-                                        objectFit: "cover",
-                                    }}
-                                />
-                                <div
-                                    className="position-absolute top-0 left-0 w-100 h-100"
-                                    style={{
-                                        background: "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 29.79%, #000 112.5%)",
-                                        borderRadius: "12px",
-                                    }}
-                                ></div>
-                                {/* title */}
-                                <h1
-                                    className="title position-absolute bottom-0 start-50 translate-middle-x text-center"
-                                >
-                                    {service.title}
-                                </h1>
-                            </div>
+                           <div
+  className="position-relative"
+  style={{ width: "240px", height: "240px" }}
+>
+  {/* Image */}
+  <img
+    src={service.imgSrc}
+    alt={service.title}
+    style={{
+      width: "100%",
+      height: "100%",
+      borderRadius: "12px",
+      objectFit: "cover",
+    }}
+  />
+  <div
+    className="position-absolute top-0 left-0 w-100 h-100"
+    style={{
+      background:
+        "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 29.79%, #000 112.5%)",
+      borderRadius: "12px",
+    }}
+  ></div>
+  {/* Title */}
+  <h1
+    className="our-services-title position-absolute start-50 text-center"
+    style={{
+      bottom: "15px", // Position 15px above the bottom
+      transform: "translateX(-50%)", // Center horizontally
+      color: "#fff", // Optional: Ensure text is visible on dark overlay
+    }}
+  >
+    {service.title}
+  </h1>
+</div>
+
                         </div>
                     ))}
                 </div>
 
                 <div className="btnContainer d-flex justify-content-center">
                     <button className="">
-                        Great Free Quote
+                        Get Free Quote
                     </button>
                 </div>
             </div>
