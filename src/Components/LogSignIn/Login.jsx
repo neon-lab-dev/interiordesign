@@ -1,9 +1,31 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LoginImg from "../../assets/Images/loginimg.jpeg";
 import { IMAGES } from "../../assets/Assets";
 import "./Login.css";
+import API from "../../utils/api";
+import { useState } from "react";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await API.post("/login", { email, password });
+      const { token } = response.data;
+
+      localStorage.setItem("authToken", token);
+
+      navigate("/dashboard");
+    } catch (err) {
+      console.error("Login failed:", err);
+      setError(err.response?.data?.message || "Something went wrong.");
+    }
+  };
+
   return (
     <section className="">
       <div className="login-container d-flex  items-center justify-between login-section w-100">
@@ -14,19 +36,30 @@ const Login = () => {
             <span className="logo-text">We Create Your Dream Home</span>
           </div>
         </div>
-        <form action="" className="login-form">
+        <form className="login-form" onSubmit={handleLogin}>
           <div className="form-title">Login</div>
+          {error && <p className="text-danger">{error}</p>}
           <div className="inp-grp">
             <label htmlFor="email">Email or user name</label>
             <input
               type="email"
               id="email"
               placeholder="Enter Your Email or Username"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
           <div className="inp-grp">
             <label htmlFor="email">Enter your password </label>
-            <input type="email" id="email" placeholder="Enter Password" />
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
           </div>
           <div
             className="d-flex w-100 align-items-center justify-content-end text-danger"
