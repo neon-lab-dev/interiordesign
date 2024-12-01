@@ -30,6 +30,18 @@ const SignUp = () => {
     setIsLoading(true);
     setError(null);
 
+    if (
+      !formData.userName ||
+      !formData.email ||
+      !formData.phoneNo ||
+      !formData.password ||
+      !formData.confirmPassword
+    ) {
+      setError("All fields are required.");
+      setIsLoading(false);
+      return;
+    }
+
     if (formData.password !== formData.confirmPassword) {
       setError("Passwords do not match!");
       setIsLoading(false);
@@ -38,7 +50,7 @@ const SignUp = () => {
 
     try {
       await API.post("/register", {
-        user_Name: formData.userName,
+        full_name: formData.userName,
         email: formData.email,
         phoneNo: formData.phoneNo,
         password: formData.password,
@@ -77,7 +89,7 @@ const SignUp = () => {
               id="userName"
               name="userName"
               placeholder="Enter Your Name"
-              value={formData.fullName}
+              value={formData.userName}
               onChange={handleInputChange}
               required
             />
@@ -100,7 +112,7 @@ const SignUp = () => {
               type="text"
               id="phoneNo"
               name="phoneNo"
-              placeholder="Create Password"
+              placeholder="Enter Your Phone Number"
               value={formData.phoneNo}
               onChange={handleInputChange}
               required

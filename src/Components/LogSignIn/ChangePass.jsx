@@ -23,6 +23,12 @@ const ChangePass = () => {
       return;
     }
 
+    if (password.length < 8) {
+      setError("Password must be at least 8 characters long.");
+      setIsLoading(false);
+      return;
+    }
+
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
       setIsLoading(false);
@@ -33,6 +39,7 @@ const ChangePass = () => {
       const response = await API.post("/password/reset", {
         password,
         confirmPassword,
+        token,
       });
 
       setSuccess("Password changed successfully!");
