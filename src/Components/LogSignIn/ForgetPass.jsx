@@ -1,14 +1,43 @@
+import React, { useState } from "react";
 import LoginImg from "../../assets/Images/loginimg.jpeg";
 import { IMAGES } from "../../assets/Assets";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
+import API from "../../utils/api";
 
-const Login = () => {
+const ForgetPass = () => {
+  const [emailOrPhone, setEmailOrPhone] = useState("");
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    navigate("/changepassword");
+    setIsLoading(true);
+    setError(null);
+
+    if (!emailOrPhone) {
+      setError("Please enter your email or phone number.");
+      setIsLoading(false);
+      return;
+    }
+
+    try {
+      const response = await API.post("/password/forgot", {
+        email: emailOrPhone,
+      });
+
+      setSuccess("Password reset link sent successfully!");
+      setIsLoading(false);
+
+      setTimeout(() => navigate("/changepassword"), 2000);
+    } catch (err) {
+      setError(err.response?.data?.message || "Something went wrong.");
+      setIsLoading(false);
+    }
   };
+
   return (
     <section className="">
       <div className="login-container d-flex  items-center justify-between login-section w-100">
@@ -25,6 +54,8 @@ const Login = () => {
           className="login-form justify-content-start py-5"
         >
           <div className="form-title">Forgot Password</div>
+          {error && <p className="text-danger">{error}</p>}
+          {success && <p className="text-success">{success}</p>}
           <div className="inp-grp">
             <label htmlFor="emailOrPhone">
               Enter the email or phone number
@@ -33,11 +64,18 @@ const Login = () => {
               type="text"
               id="emailOrPhone"
               placeholder="Enter The Email or Phone Number"
+              value={emailOrPhone}
+              onChange={(e) => setEmailOrPhone(e.target.value)}
+              required
             />
           </div>
 
-          <button type="submit" className="btn btn-base-transparent">
-            Submit
+          <button
+            type="submit"
+            className="btn btn-base-transparent"
+            disabled={isLoading}
+          >
+            {isLoading ? "Submitting..." : "Submit"}
           </button>
           <div className="d-flex justify-content-center ">
             <span
@@ -54,4 +92,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ForgetPass;
