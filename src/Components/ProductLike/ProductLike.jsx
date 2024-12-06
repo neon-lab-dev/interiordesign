@@ -1,14 +1,39 @@
 // Import Swiper core and required modules
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-
+import { useState, useEffect } from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-
+import { Link } from 'react-router-dom';
 import { ICONS } from "../../assets/Assets";
 import Card from "../Card/Card";
 
 const ProductLike = () => {
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const fetchProducts = async () => {
+        try {
+          setLoading(true);
+          const response = await fetch(
+            "https://interior-design-backend-nine.vercel.app/api/v1/products"
+          );
+    
+          if (!response.ok) {
+            throw new Error("Failed to fetch products");
+          }
+    
+          const data = await response.json();
+          setProducts(data.products || []);
+        } catch (err) {
+          console.error("Error fetching products:", err.message);
+          setError("Unable to fetch products. Please try again later.");
+        } finally {
+          setLoading(false);
+        }
+      };
+      useEffect(() => {
+        fetchProducts();
+      }, []);
 
     return (
         <section className="home-sections d-flex flex-column bg-1">
@@ -56,12 +81,13 @@ const ProductLike = () => {
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
             >
-                <SwiperSlide style={{ width: '320px' }}><Card /></SwiperSlide>
-                <SwiperSlide style={{ width: '320px' }}><Card /></SwiperSlide>
-                <SwiperSlide style={{ width: '320px' }}><Card /></SwiperSlide>
-                <SwiperSlide style={{ width: '320px' }}><Card /></SwiperSlide>
-                <SwiperSlide style={{ width: '320px' }}><Card /></SwiperSlide>
-                <SwiperSlide style={{ width: '320px' }}><Card /></SwiperSlide>
+                {products.map((product) => (
+                        <SwiperSlide key={product._id} style={{ width: 'auto' }}>
+                            <Link to={`/product/${product._id}`}>
+                                <Card product={product} />
+                            </Link>
+                        </SwiperSlide>
+                    ))}
             </Swiper>
         </section>
     );

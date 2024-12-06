@@ -3,7 +3,10 @@ import LoginImg from "../../assets/Images/loginimg.jpeg";
 import { IMAGES } from "../../assets/Assets";
 import "./Login.css";
 
+
 const SignUp = () => {
+
+
   return (
     <section className="">
       <div className="login-container d-flex  items-center justify-between login-section w-100">
@@ -65,3 +68,4 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
