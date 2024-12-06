@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 import "./Dashboard.css";
@@ -104,30 +103,28 @@ const AccountDetailsPage = () => {
                       />
                     </div>
 
-                    <div className="form-group-upload">
+                    <div className="form-group">
                       <label>Upload pic</label>
-                      <div className="input-field-container d-flex gap-1 align-items-center">
-                        <label htmlFor="profilePic" className="choose-text">Choose File</label>
-                        <span>No file chosen</span>
-                      </div>
                       <input
                         type="file"
                         name="profilePic"
-                        id="profilePic"
                         onChange={handleFileChange}
-                        className="form-control upload-input d-none"
+                        className="form-control"
                       />
                     </div>
                   </div>
 
-                  <button type="button" onClick={handleSave} className="save-btn">
+                  <button
+                    type="button"
+                    onClick={handleSave}
+                    className="save-btn"
+                  >
                     Update
                   </button>
                 </form>
               </div>
             )}
           </div>
-
         </div>
       </div>
     </section>
