@@ -26,11 +26,11 @@ function App() {
         <Route path="/bedsheets" element={<BedSheets />} />
         <Route path="/login" element={<Login />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/product" element={<Product />} />
+        <Route path="/product/:id" element={<Product />} /> {/* Dynamic route */}
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/payment" element={<Payment />} />
+        <Route path="/payment/:productId" element={<Payment />} />
         <Route path="/dashboard" element={<AccountDashboard />} />
         <Route path="/orderdesign" element={<OrdersDesign />} />
         <Route path="/forgetpassword" element={<ForgetPass />} />

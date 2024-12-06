@@ -24,6 +24,8 @@ import blue_chair from "@/assets/Images/blue_chair.png";
 import editSquare from "@/assets/Icons/edit_square.png";
 import logo1 from "../assets/Images/logo1.png";
 import whoWeAre from "../assets/Images/who-we-are.png";
+import TrashBin from "../assets/Icons/TrashBin.png"
+
 
 // home (hero section)
 import bg from "../assets/Images/BG.jpg"
@@ -112,7 +114,7 @@ export const ICONS = {
   star,
   like,
   editSquare,
-  editSquare,
+  TrashBin,
     ArrowRightUp,
     SimpleArrowLeftDisable,
     SimpleArrowRightEnable,

@@ -100,7 +100,7 @@ const Nav = () => {
               <img src={ICONS.cartIconGrey} alt="" />
               <span>My Cart</span>
             </Link>
-            <Link to="/profile" className="d-flex align-items-center gap-1">
+            <Link to="/dashboard" className="d-flex align-items-center gap-1">
               <img src={ICONS.profileIconGrey} alt="" />
               <span>Profile</span>
             </Link>

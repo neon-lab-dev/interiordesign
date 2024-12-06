@@ -171,7 +171,7 @@
 .number{
     margin: 0 1rem;
 }
-.quantity, .color p{ 
+.quantity-p, .color p{ 
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
@@ -185,15 +185,12 @@
     flex-direction: column;
     gap: 0.75rem;
 }
-.color{
-    
-}
 .color-box{
     display: flex;
     flex-direction: row;
     gap: 0.75rem;
 }
-.color1, .color2, .color3, .color4{ 
+.color1{ 
     border-radius: 33px;
     width: 26.967px;
     height: 28px;
@@ -202,15 +199,6 @@
 .color1{
     border: 2px solid #4F9FFE;
     background: #2E65A6;
-}
-.color2{
-    background: #EE3F4C;
-}
-.color3{
-    background: #F0AFCD;
-}
-.color4{
-    background: #E69D52;
 }
 .price-details-p{
     width: 250px;
@@ -312,7 +300,7 @@
     .quan-col-cont{
         flex-direction: row;
     }
-    .quantity{
+    .quantity-p{
         font-size: 1.5rem;
         margin-bottom: 1.5rem;
     }
@@ -442,6 +430,14 @@
         border-left: 1px solid rgba(255, 255, 255, 0.30);
         margin: 0;
         padding: 0 0 0 1rem;
+    }
+    .price{
+        border-bottom: none !important;
+        border-top: none !important;
+        border-left: 1px solid rgba(255, 255, 255, 0.30);
+        padding-left: 10% !important;
+        margin-left: 10%;
+        gap: 0;
     }
     .buttons{
         margin-bottom: 1.5rem;
