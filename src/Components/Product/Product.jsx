@@ -66,9 +66,7 @@ const Product = () => {
         <ProductImages images={product.images} />
         <ProductInfo product={product} />
       </div>
-      <OftenPurchased />
       <Tabs productId={id} />
-      <BestSellers />
     </>
   );
 };
