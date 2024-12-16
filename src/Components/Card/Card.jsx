@@ -13,7 +13,7 @@
 //   ).toFixed(2);
 //   const navigate = useNavigate();
 //   const handleCardClick = () => {
-   
+
 //   };
 
 //   return (
@@ -63,8 +63,8 @@ import React from "react";
 import { IMAGES, ICONS } from "@/assets/Assets";
 import { useNavigate } from "react-router-dom";
 
-const Card = ({ product={}, onWishlistUpdate }) => {
-  const { name, images=[], sizes=[], _id } = product;
+const Card = ({ product = {}, onWishlistUpdate }) => {
+  const { name, images = [], sizes = [], _id } = product;
   const { size, basePrice, discountedPercent, stock } = sizes[0] || {};
   const discountedPrice = (
     basePrice - (basePrice * discountedPercent) / 100
@@ -100,9 +100,8 @@ const Card = ({ product={}, onWishlistUpdate }) => {
       style={{ cursor: "pointer" }}
     >
       <div className="card-image position-relative">
-        <img src={images[0]?.url} alt={name} />
+        <img src={images[0]?.url} alt={name} style={{ objectFit: "cover" }} />
         <div className="d-flex align-items-center justify-content-between card-badges w-100">
-          <div className="card-badge">{`Stock: ${stock || "N/A"}`}</div>
           <div className="card-badge" onClick={handleAddToWishlist}>
             <img src={ICONS.heartWhite} alt="Favorite" />
           </div>
