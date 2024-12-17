@@ -49,6 +49,7 @@ const Testimonials = () => {
 
       <div className="testimonial-desc">
         <Swiper
+          
           spaceBetween={32}
           slidesPerView={1}
           loop={false}
@@ -66,7 +67,7 @@ const Testimonials = () => {
             nextEl: ".custom-next",
             prevEl: ".custom-prev",
           }}
-          className="swiper-container"
+          className="swiper-container-testimonial"
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
