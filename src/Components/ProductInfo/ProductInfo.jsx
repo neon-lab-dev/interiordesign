@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import Toast from "../Utilities/Toast";
+import PropTypes from "prop-types";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./ProductInfo.css";
 
 const ProductInfo = ({ product }) => {
@@ -18,11 +20,6 @@ const ProductInfo = ({ product }) => {
 
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState(sizes[0]);
-  const [toast, setToast] = useState({
-    show: false,
-    type: "info",
-    message: "",
-  });
 
   const handleSizeClick = (size) => {
     setSelectedSize(size);
@@ -30,22 +27,12 @@ const ProductInfo = ({ product }) => {
 
   const handleQuantityChange = (type) => {
     if (type === "decrement" && quantity <= 1) {
-      // Show error toast
-      setToast({
-        show: true,
-        type: "error",
-        message: "Quantity cannot be less than 1!",
-      });
-
-      // Automatically hide the toast after a timeout
-      setTimeout(() => setToast((prev) => ({ ...prev, show: false })), 3000);
+      toast.error("Quantity cannot be less than 1!");
       return; // Exit the function to prevent decrement
     }
-
     // Update quantity for increment or valid decrement
     setQuantity((prev) => (type === "increment" ? prev + 1 : prev - 1));
   };
-
 
   const handleAddToCart = () => {
     let cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
@@ -54,11 +41,7 @@ const ProductInfo = ({ product }) => {
     );
 
     if (isProductExist) {
-      setToast({
-        show: true,
-        type: "error",
-        message: "Product already exists in the cart!",
-      });
+      toast.error("Product already exists in the cart!");
     } else {
       cartProducts.push({
         productId: _id,
@@ -70,28 +53,12 @@ const ProductInfo = ({ product }) => {
         quantity: quantity,
       });
       localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
-      setToast({
-        show: true,
-        type: "success",
-        message: "Product added to cart successfully!",
-      });
+      toast.success("Product added to cart successfully!");
     }
-  };
-
-  const closeToast = () => {
-    setToast((prev) => ({ ...prev, show: false }));
   };
 
   return (
     <div className="d-flex flex-column product-info">
-      {/* Toast Component */}
-      <Toast
-        type={toast.type}
-        message={toast.message}
-        show={toast.show}
-        onClose={closeToast}
-      />
-
       {/* Product Details */}
       <div className="product-name">{name || "Product Name"}</div>
       <div className="d-flex align-items-center gap-3">
@@ -103,7 +70,7 @@ const ProductInfo = ({ product }) => {
       </div>
 
       {/* Sizes Section */}
-      <div className="d-flex flex-column gap-2 sizeDiv">
+      <div className="d-flex flex-column sizeDiv">
         <span className="product-sub-title">Size</span>
         <div className="d-flex align-items-center gap-2 size-btn">
           {sizes.length > 0 ? (
@@ -123,32 +90,54 @@ const ProductInfo = ({ product }) => {
       </div>
 
       {/* Quantity Section */}
-      <div className="d-flex align-items-center gap-5 borderDiv">
+      <div className="d-flex align-items-center gap-5">
         <div className="d-flex flex-column quantityDiv">
           <div className="product-sub-title">Quantity</div>
-          <div className="d-flex items-center gap-2 quantity">
-            <span onClick={() => handleQuantityChange("decrement")}>-</span>
-            <span>{quantity}</span>
-            <span onClick={() => handleQuantityChange("increment")}>+</span>
+          <div className="d-flex gap-4 align-items-center">
+            <div className="d-flex items-center gap-1">
+              <button className="btn btn-black active" onClick={() => handleQuantityChange("decrement")}>-</button>
+              <button className="h-100 border bg-transparent d-flex align-items-center justify-content-center text-center" style={{ minWidth: '40px', minHeight: '100%' }} onClick={(e) => e.preventDefault}>{quantity}</button>
+              <button className="btn btn-black active" onClick={() => handleQuantityChange("increment")}>+</button>
+            </div>
+            <div className="colorsDiv product-colors d-flex align-items-center h-100 gap-2">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
-        </div>
-        <div className="colorsDiv product-colors d-flex gap-2">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
         </div>
       </div>
 
       {/* Buttons Section */}
       <div className="d-flex flex-column gap-3 w-100 product-info-btn">
         <button className="btn btn-lg-colored py-2">Buy Now</button>
-        <button className="btn btn-base-transparent" onClick={handleAddToCart}>
+        <button className="btn btn-primary" onClick={handleAddToCart}>
           Add to Cart
         </button>
       </div>
     </div>
   );
+};
+ProductInfo.propTypes = {
+  product: PropTypes.shape({
+    name: PropTypes.string,
+    sizes: PropTypes.arrayOf(
+      PropTypes.shape({
+        size: PropTypes.string,
+        basePrice: PropTypes.number,
+        discountedPercent: PropTypes.number,
+      })
+    ),
+    basePrice: PropTypes.number,
+    discountedPercent: PropTypes.number,
+    _id: PropTypes.string,
+    images: PropTypes.arrayOf(
+      PropTypes.shape({
+        url: PropTypes.string,
+      })
+    ),
+  }).isRequired,
 };
 
 export default ProductInfo;

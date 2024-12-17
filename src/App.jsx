@@ -18,6 +18,8 @@ import AddingNewAddress from "./Components/DashboardPages/AddingNewAddress";
 import AccountDetailsPage from "./Components/DashboardPages/AccountDetailsPage";
 import Home from "./pages/Home/Home";
 import BedSheets from './pages/BedSheets/BedSheets';
+import { ToastContainer } from "react-toastify";
+
 
 function App() {
   return (
@@ -44,6 +46,17 @@ function App() {
         <Route path="/account-details" element={<AccountDetailsPage />} />
         <Route element={<Error />} />
       </Routes>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={true}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   );
 }

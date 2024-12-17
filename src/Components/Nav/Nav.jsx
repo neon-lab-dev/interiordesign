@@ -1,65 +1,4 @@
-// import { IMAGES, ICONS } from "@/assets/Assets.jsx"
-// import { Link } from "react-router-dom"
-// import './Nav.css'
-
-// const Nav = () => {
-//     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-//     const toggleSidebar = () => {
-//         setIsSidebarOpen(!isSidebarOpen);
-//     };
-//     return (
-//         <nav className='navBar d-flex align-items-center justify-content-between'>
-//             <div className="w-100 d-flex align-items-center justify-content-between">
-//                 <div className="d-flex align-items-center gap-4">
-//                     <Link to="/" className="logo">
-//                         <img src={IMAGES.logo} alt="logo" />
-//                     </Link>
-//                     <div className="nav-links d-flex align-items-center gap-3 horizontal-nav-links">
-//                         <Link to="/products">Bedsheets</Link>
-//                         <Link to="/products">Chairs</Link>
-//                         <Link to="/products">Tables</Link>
-//                     </div>
-//                 </div>
-//                 <div className="search-container d-none d-md-none d-sm-flex">
-//                     <img src={ICONS.searchIconGrey} alt="" />
-//                     <input type="text" placeholder="What Are You Looking For?" />
-//                 </div>
-//                 <div className="d-flex align-items-center gap-4 left-container">
-//                     <div className="search-container d-md-flex d-sm-none">
-//                         <img src={ICONS.searchIconGrey} alt="" />
-//                         <input type="text" placeholder="What Are You Looking For?" />
-//                     </div>
-//                     <div className="d-flex align-items-center gap-4 left-menus">
-//                         <Link to="/wishlist" className="d-flex align-items-center gap-1">
-//                             <img src={ICONS.heartIconGrey} alt="" />
-//                             <span>Wishlist</span>
-//                         </Link>
-//                         <Link to="/cart" className="d-flex align-items-center gap-1">
-//                             <img src={ICONS.cartIconGrey} alt="" />
-//                             <span>My Cart</span>
-//                         </Link>
-//                         <Link to="/profile" className="d-flex align-items-center gap-1">
-//                             <img src={ICONS.profileIconGrey} alt="" />
-//                             <span>Profile</span>
-//                         </Link>
-//                         <div className="d-flex align-items-center gap-1 d-none hamburgerMenu">
-//                             <img src={ICONS.hamburgerMenu} alt="" />
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//             <div className="search-container search-container-small d-none">
-//                 <img src={ICONS.searchIconGrey} alt="" />
-//                 <input type="text" placeholder="What Are You Looking For?" />
-//             </div>
-//         </nav>
-//     )
-// }
-
-// export default Nav
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IMAGES, ICONS } from "@/assets/Assets.jsx";
 import { Link } from "react-router-dom";
 import "./Nav.css";
@@ -68,10 +7,31 @@ import ProfileImg from "../../assets/Images/profileimg.jpeg";
 
 const Nav = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [cartCount, setCartCount] = useState(0); // State for cart product count
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
+  // Fetch cart count from localStorage
+  const fetchCartCount = () => {
+    const cart = JSON.parse(localStorage.getItem("cartProducts")) || [];
+    setCartCount(cart.length);
+  };
+
+  // Fetch cart count on component mount
+  useEffect(() => {
+    fetchCartCount();
+
+    // Listen for the custom event to update cart count
+    const handleCartUpdate = () => fetchCartCount();
+    window.addEventListener("cartUpdate", handleCartUpdate);
+
+    // Cleanup listener on unmount
+    return () => {
+      window.removeEventListener("cartUpdate", handleCartUpdate);
+    };
+  }, []);
 
   return (
     <nav className="navBar d-flex align-items-center justify-content-between">
@@ -96,16 +56,22 @@ const Nav = () => {
               <img src={ICONS.heartIconGrey} alt="" />
               <span>Wishlist</span>
             </Link>
-            <Link to="/cart" className="d-flex align-items-center gap-1">
+            <Link to="/cart" className="d-flex align-items-center gap-1 position-relative">
               <img src={ICONS.cartIconGrey} alt="" />
               <span>My Cart</span>
+              {/* Badge for Cart Count */}
+              {cartCount > 0 && (
+                <div className="cart-badge">
+                  {cartCount}
+                </div>
+              )}
             </Link>
             <Link to="/dashboard" className="d-flex align-items-center gap-1">
               <img src={ICONS.profileIconGrey} alt="" />
               <span>Profile</span>
             </Link>
             <div
-              className=" align-items-center gap-1 hamburgerMenu"
+              className="align-items-center gap-1 hamburgerMenu"
               onClick={toggleSidebar}
             >
               <img src={ICONS.hamburgerMenu} alt="" />
@@ -113,6 +79,7 @@ const Nav = () => {
           </div>
         </div>
       </div>
+
       {/* Sidebar */}
       <div className={`sidebar-ham ${isSidebarOpen ? "open" : ""}`}>
         <div>
