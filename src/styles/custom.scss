@@ -488,6 +488,10 @@ h6 {
   border-radius: 5px;
 }
 
+.btn-lg-colored:hover {
+  background-color: rgba(136, 129, 234, 0.9) !important;
+}
+
 .btn-base-transparent {
   border: 1px solid rgba(255, 255, 255, 0.6);
   color: rgba(255, 255, 255, 1);
@@ -727,4 +731,38 @@ form .danger-text-neighbor{
 
 .border-gray{
   border-color: #4B4B4B !important;
+}
+
+
+.btn-transparent{
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.75);
+  font-family: "Nunito Regular", sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.btn-transparent:hover{
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.quantity-btns button:nth-child(1){
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+.quantity-btns button:nth-child(2){
+  border-radius: 0px !important;
+  width: 60px !important;
+}
+.quantity-btns button:nth-child(3){
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+.bg-image{
+  background: #252424 !important;
 }
