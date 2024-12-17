@@ -228,3 +228,59 @@ text-transform: capitalize;
     font-size: 14px;
   }
 }
+
+section.Toastify {
+  padding: 0px !important;
+}
+
+
+
+/* toastStyles.css */
+
+/* Override default container styles */
+.Toastify__toast-container {
+  z-index: 9999; /* Keep it on top */
+}
+
+/* Custom Toast Styles */
+.Toastify__toast {
+  border-radius: 8px; /* Rounded corners */
+  padding: 16px; /* Add some padding */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+/* Success Toast */
+.Toastify__toast--success {
+  background-color: #1c1c1c !important; /* Custom green background */
+  color: #ffffff !important; /* White text */
+}
+
+/* Info Toast */
+.Toastify__toast--info {
+  background-color: #1c1c1c !important; /* Custom blue background */
+  color: #ffffff !important;
+}
+
+/* Error Toast */
+.Toastify__toast--error {
+  background-color: #1c1c1c !important; /* Custom red background */
+  color: #ffffff !important;
+}
+
+
+/* Warning Toast */
+.Toastify__toast--warning {
+  background-color: #ff9800 !important; /* Custom orange background */
+  color: #ffffff !important;
+}
+
+/* Toast Close Button */
+.Toastify__close-button {
+  color: #ffffff !important; /* Make close button white */
+  opacity: 1;
+}
+
+/* Progress Bar */
+.Toastify__progress-bar {
+  background-color: #ffffff !important; /* White progress bar */
+}
