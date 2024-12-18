@@ -24,7 +24,7 @@ const handleLogin = async (e) => {
     const user = {
       _id : response?.data?.user?._id,
       name : response?.data?.user?.full_name,
-      enail : response?.data?.user?.email,
+      email : response?.data?.user?.email,
     };
 
     localStorage.setItem("user", JSON.stringify(user));
