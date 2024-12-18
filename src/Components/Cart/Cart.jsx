@@ -10,8 +10,6 @@ const Cart = () => {
     setCartProducts(products);
   }, []);
 
-  console.log(cartProducts);
-
   // Save cartProducts back to localStorage whenever it changes
   const updateLocalStorage = (updatedProducts) => {
     setCartProducts(updatedProducts);
@@ -198,9 +196,11 @@ const Cart = () => {
                     on this order
                   </p>
                 </div>
+
                 <Link to={'/ordersummary'} className="w-100">
                   <button className="btn btn-lg-colored w-100 py-2">Place Order</button>
                 </Link>
+
               </div>
             </div>
           </div>

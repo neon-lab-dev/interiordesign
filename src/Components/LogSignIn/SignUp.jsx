@@ -1,76 +1,42 @@
 import { Link, useNavigate } from "react-router-dom";
 import LoginImg from "../../assets/Images/loginimg.jpeg";
-import { useState } from "react";
 import { IMAGES } from "../../assets/Assets";
-import "./Login.css";
+import { useForm } from "react-hook-form";
 import API from "../../utils/api";
+import "./Login.css";
 
 const SignUp = () => {
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({
-    userName: "",
-    email: "",
-    phoneNo: "",
-    password: "",
-    confirmPassword: "",
-  });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm();
 
-  const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSignUp = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setError(null);
-
-    if (
-      !formData.userName ||
-      !formData.email ||
-      !formData.phoneNo ||
-      !formData.password ||
-      !formData.confirmPassword
-    ) {
-      setError("All fields are required.");
-      setIsLoading(false);
-      return;
-    }
-
-    if (formData.password !== formData.confirmPassword) {
-      setError("Passwords do not match!");
-      setIsLoading(false);
-      return;
-    }
-
+  const onSubmit = async (data) => {
     try {
       await API.post("/register", {
-        full_name: formData.userName,
-        email: formData.email,
-        phoneNo: formData.phoneNo,
-        password: formData.password,
-        confirm_password: formData.confirmPassword,
+        full_name: data.full_name,
+        email: data.email,
+        phoneNo: data.phoneNo,
+        password: data.password,
+        confirm_password: data.confirm_password,
       });
 
-      setSuccess("Account created successfully!");
-      setIsLoading(false);
+      // Success notification
+      alert("Account created successfully!");
 
       // Redirect to login
       setTimeout(() => navigate("/login"), 2000);
     } catch (err) {
-      setError(err.response?.data?.message || "Something went wrong.");
-      setIsLoading(false);
+      alert(err.response?.data?.message || "Something went wrong.");
     }
   };
 
   return (
-    <section className="">
-      <div className="login-container d-flex  items-center justify-between login-section w-100">
+    <section>
+      <div className="login-container d-flex items-center justify-between login-section w-100">
         <div className="login-image-container">
           <img src={LoginImg} alt="login" className="login-image" />
           <img src={IMAGES.logo} alt="" className="logo-top" />
@@ -78,82 +44,102 @@ const SignUp = () => {
             <span className="logo-text">We Create Your Dream Home</span>
           </div>
         </div>
-        <form className="login-form" onSubmit={handleSignUp}>
+        <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
           <div className="form-title">Create an Account</div>
-          {error && <p className="text-danger">{error}</p>}
-          {success && <p className="text-success">{success}</p>}
+
           <div className="inp-grp">
-            <label htmlFor="userName">User Name</label>
+            <label htmlFor="full_name">Full Name</label>
             <input
               type="text"
-              id="userName"
-              name="userName"
-              placeholder="Enter Your Name"
-              value={formData.userName}
-              onChange={handleInputChange}
-              required
+              id="full_name"
+              {...register("full_name", {
+                required: "Full name is required",
+              })}
+              placeholder="Enter Your Full Name"
             />
+            {errors.full_name && (
+              <p className="text-danger">{errors.full_name.message}</p>
+            )}
           </div>
+
           <div className="inp-grp">
             <label htmlFor="email">Email</label>
             <input
               type="email"
               id="email"
-              name="email"
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                  message: "Invalid email address",
+                },
+              })}
               placeholder="Enter Your Email"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
             />
+            {errors.email && <p className="text-danger">{errors.email.message}</p>}
           </div>
+
           <div className="inp-grp">
-            <label htmlFor="phone">Phone</label>
+            <label htmlFor="phoneNo">Phone</label>
             <input
               type="text"
               id="phoneNo"
-              name="phoneNo"
+              {...register("phoneNo", {
+                required: "Phone number is required",
+              })}
               placeholder="Enter Your Phone Number"
-              value={formData.phoneNo}
-              onChange={handleInputChange}
-              required
             />
+            {errors.phoneNo && (
+              <p className="text-danger">{errors.phoneNo.message}</p>
+            )}
           </div>
+
           <div className="inp-grp">
-            <label htmlFor="password">Create Password</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               id="password"
-              name="password"
+              {...register("password", {
+                required: "Password is required",
+                minLength: {
+                  value: 6,
+                  message: "Password must be at least 6 characters long",
+                },
+              })}
               placeholder="Create Strong Password"
-              value={formData.password}
-              onChange={handleInputChange}
-              required
             />
+            {errors.password && (
+              <p className="text-danger">{errors.password.message}</p>
+            )}
           </div>
+
           <div className="inp-grp">
-            <label htmlFor="confirmPassword">Confirm Password</label>
+            <label htmlFor="confirm_password">Confirm Password</label>
             <input
               type="password"
-              id="confirmPassword"
-              name="confirmPassword"
+              id="confirm_password"
+              {...register("confirm_password", {
+                required: "Please confirm your password",
+                validate: (value, { password }) =>
+                  value === password || "Passwords do not match",
+              })}
               placeholder="Re-Enter Password"
-              value={formData.confirmPassword}
-              onChange={handleInputChange}
-              required
             />
+            {errors.confirm_password && (
+              <p className="text-danger">{errors.confirm_password.message}</p>
+            )}
           </div>
+
           <button
             type="submit"
             className="btn btn-base-transparent"
-            disabled={isLoading}
+            disabled={isSubmitting}
           >
-            {isLoading ? "Creating Account..." : "Sign Up"}
+            {isSubmitting ? "Creating Account..." : "Sign Up"}
           </button>
-          <div className="d-flex justify-content-center ">
-            <span
-              className="danger-text-neighbor"
-              style={{ marginRight: "2px" }}
-            >
+
+          <div className="d-flex justify-content-center">
+            <span className="danger-text-neighbor" style={{ marginRight: "2px" }}>
               Already have an account?
             </span>
             <Link to="/login" className="text-danger">
@@ -167,4 +153,3 @@ const SignUp = () => {
 };
 
 export default SignUp;
-

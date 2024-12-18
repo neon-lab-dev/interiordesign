@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import { IMAGES, ICONS } from "@/assets/Assets.jsx";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Nav.css";
 import "../DashboardPages/Dashboard.css";
-import ProfileImg from "../../assets/Images/profileimg.jpeg";
+import userIcon from "../../assets/Icons/user.svg";
+import axios from "axios";
 
 const Nav = () => {
+  const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [cartCount, setCartCount] = useState(0); // State for cart product count
+  const [cartCount, setCartCount] = useState(0);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -31,6 +33,45 @@ const Nav = () => {
     return () => {
       window.removeEventListener("cartUpdate", handleCartUpdate);
     };
+  }, []);
+
+  const [userData, setUserData] = useState(null);
+
+  // Fetch user details
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const user = localStorage.getItem('user');
+      setUserData(JSON.parse(user))
+    };
+
+    fetchUserData();
+  }, []);
+
+  const handleLogout = async () => {
+    try {
+      await axios.get("https://interior-design-backend-nine.vercel.app/api/v1/logout");
+      localStorage.removeItem("user");
+      navigate("/bedsheets")
+      window.location.reload();
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
+  };
+
+  const [user, setUser] = useState(null);
+
+  // Fetch user details
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await axios.get("https://interior-design-backend-nine.vercel.app/api/v1/me", { withCredentials: true });
+        setUser(response.data);
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+
+    fetchUserData();
   }, []);
 
   return (
@@ -66,10 +107,24 @@ const Nav = () => {
                 </div>
               )}
             </Link>
-            <Link to="/dashboard" className="d-flex align-items-center gap-1">
-              <img src={ICONS.profileIconGrey} alt="" />
-              <span>Profile</span>
-            </Link>
+            {
+              userData ?
+                <div className="d-flex gap-3 align-items-center">
+                  <Link to="/dashboard" className="d-flex align-items-center gap-1">
+                    <img src={ICONS.profileIconGrey} alt="" />
+                    <span>Profile</span>
+                  </Link>
+                  <p onClick={handleLogout} className="cursor-pointer">Logout</p>
+                </div>
+
+                :
+                <div>
+                  <Link to="/login" className="d-flex align-items-center gap-1">
+                    <span>Login</span>
+                  </Link>
+                </div>
+            }
+
             <div
               className="align-items-center gap-1 hamburgerMenu"
               onClick={toggleSidebar}
@@ -82,16 +137,20 @@ const Nav = () => {
 
       {/* Sidebar */}
       <div className={`sidebar-ham ${isSidebarOpen ? "open" : ""}`}>
-        <div>
+        {
+          userData ?
+          <div>
           <div className="img-Name">
-            <img src={ProfileImg} alt="Profile" className="profile-pic" />
-            <span className="c">Kabir Sah</span>
+            <img src={userIcon} alt="Profile" className="profile-pic" />
+            <span className="c">{userData?.name}</span>
           </div>
           <div className="d-flex flex-column profileContacts-nav gap-1">
-            <p>Email: www.kabirsah@gmail.com</p>
-            <p>Phone: 5824658726</p>
+            <p>Email: {userData?.email}</p>
           </div>
         </div>
+        :
+        ""
+        }
         <div className="sidebar-links">
           <Link to="/products">Bedsheets</Link>
           <Link to="/products">Tables</Link>
@@ -102,12 +161,17 @@ const Nav = () => {
           <Link to="/dashboard">Account Dashboard</Link>
           <Link to="/orderdesign">Orders</Link>
           <Link to="/password-reset">Password Reset</Link>
-          <Link to="/address">Address Book</Link>
+          <Link to="/address-book">Address Book</Link>
           <Link to="/account-details">Account Details</Link>
         </div>
-        <div className="logout">
-          <Link to="/logout">Logout</Link>
-        </div>
+        {
+          userData ?
+          <div onClick={handleLogout} className="logout">
+            <Link to="/logout">Logout</Link>
+          </div>
+          :
+          <Link to="/login">Login</Link>
+        }
       </div>
       <div
         className={`backdrop ${isSidebarOpen ? "active" : ""}`}

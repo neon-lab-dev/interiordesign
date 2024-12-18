@@ -5,7 +5,6 @@ import { IMAGES, ICONS } from "@/assets/Assets.jsx";
 import { Link } from "react-router-dom";
 import "./Nav.css";
 import "../DashboardPages/Dashboard.css";
-import ProfileImg from "../../assets/Images/profileimg.jpeg";
 import { NavLink } from "react-router-dom";
 
 const Nav = () => {
@@ -61,7 +60,7 @@ const Nav = () => {
         
         <div className="sidebar-links">
           <Link to="/">Home</Link>
-          <Link to="/products">Bedsheets</Link>
+          <Link to="/bedsheets">Bedsheets</Link>
         </div>
         
         

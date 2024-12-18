@@ -27,6 +27,7 @@ import TandC from "./Components/TandC/TandC";
 import PrivacyPol from "./Components/PrivacyPol/PrivacyPol";
 import ShippingRefundPol from "./Components/ShippingRefundPol/ShippingRefundPol";
 import ContactUsPage from "./Components/ContactUsPage/ContactUsPage";
+import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 
 
 function App() {
@@ -41,15 +42,20 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/payment/:productId" element={<Payment />} />
+       
+          <Route element={<ProtectedRoute />}>
+          <Route path="/payment" element={<Payment />} />
+          </Route>
+          <Route element={<ProtectedRoute />}>
         <Route path="/dashboard" element={<AccountDashboard />} />
+          </Route>
         <Route path="/orderdesign" element={<OrdersDesign />} />
         <Route path="/forgetpassword" element={<ForgetPass />} />
         <Route path="/changepassword" element={<ChangePass />} />
         <Route path="/orderhistory" element={<OrderHistory />} />
         <Route path="/changepass" element={<ChangePassWord />}></Route>
         <Route path="/addresspage" element={<AddressPage />} />
-        <Route path="/addaddress" element={<AddingNewAddress />} />
+        <Route path="/address-book" element={<AddingNewAddress />} />
         <Route path="/changepass" element={<ChangePassWord />} />
         <Route path="/ordersummary" element={<OrderSummary />} />
         <Route path="/account-details" element={<AccountDetailsPage />} />

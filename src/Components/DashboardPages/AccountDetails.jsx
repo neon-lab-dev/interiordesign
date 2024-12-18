@@ -1,8 +1,9 @@
 import "./Dashboard.css";
 import { FaRegEdit } from "react-icons/fa";
-import ProfileImg from "../../assets/Images/profileimg.jpeg";
+import user from "../../assets/Icons/user.svg";
 
-const AccountDetails = () => {
+const AccountDetails = ({userData}) => {
+  
   return (
     <div className="account-details-card">
       <h3 className="account-details-card-title">Account Details</h3>
@@ -10,12 +11,12 @@ const AccountDetails = () => {
         <FaRegEdit />
       </span>
       <div className="img-Name">
-        <img src={ProfileImg} alt="Profile" className="profile-pic" />
-        <span className="c">Kabir Sah</span>
+        <img src={user} alt="Profile" className="profile-pic" />
+        <span className="c">{userData?.user?.full_name}</span>
       </div>
       <div className="d-flex flex-column profileContacts gap-1">
-        <p>Email: www.kabirsah@gmail.com</p>
-        <p>Phone: 5824658726</p>
+        <p>Email: {userData?.user?.email}</p>
+        <p>Phone: {userData?.user?.phoneNo}</p>
       </div>
     </div>
   );

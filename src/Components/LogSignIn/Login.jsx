@@ -2,8 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import LoginImg from "../../assets/Images/loginimg.jpeg";
 import { IMAGES } from "../../assets/Assets";
 import "./Login.css";
-import API from "../../utils/api";
 import { useState } from "react";
+import axios from "axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -11,20 +11,30 @@ const Login = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await API.post("/login", { email, password });
-      const { token } = response.data;
+const handleLogin = async (e) => {
+  e.preventDefault();
 
-      localStorage.setItem("authToken", token);
+  try {
+    const response  = await axios.post(
+      "https://interior-design-backend-nine.vercel.app/api/v1/login",
+      { email, password },
+      { withCredentials: true }
+    );
 
-      navigate("/dashboard");
-    } catch (err) {
-      console.error("Login failed:", err);
-      setError(err.response?.data?.message || "Something went wrong.");
-    }
-  };
+    const user = {
+      _id : response?.data?.user?._id,
+      name : response?.data?.user?.full_name,
+      email : response?.data?.user?.email,
+    };
+
+    localStorage.setItem("user", JSON.stringify(user));
+    navigate("/dashboard");
+    window.location.reload();
+  } catch (err) {
+    console.error("Login failed:", err);
+    setError(err.response?.data?.message || "Something went wrong.");
+  }
+};
 
   return (
     <section className="">
