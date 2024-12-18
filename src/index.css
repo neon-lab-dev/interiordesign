@@ -47,7 +47,26 @@ section {
   padding: 84px 80px;
   gap: 40px;
 }
+.div-info{
+  background-color: #202020;
+  padding: 42px;
+}
 
+.heading-info{
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29.17px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 14px;
+  margin-top: 42px;
+}
+.para{
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 24px;
+  
+}
 @media (max-width: 744px) {
   section {
     padding: 42px 27px;

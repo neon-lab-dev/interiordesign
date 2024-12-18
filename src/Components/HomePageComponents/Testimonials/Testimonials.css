@@ -37,8 +37,8 @@
     font-size: 24px;
     font-weight: 400;
   } 
-  .swiper-container{
-    /* width: 40vw !important; */
+  .swiper-container-testimonial{
+     width: 40vw !important; 
   }
   
   

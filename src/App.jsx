@@ -18,8 +18,15 @@ import AddingNewAddress from "./Components/DashboardPages/AddingNewAddress";
 import AccountDetailsPage from "./Components/DashboardPages/AccountDetailsPage";
 import Home from "./pages/Home/Home";
 import BedSheets from './pages/BedSheets/BedSheets';
+
 import { ToastContainer } from "react-toastify";
 import OrderSummary from "./Components/Pages/OrderSummary";
+
+
+import TandC from "./Components/TandC/TandC";
+import PrivacyPol from "./Components/PrivacyPol/PrivacyPol";
+import ShippingRefundPol from "./Components/ShippingRefundPol/ShippingRefundPol";
+import ContactUsPage from "./Components/ContactUsPage/ContactUsPage";
 
 
 function App() {
@@ -46,6 +53,10 @@ function App() {
         <Route path="/changepass" element={<ChangePassWord />} />
         <Route path="/ordersummary" element={<OrderSummary />} />
         <Route path="/account-details" element={<AccountDetailsPage />} />
+        <Route path="/tandc" element={<TandC />} />
+        <Route path="/privacy" element={<PrivacyPol />} />
+        <Route path="/shipping" element={<ShippingRefundPol />} />
+        <Route path="/contact" element={<ContactUsPage />} />
         <Route element={<Error />} />
       </Routes>
       <ToastContainer
