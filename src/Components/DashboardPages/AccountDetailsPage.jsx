@@ -1,47 +1,80 @@
-import React, { useState } from "react";
+"use client";
+import { useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
 import "./Dashboard.css";
 import { FaRegEdit } from "react-icons/fa";
-import ProfileImg from "../../assets/Images/profileimg.jpeg";
+import axios from "axios";
+import user from "../../assets/Icons/user.svg";
+import { toast } from "sonner";
 
 const AccountDetailsPage = () => {
   const [isEditing, setIsEditing] = useState(false);
-  const [userDetails, setUserDetails] = useState({
-    name: "Kabir Sah",
-    email: "kabirsah@gmail.com",
-    phone: "5824658726",
-    address: "",
-    profilePic: ProfileImg,
-  });
-  const [file, setFile] = useState(null);
+  const [userData, setUserData] = useState(null);
+  // const [file, setFile] = useState(null);
 
-  // Handlers
+  // Fetch user details
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await axios.get("https://interior-design-backend-nine.vercel.app/api/v1/me", { withCredentials: true });
+        setUserData(response.data);
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+
+    fetchUserData();
+  }, []);
+
   const toggleEditMode = () => setIsEditing(!isEditing);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUserDetails((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
+  // const handleFileChange = (e) => {
+  //   setFile(e.target.files[0]);
+  // };
 
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
-  };
+  const handleUpdateProfile = async (e) => {
+    e.preventDefault();
+    try {
+      setIsEditing(false);
+  
+      // Fetch input values directly from the form
+      const formData = new FormData();
+      formData.append("full_name", e.target.full_name.value);
+      formData.append("email", e.target.email.value);
+      formData.append("phoneNo", e.target.phoneNo.value);
+      console.log(formData.get("phoneNo"));
 
-  const handleSave = () => {
-    setIsEditing(false);
-    // Upload file and save details logic here
-    console.log("Updated User Details:", userDetails);
-    console.log("Uploaded File:", file);
+      // const file = formData.get("profilePic");
+      // if (file) {
+      //   formData.append("profilePic", file);
+      // }
+  
+      // Send update request
+      const response =  await axios.put(
+        "https://interior-design-backend-nine.vercel.app/api/v1/me/update",
+        formData,
+        { withCredentials: true }
+      );
+  
+      if(response.data.message){
+        toast.success("Profile updated successfully");
+        window.location.reload();
+      }
+    } catch (error) {
+      console.error("Error updating user details:", error);
+    }
   };
+  
+
+  if (!userData) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <section className="dashboard-container">
       <div className="main-content">
         <div className="py-3 border-1 border-bottom border-gray d-flex align-items-center justify-content-center">
-          <span className="welcome-text">Welcome, {userDetails.name}</span>
+          <span className="welcome-text">Welcome, {userData?.user?.full_name}</span>
         </div>
         <div className="content-sections">
           <Sidebar />
@@ -53,29 +86,28 @@ const AccountDetailsPage = () => {
               </span>
               <div className="img-Name">
                 <img
-                  src={userDetails.profilePic}
+                  src={user}
                   alt="Profile"
                   className="profile-pic"
                 />
-                <span className="c">{userDetails.name}</span>
+                <span className="c">{userData?.user?.full_name}</span>
               </div>
               <div className="d-flex flex-column profileContacts gap-1">
-                <p>Email: {userDetails.email}</p>
-                <p>Phone: {userDetails.phone}</p>
+                <p>Email: {userData?.user?.email}</p>
+                <p>Phone: {userData?.user?.phoneNo}</p>
               </div>
             </div>
 
             {isEditing && (
               <div className="edit-form">
-                <form>
+                <form onSubmit={handleUpdateProfile}>
                   <div className="name-phone">
                     <div className="form-group">
                       <label>Full Name*</label>
                       <input
                         type="text"
-                        name="name"
-                        value={userDetails.name}
-                        onChange={handleChange}
+                        name="full_name"
+                        defaultValue={userData?.user?.full_name}
                         className="form-control"
                       />
                     </div>
@@ -83,9 +115,8 @@ const AccountDetailsPage = () => {
                       <label>Phone*</label>
                       <input
                         type="tel"
-                        name="phone"
-                        value={userDetails.phone}
-                        onChange={handleChange}
+                        name="phoneNo"
+                        defaultValue={userData?.user?.phoneNo}
                         className="form-control"
                       />
                     </div>
@@ -97,12 +128,12 @@ const AccountDetailsPage = () => {
                       <input
                         type="email"
                         name="email"
-                        value={userDetails.email}
-                        onChange={handleChange}
+                        defaultValue={userData?.user?.email}
                         className="form-control"
                       />
                     </div>
 
+                    {/* 
                     <div className="form-group">
                       <label>Upload pic</label>
                       <input
@@ -112,11 +143,11 @@ const AccountDetailsPage = () => {
                         className="form-control"
                       />
                     </div>
+                    */}
                   </div>
 
                   <button
-                    type="button"
-                    onClick={handleSave}
+                    type="submit"
                     className="save-btn"
                   >
                     Update
