@@ -60,7 +60,7 @@ const Nav = () => {
         
         <div className="sidebar-links">
           <Link to="/">Home</Link>
-          <Link to="/products">Bedsheets</Link>
+          <Link to="/bedsheets">Bedsheets</Link>
         </div>
         
         
