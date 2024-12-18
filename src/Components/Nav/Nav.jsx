@@ -102,7 +102,7 @@ const Nav = () => {
           <Link to="/dashboard">Account Dashboard</Link>
           <Link to="/orderdesign">Orders</Link>
           <Link to="/password-reset">Password Reset</Link>
-          <Link to="/address">Address Book</Link>
+          <Link to="/address-book">Address Book</Link>
           <Link to="/account-details">Account Details</Link>
         </div>
         <div className="logout">

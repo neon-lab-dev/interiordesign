@@ -9,8 +9,6 @@ const Cart = () => {
     setCartProducts(products);
   }, []);
 
-  console.log(cartProducts);
-
   // Save cartProducts back to localStorage whenever it changes
   const updateLocalStorage = (updatedProducts) => {
     setCartProducts(updatedProducts);

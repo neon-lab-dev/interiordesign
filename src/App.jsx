@@ -40,7 +40,7 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/payment/:productId" element={<Payment />} />
+        <Route path="/payment" element={<Payment />} />
         <Route path="/dashboard" element={<AccountDashboard />} />
         <Route path="/orderdesign" element={<OrdersDesign />} />
         <Route path="/forgetpassword" element={<ForgetPass />} />
@@ -48,7 +48,7 @@ function App() {
         <Route path="/orderhistory" element={<OrderHistory />} />
         <Route path="/changepass" element={<ChangePassWord />}></Route>
         <Route path="/addresspage" element={<AddressPage />} />
-        <Route path="/addaddress" element={<AddingNewAddress />} />
+        <Route path="/address-book" element={<AddingNewAddress />} />
         <Route path="/changepass" element={<ChangePassWord />} />
         <Route path="/account-details" element={<AccountDetailsPage />} />
         <Route path="/tandc" element={<TandC />} />
