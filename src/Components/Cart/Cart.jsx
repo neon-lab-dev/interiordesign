@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [cartProducts, setCartProducts] = useState([]);
@@ -195,7 +196,7 @@ const Cart = () => {
                     on this order
                   </p>
                 </div>
-                <button className="btn btn-lg-colored w-100 py-2">Place Order</button>
+                <Link to={"/payment"} className="btn btn-lg-colored w-100 py-2">Place Order</Link>
               </div>
             </div>
           </div>

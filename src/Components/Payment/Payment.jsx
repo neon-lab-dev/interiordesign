@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ICONS } from "../../assets/Assets";
 import "./Payment.css";
 import Paycard from "./Paycard";
@@ -11,7 +11,6 @@ const Payment = () => {
   const { productId } = useParams();
   const [products, setProducts] = useState(null);
   const [userData, setUserData] = useState(null);
-  console.log(userData)
   // const [file, setFile] = useState(null);
 
   // Fetch user details
@@ -47,7 +46,9 @@ const Payment = () => {
           <div className="account-details">
             <div className="header">
               <p className="title1">Account Details</p>
+              <Link to={"/dashboard"}>
               <img src={ICONS.editSquare} alt="edit" className="edit-icon" />
+              </Link>
             </div>
             <div className="name">
             <img src={user} alt="Profile" className="profile-pic" />
@@ -61,10 +62,12 @@ const Payment = () => {
           <div className="shipping-address">
             <div className="header">
               <p className="title1">Default Shipping Address</p>
+              <Link to={"/address-book"}>
               <img src={ICONS.editSquare} alt="edit" className="edit-icon" />
+              </Link>
             </div>
             <p className="title1">{userData?.user?.full_name}</p>
-            <p>123 Main Street, Apt 4B, Cityville, State 54321, United States</p>
+            <p>{userData?.user?.primaryaddress?.address}, {userData?.user?.primaryaddress?.state} {userData?.user?.primaryaddress?.pin_code}</p>
           </div>
         </div>
 
