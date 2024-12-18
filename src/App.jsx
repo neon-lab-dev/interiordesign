@@ -19,6 +19,7 @@ import AccountDetailsPage from "./Components/DashboardPages/AccountDetailsPage";
 import Home from "./pages/Home/Home";
 import BedSheets from './pages/BedSheets/BedSheets';
 import { ToastContainer } from "react-toastify";
+import OrderSummary from "./Components/Pages/OrderSummary";
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
         <Route path="/addresspage" element={<AddressPage />} />
         <Route path="/addaddress" element={<AddingNewAddress />} />
         <Route path="/changepass" element={<ChangePassWord />} />
+        <Route path="/ordersummary" element={<OrderSummary />} />
         <Route path="/account-details" element={<AccountDetailsPage />} />
         <Route element={<Error />} />
       </Routes>

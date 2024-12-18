@@ -265,3 +265,7 @@ section.Toastify {
 .Toastify__progress-bar {
   background-color: #ffffff !important; /* White progress bar */
 }
+
+.border-custom-light{
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+}
