@@ -42,7 +42,7 @@ const Cart = () => {
 
   return (
     <div>
-      <section className="pt-4 flex-grow-1" style={{ minHeight: '70vh' }}>
+      <section className="pt-4 flex-grow-1 position-relative" style={{ minHeight: '70vh' }}>
         <h4 className="items fw-medium">
           Your Cart: {cartProducts.length} {cartProducts.length === 1 ? "item" : "items"}
         </h4>
@@ -121,8 +121,8 @@ const Cart = () => {
 
             {/* Price Details */}
             <div
-              className="d-flex flex-column items-start border border-secondary rounded-2 shadow shadow-md overflow-hidden p-2"
-              style={{ minWidth: "340px", height: "fit-content" }}
+              className="d-flex flex-column items-start border border-secondary rounded-2 shadow shadow-md overflow-hidden p-2 position-sticky"
+              style={{ minWidth: "340px", height: "fit-content", top: '20px' }}
             >
               <h5 className="fw-light text-uppercase border-bottom pb-1">Price details</h5>
 
@@ -196,7 +196,11 @@ const Cart = () => {
                     on this order
                   </p>
                 </div>
-                <Link to={"/payment"} className="btn btn-lg-colored w-100 py-2">Place Order</Link>
+
+                <Link to={'/ordersummary'} className="w-100">
+                  <button className="btn btn-lg-colored w-100 py-2">Place Order</button>
+                </Link>
+
               </div>
             </div>
           </div>

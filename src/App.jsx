@@ -20,6 +20,7 @@ import Home from "./pages/Home/Home";
 import BedSheets from './pages/BedSheets/BedSheets';
 
 import { ToastContainer } from "react-toastify";
+import OrderSummary from "./Components/Pages/OrderSummary";
 
 
 import TandC from "./Components/TandC/TandC";
@@ -56,6 +57,7 @@ function App() {
         <Route path="/addresspage" element={<AddressPage />} />
         <Route path="/address-book" element={<AddingNewAddress />} />
         <Route path="/changepass" element={<ChangePassWord />} />
+        <Route path="/ordersummary" element={<OrderSummary />} />
         <Route path="/account-details" element={<AccountDetailsPage />} />
         <Route path="/tandc" element={<TandC />} />
         <Route path="/privacy" element={<PrivacyPol />} />
