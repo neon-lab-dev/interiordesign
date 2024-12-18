@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { IMAGES, ICONS } from "@/assets/Assets.jsx";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Nav.css";
 import "../DashboardPages/Dashboard.css";
 import ProfileImg from "../../assets/Images/profileimg.jpeg";
+import axios from "axios";
 
 const Nav = () => {
+  const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0); // State for cart product count
 
@@ -32,6 +34,29 @@ const Nav = () => {
       window.removeEventListener("cartUpdate", handleCartUpdate);
     };
   }, []);
+
+  const [userData, setUserData] = useState(null);
+
+  // Fetch user details
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const user = localStorage.getItem('user');
+      setUserData(user)
+    };
+
+    fetchUserData();
+  }, []);
+
+  const handleLogout = async () => {
+    try {
+      await axios.get("https://interior-design-backend-nine.vercel.app/api/v1/logout");
+      localStorage.removeItem("user");
+      window.location.reload();
+      navigate("/bedsheets")
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
+  }
 
   return (
     <nav className="navBar d-flex align-items-center justify-content-between">
@@ -66,10 +91,24 @@ const Nav = () => {
                 </div>
               )}
             </Link>
-            <Link to="/dashboard" className="d-flex align-items-center gap-1">
-              <img src={ICONS.profileIconGrey} alt="" />
-              <span>Profile</span>
+            {
+              userData ?
+              <div className="d-flex gap-3 align-items-center">
+  <Link to="/dashboard" className="d-flex align-items-center gap-1">
+    <img src={ICONS.profileIconGrey} alt="" />
+    <span>Profile</span>
+  </Link>
+  <p onClick={handleLogout} className="cursor-pointer">Logout</p>
+</div>
+
+            :
+            <div>
+              <Link to="/login" className="d-flex align-items-center gap-1">
+              <span>Login</span>
             </Link>
+            </div>
+            }
+          
             <div
               className="align-items-center gap-1 hamburgerMenu"
               onClick={toggleSidebar}

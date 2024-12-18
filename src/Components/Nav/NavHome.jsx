@@ -5,7 +5,6 @@ import { IMAGES, ICONS } from "@/assets/Assets.jsx";
 import { Link } from "react-router-dom";
 import "./Nav.css";
 import "../DashboardPages/Dashboard.css";
-import ProfileImg from "../../assets/Images/profileimg.jpeg";
 import { NavLink } from "react-router-dom";
 
 const Nav = () => {

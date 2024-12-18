@@ -26,6 +26,7 @@ import TandC from "./Components/TandC/TandC";
 import PrivacyPol from "./Components/PrivacyPol/PrivacyPol";
 import ShippingRefundPol from "./Components/ShippingRefundPol/ShippingRefundPol";
 import ContactUsPage from "./Components/ContactUsPage/ContactUsPage";
+import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 
 
 function App() {
@@ -41,7 +42,10 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/payment" element={<Payment />} />
+          <Route element={<ProtectedRoute />}>
+
         <Route path="/dashboard" element={<AccountDashboard />} />
+          </Route>
         <Route path="/orderdesign" element={<OrdersDesign />} />
         <Route path="/forgetpassword" element={<ForgetPass />} />
         <Route path="/changepassword" element={<ChangePass />} />
