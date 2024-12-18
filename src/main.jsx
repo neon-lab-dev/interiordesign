@@ -8,6 +8,7 @@ import App from "./App.jsx";
 import "bootstrap";
 import "./index.css";
 import "./styles/custom.scss";
+import { Toaster } from "sonner";
 
 // Component to manage conditional Nav rendering
 const ConditionalNav = () => {
@@ -24,5 +25,6 @@ createRoot(document.getElementById("root")).render(
       <Route path="/*" element={<App />} />
     </Routes>
     <Footer />
+    <Toaster position="top-center" />
   </BrowserRouter>
 );
