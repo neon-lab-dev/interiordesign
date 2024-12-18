@@ -51,8 +51,8 @@ const Nav = () => {
     try {
       await axios.get("https://interior-design-backend-nine.vercel.app/api/v1/logout");
       localStorage.removeItem("user");
-      window.location.reload();
       navigate("/bedsheets")
+      window.location.reload();
     } catch (error) {
       console.error("Error fetching user data:", error);
     }
