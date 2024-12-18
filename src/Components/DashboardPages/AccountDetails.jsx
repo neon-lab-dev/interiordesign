@@ -1,25 +1,8 @@
 import "./Dashboard.css";
 import { FaRegEdit } from "react-icons/fa";
 import user from "../../assets/Icons/user.svg";
-import { useEffect, useState } from "react";
-import axios from "axios";
 
-const AccountDetails = () => {
-  const [userData, setUserData] = useState(null);
-
-  // Fetch user details
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const response = await axios.get("https://interior-design-backend-nine.vercel.app/api/v1/me", { withCredentials: true });
-        setUserData(response.data);
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-      }
-    };
-
-    fetchUserData();
-  }, []);
+const AccountDetails = ({userData}) => {
   
   return (
     <div className="account-details-card">

@@ -15,13 +15,21 @@ const handleLogin = async (e) => {
   e.preventDefault();
 
   try {
-    await axios.post(
+    const response  = await axios.post(
       "https://interior-design-backend-nine.vercel.app/api/v1/login",
       { email, password },
       { withCredentials: true }
     );
 
+    const user = {
+      _id : response?.data?.user?._id,
+      name : response?.data?.user?.full_name,
+      enail : response?.data?.user?.email,
+    };
+
+    localStorage.setItem("user", JSON.stringify(user));
     navigate("/dashboard");
+    window.location.reload();
   } catch (err) {
     console.error("Login failed:", err);
     setError(err.response?.data?.message || "Something went wrong.");

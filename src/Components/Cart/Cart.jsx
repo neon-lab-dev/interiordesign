@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [cartProducts, setCartProducts] = useState([]);
@@ -8,8 +9,6 @@ const Cart = () => {
     const products = JSON.parse(localStorage.getItem("cartProducts")) || [];
     setCartProducts(products);
   }, []);
-
-  console.log(cartProducts);
 
   // Save cartProducts back to localStorage whenever it changes
   const updateLocalStorage = (updatedProducts) => {
@@ -197,7 +196,7 @@ const Cart = () => {
                     on this order
                   </p>
                 </div>
-                <button className="btn btn-lg-colored w-100 py-2">Place Order</button>
+                <Link to={"/payment"} className="btn btn-lg-colored w-100 py-2">Place Order</Link>
               </div>
             </div>
           </div>

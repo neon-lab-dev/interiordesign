@@ -1,16 +1,12 @@
-
-
 import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { ICONS } from "../../assets/Assets"
+import Card from '../Card/Card';
 
-import { ICONS } from "../../assets/Assets";
-import Card from "../Card/Card";
-
-const BestSellers = () => {
+const CategorizedProducts = ({sectionTitle, bgColor = ""}) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -33,9 +29,9 @@ const BestSellers = () => {
     }, []);
 
     return (
-        <section className="home-sections d-flex flex-column bg-1">
+        <section className="home-sections d-flex flex-column bg-1" style={{backgroundColor : bgColor}}>
             <div className="home-sections-header d-flex align-items-center justify-content-between">
-                <h2>Our Best Sellers</h2>
+                <h2>{sectionTitle}</h2>
                 <div className="d-flex gap-2 icons">
                     <img
                         src={ICONS.rightArrowEnabled}
@@ -85,4 +81,4 @@ const BestSellers = () => {
     );
 }
 
-export default BestSellers;
+export default CategorizedProducts;

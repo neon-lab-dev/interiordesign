@@ -36,7 +36,7 @@ const Sidebar = () => {
       </NavLink>
 
       <NavLink
-        to="/address"
+        to="/address-book"
         className="sidebar-button"
         activeClassName="active"
       >
