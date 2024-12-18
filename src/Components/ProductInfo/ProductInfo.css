@@ -1,6 +1,6 @@
 .product-name {
   font-family: "Verdana Regular";
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 400;
   line-height: 43.75px;
   letter-spacing: 0.01em;
@@ -9,7 +9,7 @@
 
 .product-price {
   font-family: "Verdana Regular";
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 39.2px;
   text-align: left;
@@ -27,7 +27,7 @@
 
 .product-sub-title {
   font-family: Verdana;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 36px;
   text-align: left;
@@ -141,7 +141,7 @@
   }
 
   .product-sub-title {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -168,7 +168,7 @@
   }
 
   .product-sub-title {
-    font-size: 24px;
+    font-size: 18px;
     line-height: 36px;
   }
 
@@ -361,4 +361,9 @@
     padding: 6px 8px !important;
     font-size: 12px !important;
   }
+}
+
+.product-info .btn-black.active{
+  background-color: #2F2F36 !important;
+  border: 1px solid #3B3B3B !important;
 }

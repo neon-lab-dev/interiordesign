@@ -19,6 +19,15 @@ import AccountDetailsPage from "./Components/DashboardPages/AccountDetailsPage";
 import Home from "./pages/Home/Home";
 import BedSheets from './pages/BedSheets/BedSheets';
 
+import { ToastContainer } from "react-toastify";
+
+
+import TandC from "./Components/TandC/TandC";
+import PrivacyPol from "./Components/PrivacyPol/PrivacyPol";
+import ShippingRefundPol from "./Components/ShippingRefundPol/ShippingRefundPol";
+import ContactUsPage from "./Components/ContactUsPage/ContactUsPage";
+
+
 function App() {
   return (
     <>
@@ -42,8 +51,23 @@ function App() {
         <Route path="/addaddress" element={<AddingNewAddress />} />
         <Route path="/changepass" element={<ChangePassWord />} />
         <Route path="/account-details" element={<AccountDetailsPage />} />
+        <Route path="/tandc" element={<TandC />} />
+        <Route path="/privacy" element={<PrivacyPol />} />
+        <Route path="/shipping" element={<ShippingRefundPol />} />
+        <Route path="/contact" element={<ContactUsPage />} />
         <Route element={<Error />} />
       </Routes>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={true}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   );
 }

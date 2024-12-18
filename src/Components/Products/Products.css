@@ -170,6 +170,7 @@
 .product-section {
   padding: 54px 50px;
   display: flex;
+  height:100%;
 }
 
 .product-section {
@@ -185,10 +186,6 @@
 @media (max-width: 1460px) {
   .product-section {
     padding: 54px 30px !important;
-  }
-
-  .product-info-btn {
-    padding: 10px 20px !important;
   }
 
   .product-info {
