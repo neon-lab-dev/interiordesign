@@ -28,17 +28,6 @@
   min-height: 466px;
 }
 
-/* Thumbnails styling */
-.product-image-thumbnail img {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-/* Add hover effect to thumbnails */
-.product-image-thumbnail img:hover {
-  transform: scale(1.1);
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .product-image-container {

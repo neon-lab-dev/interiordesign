@@ -25,6 +25,29 @@ const ProductInfo = ({ product }) => {
     setSelectedSize(size);
   };
 
+  const handleBuyNow = () => {
+    let cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+    const isProductExist = cartProducts.find(
+      (product) => product.productId === _id
+    );
+
+    if (isProductExist) {
+      toast.error("Product already exists in the cart!");
+    } else {
+      cartProducts.push({
+        productId: _id,
+        name: name,
+        size: selectedSize?.size || "Default",
+        basePrice: selectedSize?.basePrice || 0,
+        discountedPercent: selectedSize?.discountedPercent || 0,
+        image: images[0]?.url || "",
+        quantity: quantity,
+      });
+      localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
+      window.location.href = "/cart";
+    }
+  }
+
   const handleQuantityChange = (type) => {
     if (type === "decrement" && quantity <= 1) {
       toast.error("Quantity cannot be less than 1!");
@@ -111,7 +134,9 @@ const ProductInfo = ({ product }) => {
 
       {/* Buttons Section */}
       <div className="d-flex flex-column gap-3 w-100 product-info-btn">
-        <button className="btn btn-lg-colored py-2">Buy Now</button>
+        <button className="btn btn-lg-colored py-2"
+          onClick={() => handleBuyNow()}
+        >Buy Now</button>
         <button className="btn btn-primary" onClick={handleAddToCart}>
           Add to Cart
         </button>
@@ -135,8 +160,9 @@ ProductInfo.propTypes = {
     images: PropTypes.arrayOf(
       PropTypes.shape({
         url: PropTypes.string,
-      })
+      }),
     ),
+    productId: PropTypes.string,
   }).isRequired,
 };
 

@@ -65,12 +65,15 @@ const BestSellers = () => {
                     }}
                     className="swiper-container"
                     breakpoints={{
-                        320: { slidesPerView: 1.2 },
-                        480: { slidesPerView: 1.6 },
-                        640: { slidesPerView: 2 },
-                        768: { slidesPerView: 2.5 },
-                        1024: { slidesPerView: 3 },
+                        380: { slidesPerView: 1 },
+                        400: { slidesPerView: 1.2 },
+                        480: { slidesPerView: 1.4 },
+                        640: { slidesPerView: 1.8 },
+                        768: { slidesPerView: 2.2 },
+                        940: { slidesPerView: 2.5 },
+                        1100: { slidesPerView: 2.8 },
                         1280: { slidesPerView: 3.5 },
+                        1920: { slidesPerView: 5 },
                     }}
                 >
                     {products.map((product) => (

@@ -11,17 +11,14 @@ import Testimonials from "../../Components/HomePageComponents/Testimonials/Testi
 const Home = () => {
     return (
         <div>
-            <Hero/>
-            <WinningCollaborators/>
-            <WhoWeAre/>
-            <OurServices/>
-
-            <ExploreDesign/>
-           
-
+            <Hero />
+            <WinningCollaborators />
+            <WhoWeAre />
+            <OurServices />
+            <ExploreDesign />
             <ShopSignature />
             <Testimonials />
-            <ContactUs/>
+            <ContactUs />
         </div>
     );
 };
