@@ -79,7 +79,7 @@ const Nav = () => {
       <div className="w-100 d-flex align-items-center justify-content-between">
         <div className="d-flex align-items-center gap-4">
           <Link to="/" className="logo">
-            <img src={IMAGES.logo} alt="logo" />
+            <img src={IMAGES.footerLogo} alt="logo" />
           </Link>
           <div className="nav-links d-flex align-items-center gap-3 horizontal-nav-links">
             <Link to="/bedsheets">Bedsheets</Link>
