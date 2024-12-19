@@ -39,6 +39,9 @@ const Card = ({ product = {}, onWishlistUpdate }) => {
       localStorage.setItem("wishlist", JSON.stringify(wishlist));
       toast.success("Product added to wishlist!");
       if (onWishlistUpdate) onWishlistUpdate();
+      // Dispatch custom event to update wishlist count
+      const event = new Event("wishlistUpdate");
+      window.dispatchEvent(event);
     }
   };
 

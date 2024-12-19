@@ -6,7 +6,7 @@ import 'swiper/css/navigation';
 import { ICONS } from "../../assets/Assets"
 import Card from '../Card/Card';
 
-const CategorizedProducts = ({sectionTitle, bgColor = ""}) => {
+const CategorizedProducts = ({ sectionTitle, bgColor = "" }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -29,7 +29,7 @@ const CategorizedProducts = ({sectionTitle, bgColor = ""}) => {
     }, []);
 
     return (
-        <section className="home-sections d-flex flex-column bg-1" style={{backgroundColor : bgColor}}>
+        <section className="home-sections d-flex flex-column bg-1" style={{ backgroundColor: bgColor }}>
             <div className="home-sections-header d-flex align-items-center justify-content-between">
                 <h2>{sectionTitle}</h2>
                 <div className="d-flex gap-2 icons">
@@ -61,12 +61,15 @@ const CategorizedProducts = ({sectionTitle, bgColor = ""}) => {
                     }}
                     className="swiper-container"
                     breakpoints={{
-                        320: { slidesPerView: 1.2 },
-                        480: { slidesPerView: 1.6 },
-                        640: { slidesPerView: 2 },
-                        768: { slidesPerView: 2.5 },
-                        1024: { slidesPerView: 3 },
+                        380: { slidesPerView: 1 },
+                        400: { slidesPerView: 1.2 },
+                        480: { slidesPerView: 1.4 },
+                        640: { slidesPerView: 1.8 },
+                        768: { slidesPerView: 2.2 },
+                        940: { slidesPerView: 2.5 },
+                        1100: { slidesPerView: 2.8 },
                         1280: { slidesPerView: 3.5 },
+                        1920: { slidesPerView: 5 },
                     }}
                 >
                     {products.map((product) => (

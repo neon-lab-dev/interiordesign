@@ -1,39 +1,66 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 
 const OrderSummary = () => {
 
     const [cartProducts, setCartProducts] = useState([]);
+    const [userData, setUserData] = useState(null);
+
+
+
 
     // Load cart from localStorage on mount
     useEffect(() => {
         const products = JSON.parse(localStorage.getItem("cartProducts")) || [];
         setCartProducts(products);
+
+        const fetchUserData = async () => {
+            try {
+                const response = await axios.get("https://interior-design-backend-nine.vercel.app/api/v1/me", { withCredentials: true });
+                setUserData(response.data);
+            } catch (error) {
+                console.error("Error fetching user data:", error);
+            }
+        };
+
+        fetchUserData();
     }, []);
 
     console.log(cartProducts);
+    console.log(userData);
+
 
     return (
         <section className="d-flex flex-column gap-5">
-            <div className="d-flex p-2 gap-3 flex-column align-items-start shadow shadow-sm border-custom-light rounded-3">
-                <h4>Logged in as</h4>
-                <div className="d-flex align-items-center gap-2">
-                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQHrT6zBAnondQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1727031609722?e=1740009600&v=beta&t=z5jb5Rmvsei4hKeQNoxHMJoziLg36PKcSkS_sOznCw4" alt="" style={{ width: '40px', height: '40px', objectFit: 'cover', borderRadius: '50%' }} />
-                    <h6 className="m-0">John Doe</h6>
-                </div>
-                <div className="d-flex flex-column ">
-                    <p className="m-0"> <span className="fw-bold">Email:</span> johndoe@gmail.com </p>
-                    <p className="m-0"> <span className="fw-bold">Phone:</span> 1234567890 </p>
-                </div>
-            </div>
-            <div className="d-flex p-2 gap-3 flex-column align-items-start shadow shadow-sm border-custom-light rounded-3">
-                <h4>Shipping Address</h4>
-                <div className="d-flex flex-column ">
-                    <p className="m-0"> <span className="fw-bold">Address:</span> 123, XYZ Street, ABC City, 123456 </p>
-                </div>
-                <button className="btn btn-primary py-2">Edit Address</button>
-            </div>
+            {userData && (
+                <>
+                    <div className="d-flex p-2 gap-3 flex-column align-items-start shadow shadow-sm border-custom-light rounded-3">
+                        <h4>Logged in as</h4>
+                        <div className="d-flex align-items-center gap-2">
+                            <img src="https://media.licdn.com/dms/image/v2/D4D03AQHrT6zBAnondQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1727031609722?e=1740009600&v=beta&t=z5jb5Rmvsei4hKeQNoxHMJoziLg36PKcSkS_sOznCw4" alt="" style={{ width: '40px', height: '40px', objectFit: 'cover', borderRadius: '50%' }} />
+                            <h6 className="m-0">{userData.user.full_name}</h6>
+                        </div>
+                        <div className="d-flex flex-column ">
+                            <p className="m-0"> <span className="fw-bold">Email:</span> {userData.user.email}</p>
+                            <p className="m-0"> <span className="fw-bold">Phone:</span> {userData.user.phoneNo}</p>
+                        </div>
+                    </div>
+                    <div className="d-flex p-2 gap-3 flex-column align-items-start shadow shadow-sm border-custom-light rounded-3">
+                        <h4>Shipping Address</h4>
+                        <div className="d-flex flex-column ">
+                            <p className="m-0">
+                                <span className="fw-bold">Address: </span>
+                                {userData && userData.user.primaryaddress
+                                    ? `${userData.user.primaryaddress.address}, ${userData.user.primaryaddress.landmark}, ${userData.user.primaryaddress.city} - ${userData.user.primaryaddress.pin_code},  ${userData.user.primaryaddress.state}`
+                                    : "Address not available"}
+                            </p>
+                        </div>
+                        <button className="btn btn-primary py-2">Edit Address</button>
+                    </div>
+                </>
+            )}
 
             {/* Order Summary */}
             {cartProducts.length !== 0 ? (
@@ -62,7 +89,6 @@ const OrderSummary = () => {
                                             <p className="text-lg fw-normal">
                                                 <span className="fw-medium">Product :</span> {product.name || "Product Name"}
                                             </p>
-                                            <span>- {product.description || "Description"}</span>
                                         </div>
                                         {/* Pricing */}
                                         <d-flex className="flex-column gap-2">
@@ -82,7 +108,7 @@ const OrderSummary = () => {
 
                                         <div className="d-flex align-items-center gap-3">
                                             {/* Quantity Control */}
-                                            <div className="d-flex items-start flex-column gap-1 pe-2 border-end ">
+                                            <div className="d-flex items-start flex-column gap-1 pe-2 border-end h-100 justify-content-between">
                                                 <span>
                                                     <b>Quantity</b>
                                                 </span>
@@ -91,7 +117,7 @@ const OrderSummary = () => {
                                                 </div>
                                             </div>
                                             {/* Quantity Control */}
-                                            <div className="d-flex items-start flex-column gap-1 pe-2 border-end ">
+                                            <div className="d-flex items-start flex-column gap-1 pe-2 border-end  h-100 justify-content-between">
                                                 <span>
                                                     <b>Size</b>
                                                 </span>
@@ -100,7 +126,7 @@ const OrderSummary = () => {
                                                 </div>
                                             </div>
                                             {/* Quantity Control */}
-                                            <div className="d-flex items-start flex-column gap-1">
+                                            <div className="d-flex items-start flex-column gap-1  h-100 justify-content-between">
                                                 <span>
                                                     <b>Color</b>
                                                 </span>

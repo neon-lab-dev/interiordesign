@@ -42,13 +42,13 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/cart" element={<Cart />} />
-       
-          <Route element={<ProtectedRoute />}>
+
+        <Route element={<ProtectedRoute />}>
           <Route path="/payment" element={<Payment />} />
-          </Route>
-          <Route element={<ProtectedRoute />}>
-        <Route path="/dashboard" element={<AccountDashboard />} />
-          </Route>
+        </Route>
+        <Route element={<ProtectedRoute />}>
+          <Route path="/dashboard" element={<AccountDashboard />} />
+        </Route>
         <Route path="/orderdesign" element={<OrdersDesign />} />
         <Route path="/forgetpassword" element={<ForgetPass />} />
         <Route path="/changepassword" element={<ChangePass />} />
