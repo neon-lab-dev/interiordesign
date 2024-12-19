@@ -1,22 +1,23 @@
 import "./ShopSignature.css";
 import { ICONS, IMAGES } from "../../../assets/Assets";
+import { Link } from "react-router-dom";
 
 const ShopSignature = () => {
   const bedsheet = [
     {
-      img: IMAGES.bedsheet,
-      heading: "Bedsheets",
-      desc: "Experience luxurious comfort with our premium bedsheets, crafted for quality and style.",
+      img: IMAGES.bed,
+      heading: "300 TC Bedsheets",
+      desc: "Light, breathable, and perfect for everyday comfort.",
     },
     {
       img: IMAGES.bedsheet,
-      heading: "Bedsheet(Category)",
-      desc: "Our collection of chairs blends comfort and style, perfect for any space.",
+      heading: "400 TC Bedsheets",
+      desc: "Smooth, soft, and a touch of luxury for restful nights.",
     },
     {
       img: IMAGES.bedsheet,
-      heading: "Bedsheet(Category)",
-      desc: "Designed with elegance and functionality, our tables enhance your living area.",
+      heading: "600 TC Bedsheets",
+      desc: "Luxuriously silky and durable for an indulgent sleep experience.",
     },
   ];
   return (
@@ -30,12 +31,12 @@ const ShopSignature = () => {
           <div className="bedsheetcard-container" key={index}>
             <div className="bedsheet-image-cont">
               <img src={item.img} alt="bedsheet" />
-              <div className="shopnow-btn">
+              <Link to={"/bedsheets"} className="shopnow-btn">
                 <p>Shop now</p>
                 <div className="shopnow-btn-arrow">
                   <img src={ICONS.ArrowRightUp} alt="arrow" />
                 </div>
-              </div>
+              </Link>
             </div>
 
             <div className="bedsheet-desc">

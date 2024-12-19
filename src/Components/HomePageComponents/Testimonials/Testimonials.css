@@ -21,6 +21,7 @@
     display: none;
   }
   .testimonial-desc{
+    width: 100%;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -74,6 +75,7 @@
     }
     .testimonial-desc{
         width: 100%;
+        padding: 0px 50px;
     }
     .testimonial-desc p{
         width: 100%;
@@ -82,6 +84,9 @@
     .swiper-container{
         width: 90vw !important;
     }
+    .swiper-container-testimonial{
+      width: 100vw !important;
+   }
   }
   
   @media screen and (max-width: 480px){

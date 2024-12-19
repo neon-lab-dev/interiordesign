@@ -38,6 +38,7 @@ import modularFurniture from "../assets/Images/modular-furniture.png";
 import looseFurniture from "../assets/Images/loose-furniture.png";
 import officeFurniture from "../assets/Images/office-furniture.png";
 import bedsheet from "@/assets/Images/bedsheet.png"
+import bed from "../assets/Images/bed.png"
 import ArrowRightUp from "@/assets/Icons/ArrowRightUp.png"
 import SimpleArrowRightEnable from "@/assets/Icons/SimpleArrowRightEnable.png"
 import SimpleArrowRightDisable from "@/assets/Icons/SimpleArrowRightDisable.png"
@@ -80,6 +81,7 @@ export const IMAGES = {
   looseFurniture,
   officeFurniture,
   bedsheet,
+  bed,
   explore1,
   explore2,
   explore3,
