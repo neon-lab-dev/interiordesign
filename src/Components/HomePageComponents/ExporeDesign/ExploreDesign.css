@@ -61,32 +61,31 @@
 
 
 .margint-top{
-  margin-top: 16px;
+  margin-top: 32px;
 }
-
 
 @media (max-width: 768px) {
   .row.g-4 {
-    flex-wrap: nowrap; /* Prevent wrapping for smaller screens */
-    overflow-x: auto; /* Enable horizontal scrolling */
-  }
-  .margint-top{
-    margin-top:0;
+    flex-direction: column; /* Stack items vertically */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: hidden; /* Disable horizontal scrolling */
   }
 
   .col-md {
-    flex: 0 0 auto; /* Prevent shrinking and maintain column width */
-    min-width:632px ; /* Adapt width based on content */
-    display: flex; /* Align images in each column */
-    flex-direction: row;
-    gap: 16px;
-    align-items: center; /* Center images horizontally */
+    flex: 0 0 100%; /* Take full width */
+    min-width: unset; /* Reset minimum width */
   }
 
   .images-style {
-    width: 300px; /* Prevent images from exceeding the column */
+    width: 100%; /* Make images responsive to container width */
+    height: auto; /* Adjust height automatically */
+  }
+
+  .margint-top {
+    margin-top: 32px; /* Retain spacing between stacked images */
   }
 }
+
 
 
 

@@ -24,7 +24,8 @@ import blue_chair from "@/assets/Images/blue_chair.png";
 import editSquare from "@/assets/Icons/edit_square.png";
 import logo1 from "../assets/Images/logo1.png";
 import whoWeAre from "../assets/Images/who-we-are.png";
-import TrashBin from "../assets/Icons/TrashBin.png"
+import TrashBin from "../assets/Icons/TrashBin.png";
+import paymentSuccess from "../assets/Icons/success.svg";
 
 
 // home (hero section)
@@ -38,6 +39,7 @@ import modularFurniture from "../assets/Images/modular-furniture.png";
 import looseFurniture from "../assets/Images/loose-furniture.png";
 import officeFurniture from "../assets/Images/office-furniture.png";
 import bedsheet from "@/assets/Images/bedsheet.png"
+import bed from "../assets/Images/bed.png"
 import ArrowRightUp from "@/assets/Icons/ArrowRightUp.png"
 import SimpleArrowRightEnable from "@/assets/Icons/SimpleArrowRightEnable.png"
 import SimpleArrowRightDisable from "@/assets/Icons/SimpleArrowRightDisable.png"
@@ -80,6 +82,7 @@ export const IMAGES = {
   looseFurniture,
   officeFurniture,
   bedsheet,
+  bed,
   explore1,
   explore2,
   explore3,
@@ -97,6 +100,7 @@ export const IMAGES = {
 };
 
 export const ICONS = {
+  paymentSuccess,
   searchIconGrey,
   cartIconGrey,
   profileIconGrey,

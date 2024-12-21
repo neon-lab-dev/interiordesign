@@ -1,16 +1,47 @@
-import { useState } from "react";
+import { useRef } from "react";
 import "./Hero.css";
 import { auto } from "@popperjs/core";
+import emailjs from '@emailjs/browser';
+import { toast, Toaster } from "sonner";
 const Hero = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    purpose: "",
-  });
 
-  const handleInputChange = (e) => {
-    const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
+  const form = useRef(null);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    const emailPromise = emailjs.sendForm(
+      "service_xhg76qm",
+      "template_e2vpmsa",
+      form.current,
+      {
+        publicKey: "Vy_QghFw_oD9eMuwv",
+      }
+    );
+
+    toast.promise(
+      emailPromise,
+      {
+        loading: "Sending your email...",
+        success: "Thanks for your interest. We will contact you soon!",
+        error: "Failed to send the email. Please try again later.",
+      },
+      {
+        style: {
+          padding: "10px",
+          borderRadius: "5px",
+        },
+        duration: 3000,
+      }
+    );
+
+    emailPromise
+      .then(() => {
+        form.current.reset();
+      })
+      .catch((error) => {
+        console.error("FAILED...", error.text);
+      });
   };
 
   return (
@@ -77,14 +108,15 @@ const Hero = () => {
                 }}
               >
                 <h2 className="mb-4 text-style">Your Dream Our Design</h2>
-                <form>
+                <form ref={form} onSubmit={sendEmail}>
                   <div className="mb-3">
                     <label htmlFor="name" className="input-text-style">
                       Enter your name
                     </label>
                     <input
+                      name="from_name"
                       type="text"
-                      id="name"
+                      id="from_name"
                       className="input-box input-box-height"
                     />
                   </div>
@@ -94,17 +126,19 @@ const Hero = () => {
                     </label>
                     <input
                       type="text"
-                      id="phone"
+                      id="mobileNumber"
+                      name="mobileNumber"
                       className="input-box input-box-height"
                     />
                   </div>
                   <div className="mb-3">
-                    <label htmlFor="purpose" className="input-text-style">
+                    <label htmlFor="message" className="input-text-style">
                       Purpose
                     </label>
                     <textarea
-                      id="purpose"
-                      className="input-box p-1"
+                      name="message"
+                      id="message"
+                      className="input-box text-white p-1"
                       rows="3"
                     ></textarea>
                   </div>
@@ -130,6 +164,8 @@ const Hero = () => {
           </section>
         </div>
       </div>
+
+      <Toaster position="top-center" />
     </div>
   );
 };

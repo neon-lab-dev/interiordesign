@@ -47,9 +47,9 @@ const Testimonials = () => {
         </div>
       </div>
 
-      <div className="testimonial-desc">
+      <div className="slider-container">
         <Swiper
-          
+
           spaceBetween={32}
           slidesPerView={1}
           loop={false}
@@ -81,19 +81,19 @@ const Testimonials = () => {
       </div>
 
       <div className="custom-navigation-small">
-          <img
-            src={isBeginning ? ICONS.SimpleArrowLeftDisable : ICONS.SimpleArrowLeftEnable}
-            alt="custom-prev"
-            className={`custom-prev ${isBeginning ? "disabled" : ""}`}
-            onClick={() => !isBeginning && swiperRef.current?.slidePrev()}
-          />
-          <img
-            src={isEnd ? ICONS.SimpleArrowRightDisable : ICONS.SimpleArrowRightEnable}
-            alt="custom-next"
-            className={`custom-next ${isEnd ? "disabled" : ""}`}
-            onClick={() => !isEnd && swiperRef.current?.slideNext()}
-          />
-        </div>
+        <img
+          src={isBeginning ? ICONS.SimpleArrowLeftDisable : ICONS.SimpleArrowLeftEnable}
+          alt="custom-prev"
+          className={`custom-prev ${isBeginning ? "disabled" : ""}`}
+          onClick={() => !isBeginning && swiperRef.current?.slidePrev()}
+        />
+        <img
+          src={isEnd ? ICONS.SimpleArrowRightDisable : ICONS.SimpleArrowRightEnable}
+          alt="custom-next"
+          className={`custom-next ${isEnd ? "disabled" : ""}`}
+          onClick={() => !isEnd && swiperRef.current?.slideNext()}
+        />
+      </div>
     </div>
   );
 };
