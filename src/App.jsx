@@ -28,6 +28,7 @@ import PrivacyPol from "./Components/PrivacyPol/PrivacyPol";
 import ShippingRefundPol from "./Components/ShippingRefundPol/ShippingRefundPol";
 import ContactUsPage from "./Components/ContactUsPage/ContactUsPage";
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
+import PaymentSuccess from "./pages/PaymentSuccess/PaymentSuccess";
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/payment-success" element={<PaymentSuccess />} />
 
         <Route element={<ProtectedRoute />}>
           <Route path="/payment" element={<Payment />} />
