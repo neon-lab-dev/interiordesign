@@ -24,7 +24,8 @@ import blue_chair from "@/assets/Images/blue_chair.png";
 import editSquare from "@/assets/Icons/edit_square.png";
 import logo1 from "../assets/Images/logo1.png";
 import whoWeAre from "../assets/Images/who-we-are.png";
-import TrashBin from "../assets/Icons/TrashBin.png"
+import TrashBin from "../assets/Icons/TrashBin.png";
+import paymentSuccess from "../assets/Icons/success.svg";
 
 
 // home (hero section)
@@ -99,6 +100,7 @@ export const IMAGES = {
 };
 
 export const ICONS = {
+  paymentSuccess,
   searchIconGrey,
   cartIconGrey,
   profileIconGrey,
