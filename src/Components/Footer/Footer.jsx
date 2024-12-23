@@ -19,7 +19,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="footer-links gap-2">
-                        <span className="footer-head text-uppercase">Why Us</span>
+                        <span className="footer-head text-uppercase">Legal</span>
                         <div className="d-flex flex-column gap-1">
                             <a href="/contact">Contact Us</a>
                             <a href="/privacy">Privacy Policy</a>
@@ -27,22 +27,16 @@ const Footer = () => {
                             <a href="/tandc">Terms and Conditions</a>
                         </div>
                     </div>
-                    <div className="footer-links gap-2">
+                    {/* <div className="footer-links gap-2">
                         <span className="footer-head text-uppercase">connect with us</span>
                         <div className="d-flex flex-column gap-1">
-                            {/* <a href="/">Home</a>
-                            <a href="/">About</a>
-                            <a href="/">Products</a> */}
                         </div>
                     </div>
                     <div className="footer-links gap-2">
                         <span className="footer-head text-uppercase">visit our store</span>
                         <div className="d-flex flex-column gap-1">
-                            {/* <a href="/">Home</a>
-                            <a href="/">About</a>
-                            <a href="/">Products</a> */}
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className="flex-column align-items-start justify-content-between w-100 show-1024-flex">

@@ -19,7 +19,7 @@ const Sidebar = () => {
       </NavLink>
 
       <NavLink
-        to="/orderdesign"
+        to="/orderhistory"
         className="sidebar-button"
         activeClassName="active"
         //onClick={handleOrders}
@@ -28,7 +28,7 @@ const Sidebar = () => {
       </NavLink>
 
       <NavLink
-        to="/password-reset"
+        to="/changepass"
         className="sidebar-button"
         activeClassName="active"
       >

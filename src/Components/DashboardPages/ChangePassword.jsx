@@ -1,13 +1,29 @@
 import "./OrderCard.css"
 import "./Dashboard.css";
 import Sidebar from "./Sidebar";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const OrderDesign = () => {
+    const [userData, setUserData] = useState(null);
+
+    useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const response = await axios.get("https://interior-design-backend-nine.vercel.app/api/v1/me", { withCredentials: true });
+                setUserData(response.data);
+            } catch (error) {
+                console.error("Error fetching user data:", error);
+            }
+        };
+
+        fetchUserData();
+    }, []);
     return (
         <section className="dashboard-container">
             <div className="main-content">
                 <div className="py-3 border-1 border-bottom border-gray d-flex align-items-center justify-content-center">
-                    <span className="welcome-text">Welcome, Kabir Sah</span>
+                    <span className="welcome-text">Welcome, {userData?.user?.full_name}</span>
                 </div>
                 <div>
                     <div className="content-sections">

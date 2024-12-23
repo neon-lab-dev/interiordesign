@@ -489,7 +489,7 @@ const Tabs = ({ productId }) => {
             aria-controls="key-specification-tab-pane"
             aria-selected="true"
           >
-            Key Specifications
+            Key Features
           </button>
         </li>
         <li className="nav-item" role="presentation">

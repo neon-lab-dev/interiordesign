@@ -10,6 +10,7 @@ const ProductInfo = ({ product }) => {
     sizes = [],
     basePrice,
     discountedPercent,
+    color,
     _id,
     images = [],
   } = product || {};
@@ -39,6 +40,7 @@ const ProductInfo = ({ product }) => {
         name: name,
         size: selectedSize?.size || "Default",
         basePrice: selectedSize?.basePrice || 0,
+        color,
         discountedPercent: selectedSize?.discountedPercent || 0,
         image: images[0]?.url || "",
         quantity: quantity,
@@ -70,6 +72,7 @@ const ProductInfo = ({ product }) => {
         productId: _id,
         name: name,
         size: selectedSize?.size || "Default",
+        color,
         basePrice: selectedSize?.basePrice || 0,
         discountedPercent: selectedSize?.discountedPercent || 0,
         image: images[0]?.url || "",

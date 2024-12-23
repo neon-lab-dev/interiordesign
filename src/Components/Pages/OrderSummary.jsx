@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { toast } from "sonner";
+import user from "../../assets/Icons/user.svg";
 
 
 const OrderSummary = () => {
 
     const [cartProducts, setCartProducts] = useState([]);
     const [userData, setUserData] = useState(null);
-
-
+    const [loading, setLoading] = useState(false);
 
 
     // Load cart from localStorage on mount
@@ -28,8 +29,65 @@ const OrderSummary = () => {
         fetchUserData();
     }, []);
 
-    console.log(cartProducts);
-    console.log(userData);
+    const totalAmount = cartProducts
+        .reduce(
+            (total, product) =>
+                total +
+                (product.basePrice -
+                    product.basePrice * (product.discountedPercent / 100)) *
+                product.quantity,
+            0
+        )
+        .toFixed(2)
+
+    const handleCheckout = async () => {
+        try {
+
+            if (!userData?.user?.primaryaddress && !userData?.user?.secondaryaddress) {
+                toast.error('Please add a shipping address to proceed');
+                return;
+            }
+
+            setLoading(true);
+            const keyData = await axios.get('https://interior-design-backend-nine.vercel.app/api/v1/getkey')
+
+            const response = await axios.post(
+                'https://interior-design-backend-nine.vercel.app/api/v1/checkout',
+                { amount: totalAmount },
+                { withCredentials: true }
+            );
+
+
+
+            const options = {
+                key: keyData?.data?.key, // Razorpay key_id
+                amount: response?.data?.order?.amount,
+                currency: 'INR',
+                name: 'Spaceframe',
+                description: 'Test Transaction',
+                image: "https://i.ibb.co.com/SmbFbDC/footer-Logo.png",
+                order_id: response?.data?.order?.id, // the order id
+                callback_url: 'https://interior-design-backend-nine.vercel.app/api/v1/paymentverification', // success URL
+                prefill: {
+                    name: userData?.user?.full_name,
+                    email: userData?.user?.email,
+                    contact: userData?.user?.phoneNo,
+                },
+                theme: {
+                    color: '#7E77D6'
+                },
+            };
+            const rzp = new window.Razorpay(options);
+            rzp.open();
+
+            localStorage.setItem("orderProducts", JSON.stringify(cartProducts));
+
+        } catch (error) {
+            console.error('Error during checkout:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
 
     return (
@@ -38,8 +96,8 @@ const OrderSummary = () => {
                 <>
                     <div className="d-flex p-2 gap-3 flex-column align-items-start shadow shadow-sm border-custom-light rounded-3">
                         <h4>Logged in as</h4>
-                        <div className="d-flex align-items-center gap-2">
-                            <img src="https://media.licdn.com/dms/image/v2/D4D03AQHrT6zBAnondQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1727031609722?e=1740009600&v=beta&t=z5jb5Rmvsei4hKeQNoxHMJoziLg36PKcSkS_sOznCw4" alt="" style={{ width: '40px', height: '40px', objectFit: 'cover', borderRadius: '50%' }} />
+                        <div className="d-flex align-items-center">
+                            <img src={user} alt="Profile" className="profile-pic" />
                             <h6 className="m-0">{userData.user.full_name}</h6>
                         </div>
                         <div className="d-flex flex-column ">
@@ -57,7 +115,7 @@ const OrderSummary = () => {
                                     : "Address not available"}
                             </p>
                         </div>
-                        <button className="btn btn-primary py-2">Edit Address</button>
+                        <Link to={"/address-book"} className="btn btn-primary py-2">Edit Address</Link>
                     </div>
                 </>
             )}
@@ -222,7 +280,18 @@ const OrderSummary = () => {
                                         on this order
                                     </p>
                                 </div>
-                                <button className="btn btn-lg-colored w-100 py-2">Proceed to Pay</button>
+                                <button onClick={handleCheckout} className="btn btn-lg-colored w-100 py-2">
+                                    {
+                                        loading ?
+                                            <div className="d-flex justify-content-center">
+                                                <div className="spinner-border text-primary" role="status">
+                                                    <span className="visually-hidden">Loading...</span>
+                                                </div>
+                                            </div>
+                                            :
+                                            "Proceed to Pay"
+                                    }
+                                </button>
                             </div>
                         </div>
                     </div>
