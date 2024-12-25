@@ -3,6 +3,7 @@ import Sidebar from "./Sidebar";
 import AddressCard from "./AddressCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import CheckBox from "../InputFields/CheckBox";
 
 const AddingNewAddress = () => {
   const [userData, setUserData] = useState(null);
@@ -63,6 +64,8 @@ const AddingNewAddress = () => {
     }
   };
 
+  console.log(userData.user.primaryaddress);
+
   return (
     <section className="dashboard-container">
       <div className="main-content">
@@ -72,7 +75,7 @@ const AddingNewAddress = () => {
         <div>
           <div className="content-sections">
             <Sidebar />
-            <div className="Dashcard-section">
+            <div className="Dashcard-section d-flex flex-column w-100 gap-4">
               <div className="address-cards">
                 {/* for primary address */}
                 <AddressCard
@@ -93,7 +96,7 @@ const AddingNewAddress = () => {
               {/* Address Form */}
               {selectedAddress === "primaryaddress" && (
                 <form onSubmit={handleUpdateAddress} className="addaddressform">
-                  <div className="form-details">
+                  <div className="form-details d-flex flex-column gap-2">
                     {/* <label htmlFor="full_name">Full Name</label>
                     <input
                       type="text"
@@ -118,15 +121,20 @@ const AddingNewAddress = () => {
                       onChange={handleInputChange}
                       required
                     /> */}
+                    <div className="d-flex w-100 flex-column gap-1">
                     <label htmlFor="address">Address</label>
                     <input
                     placeholder="Siya ram puri ayodhya"
                       type="text"
                       id="address"
+                      style={{width: '100%', height: '55px'}}
                       defaultValue={userData?.user?.primaryaddress?.address}
                       
                       required
                     />
+                    </div>
+                    <div className="d-flex w-100 flex-column gap-1">
+
                     <label htmlFor="landmark">Landmark</label>
                     <input
                     placeholder="Ram mandir"
@@ -136,8 +144,11 @@ const AddingNewAddress = () => {
                       
                       required
                     />
+                    </div>
+
                     <div className="detailaddress">
-                      <label htmlFor="state">State</label>
+                     <div className="d-flex flex-column gap-1">
+                     <label htmlFor="state">State</label>
                       <input
                       placeholder="UP"
                         type="text"
@@ -146,6 +157,8 @@ const AddingNewAddress = () => {
                         
                         required
                       />
+                     </div>
+                      <div className="d-flex flex-column gap-1">
                       <label htmlFor="city">Town/City</label>
                       <input
                       placeholder="Ayodhya"
@@ -155,6 +168,8 @@ const AddingNewAddress = () => {
                         
                         required
                       />
+                      </div>
+                      <div className="d-flex flex-column gap-1">
                       <label htmlFor="pin_code">Pincode</label>
                       <input
                       placeholder="224123"
@@ -164,10 +179,17 @@ const AddingNewAddress = () => {
                         required
                       />
                     </div>
+                    </div>
                     <div>
-                      <button type="submit" className="btn btn-base-transparent">
+
+                      <div className="d-flex flex-column gap-2 my-2">
+                      <CheckBox label="Set as Primary Address" />
+                      <button type="submit" className="btn btn-base-transparent w-auto"
+                        style={{width: 'fit-content !important'}}
+                      >
                         Update
                       </button>
+                      </div>
                     </div>
                   </div>
                 </form>

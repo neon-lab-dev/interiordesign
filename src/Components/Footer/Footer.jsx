@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 const Footer = () => {
     return (
-        <footer className="w-100">
+        <footer className="w-100" id="footer">
             <div className="d-flex align-items-start justify-content-between w-100 hide-1024">
                 <div className="footer-logo">
                     <img src={IMAGES.footerLogo} alt="" />

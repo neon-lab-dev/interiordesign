@@ -21,7 +21,8 @@
     
 }
 
-.btnContainer button {
+.btnContainer button,
+.btnContainer a{
     display: flex;
     width: 174px;
     padding: 14.5px 12px;
