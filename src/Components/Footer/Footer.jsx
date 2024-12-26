@@ -1,4 +1,4 @@
-import { IMAGES } from "../../assets/Assets"
+import { ICONS, IMAGES } from "../../assets/Assets"
 import './Footer.css'
 import { Link } from "react-router-dom"
 
@@ -30,17 +30,15 @@ const Footer = () => {
                     <div className="footer-links gap-2">
                         <span className="footer-head text-uppercase">connect with us</span>
                         <div className="d-flex flex-column gap-1">
-                            {/* <a href="/">Home</a>
-                            <a href="/">About</a>
-                            <a href="/">Products</a> */}
+                            <p>Email: info@spaceframe.co.in</p>
+                            <p>Mobile: +91 9953520512                             </p>
                         </div>
                     </div>
                     <div className="footer-links gap-2">
                         <span className="footer-head text-uppercase">visit our store</span>
-                        <div className="d-flex flex-column gap-1">
-                            {/* <a href="/">Home</a>
-                            <a href="/">About</a>
-                            <a href="/">Products</a> */}
+                        <div className="d-flex flex-row gap-1">
+                            <img src={ICONS.address} alt="" className="address-img"/>
+                            <p>2nd floor, iWorkk, 90, Mehrauli-Gurgaon Rd, Industrial Development Area, Sector 16, Gurugram, Haryana 122007</p>
                         </div>
                     </div>
                 </div>
