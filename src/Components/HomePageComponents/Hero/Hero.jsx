@@ -118,6 +118,7 @@ const Hero = () => {
                       type="text"
                       id="from_name"
                       className="input-box input-box-height"
+                      placeholder="Enter your name"
                     />
                   </div>
                   <div className="mb-3">
@@ -129,6 +130,7 @@ const Hero = () => {
                       id="mobileNumber"
                       name="mobileNumber"
                       className="input-box input-box-height"
+                      placeholder="Enter your mobile number"
                     />
                   </div>
                   <div className="mb-3">
@@ -140,6 +142,7 @@ const Hero = () => {
                       id="message"
                       className="input-box text-white p-1"
                       rows="3"
+                      placeholder="Want to know about 500 office chair cost"
                     ></textarea>
                   </div>
                   <button type="submit" className="w-100 custom-text-2 btn-bg">
