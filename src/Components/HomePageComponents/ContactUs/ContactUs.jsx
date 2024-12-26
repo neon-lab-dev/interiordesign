@@ -40,7 +40,7 @@ const ContactUs = () => {
                   type="text"
                   id="name"
                   className="input-box input-box-height"
-                  placeholder="Kabir Sah"
+                  placeholder="Enter your name"
                 />
               </div>
               <div className="mb-3">

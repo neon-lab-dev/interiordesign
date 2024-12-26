@@ -183,6 +183,9 @@ input,
 .input-field-container{
   width: 100%;
 }
+textarea{
+  padding:  16px;
+}
 
 input:focus {
   border: 1px solid rgba(255, 255, 255, 0.6);
