@@ -131,7 +131,7 @@ const Nav = () => {
                   <img src={ICONS.profileIconGrey} alt="" />
                   <span>Profile</span>
                 </Link>
-                <p onClick={handleLogout} className="cursor-pointer">Logout</p>
+                <button  onClick={handleLogout} className="cursor-pointer btn-transparent">Logout</button>
               </div>
             ) : (
               <div>

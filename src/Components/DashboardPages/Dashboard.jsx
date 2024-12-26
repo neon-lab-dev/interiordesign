@@ -47,13 +47,9 @@ const Dashboard = () => {
         <div>
           <div className="content-sections">
           {isLargeScreen && <Sidebar />}
-            <div className="Dashcard-section">
+            <div className="Dashcard-section w-100">
               <AccountDetails userData={userData} />
               <RecentOrders />
-              <div className="address-cards">
-                <AddressCard />
-                <AddressCard />
-              </div>
             </div>
           </div>
         </div>

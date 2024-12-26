@@ -7,9 +7,10 @@ const RecentOrders = () => {
       <div className=" flex-1 flex-column gap-2 mt-2 recent-bigscreen">
         <div className="head w-100 d-flex items-center justify-start">
           <span style={{ width: "20%" }}>Order ID</span>
-          <span style={{ width: "25%" }}>Order Date</span>
+          <span style={{ width: "20%" }}>Order Date</span>
           <span style={{ width: "15%" }}>Order Total</span>
           <span style={{ width: "20%" }}>Status</span>
+          <span style={{ width: "25%" }}></span>
         </div>
         <div className="py-3 w-100 d-flex items-center justify-between order-row">
           <span style={{ width: "20%" }}>#123456</span>

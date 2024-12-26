@@ -106,23 +106,26 @@ const OrderSummary = () => {
                                             </div>
                                         </d-flex>
 
-                                        <div className="d-flex align-items-center gap-3">
+                                        <div className="d-flex align-items-center gap-3 quantity-control">
                                             {/* Quantity Control */}
                                             <div className="d-flex items-start flex-column gap-1 pe-2 border-end h-100 justify-content-between">
                                                 <span>
                                                     <b>Quantity</b>
                                                 </span>
                                                 <div className="d-flex items-center">
-                                                    <button className="btn btn-transparent">{product.quantity}</button>
+                                                    <button className="btn btn-transparent"
+                                                    >{product.quantity}</button>
                                                 </div>
                                             </div>
                                             {/* Quantity Control */}
-                                            <div className="d-flex items-start flex-column gap-1 pe-2 border-end  h-100 justify-content-between">
+                                            <div className="d-flex items-start flex-column gap-1 pe-2 border-end h-100 justify-content-between "
+                                            >
                                                 <span>
                                                     <b>Size</b>
                                                 </span>
                                                 <div className="d-flex items-center">
-                                                    <button className="btn btn-black active">{product.size}</button>
+                                                    <button className="btn btn-black active"
+                                                    >{product.size}</button>
                                                 </div>
                                             </div>
                                             {/* Quantity Control */}
@@ -131,7 +134,8 @@ const OrderSummary = () => {
                                                     <b>Color</b>
                                                 </span>
                                                 <div className="d-flex items-center">
-                                                    <button className="btn btn-transparent">{product.color}</button>
+                                                    <button className="btn btn-transparent"
+                                                    >{product.color}</button>
                                                 </div>
                                             </div>
                                         </div>

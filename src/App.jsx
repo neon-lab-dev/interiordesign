@@ -58,7 +58,7 @@ function App() {
         <Route path="/changepass" element={<ChangePassWord />}></Route>
         <Route path="/addresspage" element={<AddressPage />} />
         <Route path="/address-book" element={<AddingNewAddress />} />
-        <Route path="/changepass" element={<ChangePassWord />} />
+        <Route path="/password-reset" element={<ChangePassWord />} />
         <Route path="/ordersummary" element={<OrderSummary />} />
         <Route path="/account-details" element={<AccountDetailsPage />} />
         <Route path="/tandc" element={<TandC />} />
