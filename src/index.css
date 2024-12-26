@@ -72,6 +72,9 @@ section {
     padding: 42px 27px;
     gap: 36px;
   }
+  .div-info{
+    padding: 20px;
+  }
 }
 
 @media (max-width: 375px) {

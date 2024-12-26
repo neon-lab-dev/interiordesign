@@ -31,7 +31,7 @@ const Footer = () => {
                         <span className="footer-head text-uppercase">connect with us</span>
                         <div className="d-flex flex-column gap-1">
                             <p>Email: info@spaceframe.co.in</p>
-                            <p>Mobile: +91 9953520512                             </p>
+                            <p>Mobile: +91 9953520512 </p>
                         </div>
                     </div>
                     <div className="footer-links gap-2">
@@ -72,9 +72,10 @@ const Footer = () => {
                         </h2>
                         <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#footerAccordion">
                             <div className="accordion-body d-flex flex-column gap-1">
-                                <Link to="/">Home</Link>
-                                <Link to="/">About</Link>
-                                <Link to="/products">Products</Link>
+                            <a href="/contact">Contact Us</a>
+                            <a href="/privacy">Privacy Policy</a>
+                            <a href="/shipping">Shipping and Refund Policy</a>
+                            <a href="/tandc">Terms and Conditions</a>
                             </div>
                         </div>
                     </div>
@@ -86,9 +87,8 @@ const Footer = () => {
                         </h2>
                         <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#footerAccordion">
                             <div className="accordion-body d-flex flex-column gap-1">
-                                <Link to="/">Home</Link>
-                                <Link to="/">About</Link>
-                                <Link to="/products">Products</Link>
+                            <p>Email: info@spaceframe.co.in</p>
+                            <p>Mobile: +91 9953520512 </p>
                             </div>
                         </div>
                     </div>
@@ -99,10 +99,9 @@ const Footer = () => {
                             </button>
                         </h2>
                         <div id="collapseFour" className="accordion-collapse collapse" data-bs-parent="#footerAccordion">
-                            <div className="accordion-body d-flex flex-column gap-1">
-                                <Link to="/">Home</Link>
-                                <Link to="/">About</Link>
-                                <Link to="/products">Products</Link>
+                            <div className="accordion-body d-flex flex-row gap-1">
+                            <img src={ICONS.address} alt="" className="address-img"/>
+                            <p>2nd floor, iWorkk, 90, Mehrauli-Gurgaon Rd, Industrial Development Area, Sector 16, Gurugram, Haryana 122007</p>
                             </div>
                         </div>
                     </div>
