@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./ProductInfo.css";
+import { useNavigate } from "react-router-dom";
+import { use } from "react";
 
 const ProductInfo = ({ product }) => {
   const {
@@ -13,7 +15,8 @@ const ProductInfo = ({ product }) => {
     _id,
     images = [],
   } = product || {};
-
+  const navigate = useNavigate();
+  
   const calculatePrice = (basePrice, discountedPercent) => {
     return basePrice - (basePrice * discountedPercent) / 100;
   };
@@ -24,6 +27,10 @@ const ProductInfo = ({ product }) => {
   const handleSizeClick = (size) => {
     setSelectedSize(size);
   };
+
+  const handleInquireNow = () => {
+    navigate("/contact");
+  }
 
   const handleBuyNow = () => {
     let cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
@@ -139,6 +146,9 @@ const ProductInfo = ({ product }) => {
         >Buy Now</button>
         <button className="btn btn-primary" onClick={handleAddToCart}>
           Add to Cart
+        </button>
+        <button className="btn btn-primary" onClick={handleInquireNow}>
+          Inquire Now
         </button>
       </div>
     </div>
