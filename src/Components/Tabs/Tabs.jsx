@@ -24,7 +24,10 @@ const Tabs = ({ productId }) => {
 
           // Calculate average rating and total reviews
           const totalReviews = data.reviews.length;
-          const totalRating = data.reviews.reduce((sum, review) => sum + review.rating, 0);
+          const totalRating = data.reviews.reduce(
+            (sum, review) => sum + review.rating,
+            0
+          );
           setAverageRating((totalRating / totalReviews).toFixed(1));
           setReviewCount(totalReviews);
         } else {
@@ -83,58 +86,115 @@ const Tabs = ({ productId }) => {
       <ul className="nav nav-tabs border-0" id="myTab" role="tablist">
         {/* Tab Headers */}
         <li className="nav-item" role="presentation">
-          <button className="nav-link" id="key-specification-tab" data-bs-toggle="tab" data-bs-target="#key-specification-tab-pane" type="button" role="tab" aria-controls="key-specification-tab-pane" aria-selected="true">
+          <button
+            className="nav-link"
+            id="key-specification-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#key-specification-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="key-specification-tab-pane"
+            aria-selected="true"
+          >
             Key Features
           </button>
         </li>
         <li className="nav-item" role="presentation">
-          <button className="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+          <button
+            className="nav-link"
+            id="profile-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#profile-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="profile-tab-pane"
+            aria-selected="false"
+          >
             Specifications
           </button>
         </li>
         <li className="nav-item" role="presentation">
-          <button className="nav-link active" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">
+          <button
+            className="nav-link active"
+            id="contact-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#contact-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="contact-tab-pane"
+            aria-selected="false"
+          >
             Customer Review
           </button>
         </li>
       </ul>
       <div className="tab-content" id="myTabContent">
-        <div className="tab-pane fade" id="key-specification-tab-pane" role="tabpanel" aria-labelledby="key-specification-tab">
+        <div
+          className="tab-pane fade"
+          id="key-specification-tab-pane"
+          role="tabpanel"
+          aria-labelledby="key-specification-tab"
+        >
           ...
         </div>
-        <div className="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab">
+        <div
+          className="tab-pane fade"
+          id="profile-tab-pane"
+          role="tabpanel"
+          aria-labelledby="profile-tab"
+        >
           ...
         </div>
-        <div className="tab-pane fade show active" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab">
+        <div
+          className="tab-pane fade show active"
+          id="contact-tab-pane"
+          role="tabpanel"
+          aria-labelledby="contact-tab"
+        >
           {/* Customer Reviews Section */}
           <div className="d-flex items-center justify-between gap-2 customersTabContent w-100">
             <div className="ratings d-flex flex-column gap-4">
               <div className="average-rating d-flex flex-column gap-1 align-items-start justify-content-between">
                 <div className="d-flex align-items-center gap-1">
                   <img src={ICONS.star} alt="Star Icon" />
-                  <span style={{ lineHeight: "1" }}>{averageRating || "0"}</span>
+                  <span style={{ lineHeight: "1" }}>
+                    {averageRating || "0"}
+                  </span>
                 </div>
                 <div className="reviews-count">{reviewCount} Reviews</div>
               </div>
             </div>
             <div className="reviews-section flex-grow-1 ">
               {reviews.map((review) => (
-                <div key={review._id} className="d-flex align-items-center flex-column gap-2 testimonial h-fit">
+                <div
+                  key={review._id}
+                  className="d-flex align-items-center flex-column gap-2 testimonial h-fit"
+                >
                   <div className="d-flex align-items-center justify-content-center gap-1">
-                    <img src={ICONS.star} alt="" style={{ width: "24px", height: "24px" }} />
+                    <img
+                      src={ICONS.star}
+                      alt=""
+                      style={{ width: "24px", height: "24px" }}
+                    />
                     <span style={{ lineHeight: "0px" }}>{review.rating}</span>
                     <span className="author">{review.name}</span>
                   </div>
-                  <div className="testimonial-description">{review.comment}</div>
+                  <div className="testimonial-description">
+                    {review.comment}
+                  </div>
                 </div>
               ))}
               {/* No Reviews Message */}
 
-             <div className="d-flex justify-content-center align-items-center">
-             <button className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#writeReviewModal">
-                Write a Review
-              </button>
-             </div>
+              <div className="d-flex justify-content-center align-items-center">
+                <button
+                  className="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#writeReviewModal"
+                >
+                  Write a Review
+                </button>
+              </div>
 
               {reviewCount === 0 && (
                 <div className="d-flex justify-content-center mt-5 flex-column align-items-center text-center">
@@ -148,14 +208,26 @@ const Tabs = ({ productId }) => {
       </div>
 
       {/* Modal for Writing a Review */}
-      <div className="modal fade" id="writeReviewModal" tabIndex="-1" aria-labelledby="writeReviewModalLabel" aria-hidden="true">
+      <div
+        className="modal fade"
+        id="writeReviewModal"
+        tabIndex="-1"
+        aria-labelledby="writeReviewModalLabel"
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="modal-header border-0">
               <h5 className="modal-title" id="writeReviewModalLabel">
                 Write a Review
               </h5>
-              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <span
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                className="ms-auto"
+              >
+                <img src={ICONS.close} alt="" style={{ width: "20px" }} />
+              </span>
             </div>
             <div className="modal-body">
               <div className="mb-3">
@@ -166,28 +238,36 @@ const Tabs = ({ productId }) => {
                   {[1, 2, 3, 4, 5].map((index) => (
                     <img
                       key={index}
-                      src={rating >= index ? ICONS.star : ICONS.emptyStar}
+                      src={rating >= index ? ICONS.starFilled : ICONS.starEmpty}
                       alt="Star"
-                      style={{ cursor: "pointer", width: "24px", height: "24px" }}
+                      style={{
+                        cursor: "pointer",
+                        width: "24px",
+                        height: "24px",
+                      }}
                       onClick={() => handleStarClick(index)}
                     />
                   ))}
                 </div>
               </div>
-                <label htmlFor="comment" className="form-label">
-                  Write your comment:
-                </label>
-                <textarea
-                  className="form-control"
-                  id="comment"
-                  rows="3"
-                  value={comment}
-                  onChange={(e) => setComment(e.target.value)}
-                  style={{ resize: "none" }}
-                ></textarea>
+              <label htmlFor="comment" className="form-label">
+                Write your comment:
+              </label>
+              <textarea
+                className="form-control"
+                id="comment"
+                rows="3"
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+                style={{ resize: "none" }}
+              ></textarea>
             </div>
             <div className="modal-footer border-0">
-              <button type="button" className="btn btn-primary" onClick={handleSubmitReview}>
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={handleSubmitReview}
+              >
                 Submit
               </button>
             </div>
