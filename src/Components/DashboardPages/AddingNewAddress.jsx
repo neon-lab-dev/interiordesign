@@ -13,9 +13,12 @@ const AddingNewAddress = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get("https://interior-design-backend-nine.vercel.app/api/v1/me", {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          "https://interior-design-backend-nine.vercel.app/api/v1/me",
+          {
+            withCredentials: true,
+          }
+        );
         setUserData(response.data);
       } catch (error) {
         console.error("Error fetching user data:", error);
@@ -64,13 +67,15 @@ const AddingNewAddress = () => {
     }
   };
 
-  console.log(userData.user.primaryaddress);
+  // console.log(userData.user.primaryaddress);
 
   return (
     <section className="dashboard-container">
       <div className="main-content">
         <div className="py-3 border-1 border-bottom border-gray d-flex align-items-center justify-content-center">
-          <span className="welcome-text">Welcome, {userData?.user?.full_name}</span>
+          <span className="welcome-text">
+            Welcome, {userData?.user?.full_name}
+          </span>
         </div>
         <div>
           <div className="content-sections">
@@ -122,73 +127,71 @@ const AddingNewAddress = () => {
                       required
                     /> */}
                     <div className="d-flex w-100 flex-column gap-1">
-                    <label htmlFor="address">Address</label>
-                    <input
-                    placeholder="Siya ram puri ayodhya"
-                      type="text"
-                      id="address"
-                      style={{width: '100%', height: '55px'}}
-                      defaultValue={userData?.user?.primaryaddress?.address}
-                      
-                      required
-                    />
+                      <label htmlFor="address">Address</label>
+                      <input
+                        placeholder="Siya ram puri ayodhya"
+                        type="text"
+                        id="address"
+                        style={{ width: "100%", height: "55px" }}
+                        defaultValue={userData?.user?.primaryaddress?.address}
+                        required
+                      />
                     </div>
                     <div className="d-flex w-100 flex-column gap-1">
-
-                    <label htmlFor="landmark">Landmark</label>
-                    <input
-                    placeholder="Ram mandir"
-                      type="text"
-                      id="landmark"
-                      defaultValue={userData?.user?.primaryaddress?.landmark}
-                      
-                      required
-                    />
+                      <label htmlFor="landmark">Landmark</label>
+                      <input
+                        placeholder="Ram mandir"
+                        type="text"
+                        id="landmark"
+                        defaultValue={userData?.user?.primaryaddress?.landmark}
+                        required
+                      />
                     </div>
 
                     <div className="detailaddress">
-                     <div className="d-flex flex-column gap-1">
-                     <label htmlFor="state">State</label>
-                      <input
-                      placeholder="UP"
-                        type="text"
-                        id="state"
-                        defaultValue={userData?.user?.primaryaddress?.state}
-                        
-                        required
-                      />
-                     </div>
                       <div className="d-flex flex-column gap-1">
-                      <label htmlFor="city">Town/City</label>
-                      <input
-                      placeholder="Ayodhya"
-                        type="text"
-                        id="city"
-                        defaultValue={userData?.user?.primaryaddress?.city}
-                        
-                        required
-                      />
+                        <label htmlFor="state">State</label>
+                        <input
+                          placeholder="UP"
+                          type="text"
+                          id="state"
+                          defaultValue={userData?.user?.primaryaddress?.state}
+                          required
+                        />
                       </div>
                       <div className="d-flex flex-column gap-1">
-                      <label htmlFor="pin_code">Pincode</label>
-                      <input
-                      placeholder="224123"
-                        type="text"
-                        id="pin_code"
-                        defaultValue={userData?.user?.primaryaddress?.pin_code}
-                        required
-                      />
-                    </div>
+                        <label htmlFor="city">Town/City</label>
+                        <input
+                          placeholder="Ayodhya"
+                          type="text"
+                          id="city"
+                          defaultValue={userData?.user?.primaryaddress?.city}
+                          required
+                        />
+                      </div>
+                      <div className="d-flex flex-column gap-1">
+                        <label htmlFor="pin_code">Pincode</label>
+                        <input
+                          placeholder="224123"
+                          type="text"
+                          id="pin_code"
+                          defaultValue={
+                            userData?.user?.primaryaddress?.pin_code
+                          }
+                          required
+                        />
+                      </div>
                     </div>
                     <div>
-
                       <div className="d-flex flex-column gap-2 my-2">
-                      <CheckBox label="Set as Primary Address" />
-                      <button type="submit" className="btn btn-base-transparent w-auto"
-                        style={{width: 'fit-content !important'}}
-                      >
-                        Update
-                      </button>
+                        <CheckBox label="Set as Primary Address" />
+                        <button
+                          type="submit"
+                          className="btn btn-base-transparent w-auto"
+                          style={{ width: "fit-content !important" }}
+                        >
+                          Update
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -223,52 +226,53 @@ const AddingNewAddress = () => {
                     /> */}
                     <label htmlFor="address">Address</label>
                     <input
-                    placeholder="Siya ram puri ayodhya"
+                      placeholder="Siya ram puri ayodhya"
                       type="text"
                       id="address"
                       defaultValue={userData?.user?.secondaryaddress?.address}
-                      
                       required
                     />
                     <label htmlFor="landmark">Landmark</label>
                     <input
-                    placeholder="Ram mandir"
+                      placeholder="Ram mandir"
                       type="text"
                       id="landmark"
                       defaultValue={userData?.user?.secondaryaddress?.landmark}
-                      
                       required
                     />
                     <div className="detailaddress">
                       <label htmlFor="state">State</label>
                       <input
-                      placeholder="UP"
+                        placeholder="UP"
                         type="text"
                         id="state"
                         defaultValue={userData?.user?.secondaryaddress?.state}
-                        
                         required
                       />
                       <label htmlFor="city">Town/City</label>
                       <input
-                      placeholder="Ayodhya"
+                        placeholder="Ayodhya"
                         type="text"
                         id="city"
                         defaultValue={userData?.user?.secondaryaddress?.city}
-                        
                         required
                       />
                       <label htmlFor="pin_code">Pincode</label>
                       <input
-                      placeholder="224123"
+                        placeholder="224123"
                         type="text"
                         id="pin_code"
-                        defaultValue={userData?.user?.secondaryaddress?.pin_code}
+                        defaultValue={
+                          userData?.user?.secondaryaddress?.pin_code
+                        }
                         required
                       />
                     </div>
                     <div>
-                      <button type="submit" className="btn btn-base-transparent">
+                      <button
+                        type="submit"
+                        className="btn btn-base-transparent"
+                      >
                         Update
                       </button>
                     </div>

@@ -18,6 +18,8 @@ import sortBy from "@/assets/Icons/sortBy.svg";
 import chair from "@/assets/Images/chair.png";
 import add from "@/assets/Icons/add.svg";
 import star from "@/assets/Icons/star.svg";
+import starEmpty from "@/assets/Icons/star-empty.svg";
+import starFilled from "@/assets/Icons/star-filled.svg";
 import like from "@/assets/Icons/like.svg";
 import profile from "@/assets/Images/profile.jpeg";
 import blue_chair from "@/assets/Images/blue_chair.png";
@@ -27,10 +29,10 @@ import whoWeAre from "../assets/Images/who-we-are.png";
 import TrashBin from "../assets/Icons/TrashBin.png";
 import paymentSuccess from "../assets/Icons/success.svg";
 import address from "../assets/Icons/MapPointWave.png";
-
+import close from "../assets/Icons/close.svg";
 
 // home (hero section)
-import bg from "../assets/Images/BG.jpg"
+import bg from "../assets/Images/BG.jpg";
 
 // Our service images
 import interiorDesign from "../assets/Images/interior-design.png";
@@ -39,13 +41,13 @@ import civil from "../assets/Images/civil.png";
 import modularFurniture from "../assets/Images/modular-furniture.png";
 import looseFurniture from "../assets/Images/loose-furniture.png";
 import officeFurniture from "../assets/Images/office-furniture.png";
-import bedsheet from "@/assets/Images/bedsheet.png"
-import bed from "../assets/Images/bed.png"
-import ArrowRightUp from "@/assets/Icons/ArrowRightUp.png"
-import SimpleArrowRightEnable from "@/assets/Icons/SimpleArrowRightEnable.png"
-import SimpleArrowRightDisable from "@/assets/Icons/SimpleArrowRightDisable.png"
-import SimpleArrowLeftEnable from "@/assets/Icons/SimpleArrowLeftEnable.png"
-import SimpleArrowLeftDisable from "@/assets/Icons/SimpleArrowLeftDisable.svg"
+import bedsheet from "@/assets/Images/bedsheet.png";
+import bed from "../assets/Images/bed.png";
+import ArrowRightUp from "@/assets/Icons/ArrowRightUp.png";
+import SimpleArrowRightEnable from "@/assets/Icons/SimpleArrowRightEnable.png";
+import SimpleArrowRightDisable from "@/assets/Icons/SimpleArrowRightDisable.png";
+import SimpleArrowLeftEnable from "@/assets/Icons/SimpleArrowLeftEnable.png";
+import SimpleArrowLeftDisable from "@/assets/Icons/SimpleArrowLeftDisable.svg";
 
 // explore design images
 import explore1 from "../assets/Images/explore1.jpg";
@@ -59,12 +61,12 @@ import explore6 from "../assets/Images/explore6.jpg";
 import contact from "../assets/Images/contact.jpg";
 
 // Winning collabratoes-home
-import overlay from"../assets/Icons/blackRocks.svg"
-import blackRocks from "../assets/Images/blackRock logo.png"
-import clearWater from "../assets/Images/water.png"
-import cevnt from "../assets/Images/cevnt.png"
-import berkdia from "../assets/Images/berkadia.png"
-import baker from "../assets/Images/baker.png"
+import overlay from "../assets/Icons/blackRocks.svg";
+import blackRocks from "../assets/Images/blackRock logo.png";
+import clearWater from "../assets/Images/water.png";
+import cevnt from "../assets/Images/cevnt.png";
+import berkdia from "../assets/Images/berkadia.png";
+import baker from "../assets/Images/baker.png";
 
 export const IMAGES = {
   logo,
@@ -96,8 +98,7 @@ export const IMAGES = {
   clearWater,
   cevnt,
   berkdia,
-  baker
-  
+  baker,
 };
 
 export const ICONS = {
@@ -117,14 +118,17 @@ export const ICONS = {
   sortBy,
   add,
   star,
+  starFilled,
   like,
+  close,
+  starEmpty,
   editSquare,
   TrashBin,
-    ArrowRightUp,
-    SimpleArrowLeftDisable,
-    SimpleArrowRightEnable,
-    SimpleArrowRightDisable,
-    SimpleArrowLeftEnable,
-    overlay, 
-    address
+  ArrowRightUp,
+  SimpleArrowLeftDisable,
+  SimpleArrowRightEnable,
+  SimpleArrowRightDisable,
+  SimpleArrowLeftEnable,
+  overlay,
+  address,
 };
