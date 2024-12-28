@@ -33,7 +33,7 @@ const ProductImages = ({ images = [] }) => {
   };
 
   return (
-    <div className="product-image-container d-flex justify-content-between h-100 w-50">
+    <div className="product-image-container d-flex justify-content-between h-100">
       {/* Left Column for Thumbnails */}
       <div className="product-image-thumbnails d-flex flex-column gap-3 d-md-flex d-none">
         {images.map((img, idx) => (
@@ -64,7 +64,10 @@ const ProductImages = ({ images = [] }) => {
             className="w-100 h-100 rounded-3"
           />
         )}
-        <div className="product-zoom" style={zoomStyle}></div>
+        <div
+          className="product-zoom w-100 h-100 rounded-3"
+          style={zoomStyle}
+        ></div>
       </div>
     </div>
   );
