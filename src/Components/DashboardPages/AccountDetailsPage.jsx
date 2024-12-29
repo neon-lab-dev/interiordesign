@@ -16,7 +16,10 @@ const AccountDetailsPage = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get("https://interior-design-backend-nine.vercel.app/api/v1/me", { withCredentials: true });
+        const response = await axios.get(
+          "https://interior-design-backend-nine.vercel.app/api/v1/me",
+          { withCredentials: true }
+        );
         setUserData(response.data);
       } catch (error) {
         console.error("Error fetching user data:", error);
@@ -36,7 +39,7 @@ const AccountDetailsPage = () => {
     e.preventDefault();
     try {
       setIsEditing(false);
-  
+
       // Fetch input values directly from the form
       const formData = new FormData();
       formData.append("full_name", e.target.full_name.value);
@@ -48,15 +51,15 @@ const AccountDetailsPage = () => {
       // if (file) {
       //   formData.append("profilePic", file);
       // }
-  
+
       // Send update request
-      const response =  await axios.put(
+      const response = await axios.put(
         "https://interior-design-backend-nine.vercel.app/api/v1/me/update",
         formData,
         { withCredentials: true }
       );
-  
-      if(response.data.message){
+
+      if (response.data.message) {
         toast.success("Profile updated successfully");
         window.location.reload();
       }
@@ -64,17 +67,24 @@ const AccountDetailsPage = () => {
       console.error("Error updating user details:", error);
     }
   };
-  
 
   if (!userData) {
-    return <div>Loading...</div>;
+    return (
+      <div className="w-100 d-flex align-items-center justify-content-center py-5">
+        <div class="spinner-border mx-auto" role="status">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+    );
   }
 
   return (
     <section className="dashboard-container">
       <div className="main-content">
         <div className="py-3 border-1 border-bottom border-gray d-flex align-items-center justify-content-center">
-          <span className="welcome-text">Welcome, {userData?.user?.full_name}</span>
+          <span className="welcome-text">
+            Welcome, {userData?.user?.full_name}
+          </span>
         </div>
         <div className="content-sections">
           <Sidebar />
@@ -85,11 +95,7 @@ const AccountDetailsPage = () => {
                 <FaRegEdit />
               </span>
               <div className="img-Name">
-                <img
-                  src={user}
-                  alt="Profile"
-                  className="profile-pic"
-                />
+                <img src={user} alt="Profile" className="profile-pic" />
                 <span className="c">{userData?.user?.full_name}</span>
               </div>
               <div className="d-flex flex-column profileContacts gap-1">
@@ -146,10 +152,7 @@ const AccountDetailsPage = () => {
                     */}
                   </div>
 
-                  <button
-                    type="submit"
-                    className="save-btn"
-                  >
+                  <button type="submit" className="save-btn">
                     Update
                   </button>
                 </form>

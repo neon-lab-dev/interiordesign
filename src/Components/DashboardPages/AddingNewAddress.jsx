@@ -148,7 +148,7 @@ const AddingNewAddress = () => {
                       />
                     </div>
 
-                    <div className="detailaddress">
+                    <div className="detailaddress flex-wrap">
                       <div className="d-flex flex-column gap-1">
                         <label htmlFor="state">State</label>
                         <input
@@ -183,11 +183,13 @@ const AddingNewAddress = () => {
                       </div>
                     </div>
                     <div>
-                      <div className="d-flex flex-column gap-2 my-2">
-                        <CheckBox label="Set as Primary Address" />
+                      <div
+                        className="d-flex flex-column gap-2 my-2"
+                        style={{ width: "200px" }}
+                      >
                         <button
                           type="submit"
-                          className="btn btn-base-transparent w-auto"
+                          className="btn btn-base-transparent w-fit"
                           style={{ width: "fit-content !important" }}
                         >
                           Update
@@ -199,7 +201,7 @@ const AddingNewAddress = () => {
               )}
               {selectedAddress === "secondaryaddress" && (
                 <form onSubmit={handleUpdateAddress} className="addaddressform">
-                  <div className="form-details">
+                  <div className="form-details d-flex flex-column gap-2">
                     {/* <label htmlFor="full_name">Full Name</label>
                     <input
                       type="text"
@@ -224,54 +226,70 @@ const AddingNewAddress = () => {
                       onChange={handleInputChange}
                       required
                     /> */}
-                    <label htmlFor="address">Address</label>
-                    <input
-                      placeholder="Siya ram puri ayodhya"
-                      type="text"
-                      id="address"
-                      defaultValue={userData?.user?.secondaryaddress?.address}
-                      required
-                    />
-                    <label htmlFor="landmark">Landmark</label>
-                    <input
-                      placeholder="Ram mandir"
-                      type="text"
-                      id="landmark"
-                      defaultValue={userData?.user?.secondaryaddress?.landmark}
-                      required
-                    />
-                    <div className="detailaddress">
-                      <label htmlFor="state">State</label>
+                    <div className="d-flex w-100 flex-column gap-1">
+                      <label htmlFor="address">Address</label>
                       <input
-                        placeholder="UP"
+                        placeholder="Siya ram puri ayodhya"
                         type="text"
-                        id="state"
-                        defaultValue={userData?.user?.secondaryaddress?.state}
+                        id="address"
+                        defaultValue={userData?.user?.secondaryaddress?.address}
                         required
                       />
-                      <label htmlFor="city">Town/City</label>
+                    </div>
+                    <div className="d-flex w-100 flex-column gap-1">
+                      <label htmlFor="landmark">Landmark</label>
                       <input
-                        placeholder="Ayodhya"
+                        placeholder="Ram mandir"
                         type="text"
-                        id="city"
-                        defaultValue={userData?.user?.secondaryaddress?.city}
-                        required
-                      />
-                      <label htmlFor="pin_code">Pincode</label>
-                      <input
-                        placeholder="224123"
-                        type="text"
-                        id="pin_code"
+                        id="landmark"
                         defaultValue={
-                          userData?.user?.secondaryaddress?.pin_code
+                          userData?.user?.secondaryaddress?.landmark
                         }
                         required
                       />
                     </div>
-                    <div>
+                    <div className="detailaddress flex-wrap">
+                      <div className="d-flex flex-column gap-1">
+                        <label htmlFor="state">State</label>
+                        <input
+                          placeholder="UP"
+                          type="text"
+                          id="state"
+                          defaultValue={userData?.user?.secondaryaddress?.state}
+                          required
+                        />
+                      </div>
+                      <div className="d-flex flex-column gap-1">
+                        <label htmlFor="city">Town/City</label>
+                        <input
+                          placeholder="Ayodhya"
+                          type="text"
+                          id="city"
+                          defaultValue={userData?.user?.secondaryaddress?.city}
+                          required
+                        />
+                      </div>
+                      <div className="d-flex flex-column gap-1">
+                        <label htmlFor="pin_code">Pincode</label>
+                        <input
+                          placeholder="224123"
+                          type="text"
+                          id="pin_code"
+                          defaultValue={
+                            userData?.user?.secondaryaddress?.pin_code
+                          }
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className="d-flex flex-column gap-2 my-2"
+                      style={{ width: "200px" }}
+                    >
                       <button
                         type="submit"
-                        className="btn btn-base-transparent"
+                        className="btn btn-base-transparent w-fit"
+                        style={{ width: "fit-content !important" }}
                       >
                         Update
                       </button>

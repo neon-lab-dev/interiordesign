@@ -17,7 +17,10 @@ const Payment = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get("https://interior-design-backend-nine.vercel.app/api/v1/me", { withCredentials: true });
+        const response = await axios.get(
+          "https://interior-design-backend-nine.vercel.app/api/v1/me",
+          { withCredentials: true }
+        );
         setUserData(response.data);
       } catch (error) {
         console.error("Error fetching user data:", error);
@@ -27,7 +30,6 @@ const Payment = () => {
     fetchUserData();
   }, []);
 
-
   useEffect(() => {
     const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
     setProducts(cartProducts);
@@ -36,7 +38,11 @@ const Payment = () => {
   console.log(products);
 
   if (!products) {
-    return <p>Loading product details...</p>;
+    return (
+      <div class="spinner-border" role="status">
+        <span class="sr-only"></span>
+      </div>
+    );
   }
 
   return (
@@ -47,11 +53,11 @@ const Payment = () => {
             <div className="header">
               <p className="title1">Account Details</p>
               <Link to={"/dashboard"}>
-              <img src={ICONS.editSquare} alt="edit" className="edit-icon" />
+                <img src={ICONS.editSquare} alt="edit" className="edit-icon" />
               </Link>
             </div>
             <div className="name">
-            <img src={user} alt="Profile" className="profile-pic" />
+              <img src={user} alt="Profile" className="profile-pic" />
               <p className="title1">{userData?.user?.full_name}</p>
             </div>
             <div className="contact">
@@ -63,23 +69,23 @@ const Payment = () => {
             <div className="header">
               <p className="title1">Default Shipping Address</p>
               <Link to={"/address-book"}>
-              <img src={ICONS.editSquare} alt="edit" className="edit-icon" />
+                <img src={ICONS.editSquare} alt="edit" className="edit-icon" />
               </Link>
             </div>
             <p className="title1">{userData?.user?.full_name}</p>
-            <p>{userData?.user?.primaryaddress?.address}, {userData?.user?.primaryaddress?.state} {userData?.user?.primaryaddress?.pin_code}</p>
+            <p>
+              {userData?.user?.primaryaddress?.address},{" "}
+              {userData?.user?.primaryaddress?.state}{" "}
+              {userData?.user?.primaryaddress?.pin_code}
+            </p>
           </div>
         </div>
 
         <div>
-          {
-            products?.map(product => 
-              <Paycard key={product?.name} product={product} />
-            )
-          }
+          {products?.map((product) => (
+            <Paycard key={product?.name} product={product} />
+          ))}
         </div>
-
-        
       </div>
       <ProductLike />
     </div>

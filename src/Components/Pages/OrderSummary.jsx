@@ -70,7 +70,9 @@ const OrderSummary = () => {
                   : "Address not available"}
               </p>
             </div>
-            <button className="btn btn-primary py-2">Edit Address</button>
+            <Link to="/address-book">
+              <button className="btn btn-primary py-2">Edit Address</button>
+            </Link>
           </div>
         </>
       )}
