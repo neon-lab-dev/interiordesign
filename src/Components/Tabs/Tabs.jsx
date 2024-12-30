@@ -62,23 +62,30 @@ const Tabs = ({ productId }) => {
 
       const data = await response.json();
       if (data.success) {
-        alert("Review submitted successfully!");
+        toast.success("Review submitted successfully!");
         setReviews((prev) => [...prev, data.review]); // Update reviews list
         setRating(0);
         setComment("");
       } else {
-        alert("Failed to submit the review.");
+        toast.error("Failed to submit the review.");
       }
     } catch (error) {
-      alert("An error occurred while submitting your review.");
+      toast.error("An error occurred while submitting your review.");
     }
   };
+
+  console.log(reviewCount);
 
   const handleStarClick = (index) => {
     setRating(index);
   };
 
-  if (loading) return <div>Loading...</div>;
+  if (loading)
+    return (
+      <div class="spinner-border mx-auto" role="status">
+        <span class="sr-only"></span>
+      </div>
+    );
   if (error) return <div>{error}</div>;
 
   return (
@@ -158,7 +165,7 @@ const Tabs = ({ productId }) => {
                 <div className="d-flex align-items-center gap-1">
                   <img src={ICONS.star} alt="Star Icon" />
                   <span style={{ lineHeight: "1" }}>
-                    {averageRating || "0"}
+                    {reviewCount === 0 ? "0 reviews" : averageRating}
                   </span>
                 </div>
                 <div className="reviews-count">{reviewCount} Reviews</div>

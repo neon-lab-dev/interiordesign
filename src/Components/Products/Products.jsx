@@ -138,7 +138,9 @@ const Products = () => {
             </div>
           </div>
           {loading ? (
-            <div>Loading...</div>
+            <div class="spinner-border mx-auto" role="status">
+              <span class="sr-only"></span>
+            </div>
           ) : error ? (
             <div className="error-message">{error}</div>
           ) : (
