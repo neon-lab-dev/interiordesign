@@ -34,12 +34,20 @@ const Nav = () => {
         Home
       </NavLink>
       <NavLink   
+        to="/about-us" 
+        className={({ isActive }) => 
+          isActive ? "active-link border-bottom border-2 text-nowrap " : "inactive-link text-nowrap"
+        }
+      >
+        About Us
+      </NavLink>
+      <NavLink   
         to="/bedsheets" 
         className={({ isActive }) => 
           isActive ? "active-link border-bottom border-2" : "inactive-link"
         }
       >
-        Bedsheets
+        Products
       </NavLink>
             <button type="submit" className="w-100 custom-text-2  btnNav">
                     Get Free Quote
@@ -60,10 +68,11 @@ const Nav = () => {
         
         <div className="sidebar-links">
           <Link to="/">Home</Link>
-          <Link to="/bedsheets">Bedsheets</Link>
+          <Link to="/about-us">About Us</Link>
+          <Link to="/bedsheets">Products</Link>
         </div>
         
-        
+      
       </div>
       <div
         className={`backdrop ${isSidebarOpen ? "active" : ""}`}

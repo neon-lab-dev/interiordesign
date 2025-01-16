@@ -30,17 +30,18 @@ import TrashBin from "../assets/Icons/TrashBin.png";
 import paymentSuccess from "../assets/Icons/success.svg";
 import address from "../assets/Icons/MapPointWave.png";
 import close from "../assets/Icons/close.svg";
+import buy from "../assets/ICONS/buy.svg"
 
 // home (hero section)
 import bg from "../assets/Images/BG.jpg";
 
 // Our service images
-import interiorDesign from "../assets/Images/interior-design.png";
-import turnkeyProjects from "../assets/Images/turnkey-projects.png";
-import civil from "../assets/Images/civil.png";
-import modularFurniture from "../assets/Images/modular-furniture.png";
+import interiorDesign from "../assets/Images/interior-design.jpg";
+import turnkeyProjects from "../assets/Images/turnkey-projects.jpg";
+import civil from "../assets/Images/civil.jpg";
+import modularFurniture from "../assets/Images/modular-furniture.jpg";
 import looseFurniture from "../assets/Images/loose-furniture.png";
-import officeFurniture from "../assets/Images/office-furniture.png";
+import officeFurniture from "../assets/Images/office-furniture.jpeg";
 import bedsheet from "@/assets/Images/bedsheet.png";
 import bed from "../assets/Images/bed.png";
 import ArrowRightUp from "@/assets/Icons/ArrowRightUp.png";
@@ -67,6 +68,9 @@ import clearWater from "../assets/Images/water.png";
 import cevnt from "../assets/Images/cevnt.png";
 import berkdia from "../assets/Images/berkadia.png";
 import baker from "../assets/Images/baker.png";
+
+// login
+import loginImage from "../assets/Images/loginimg.jpg"
 
 export const IMAGES = {
   logo,
@@ -99,6 +103,7 @@ export const IMAGES = {
   cevnt,
   berkdia,
   baker,
+  loginImage
 };
 
 export const ICONS = {
@@ -131,4 +136,5 @@ export const ICONS = {
   SimpleArrowLeftEnable,
   overlay,
   address,
+  buy
 };

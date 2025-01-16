@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ICONS } from "../../assets/Assets";
 import "./Tabs.css";
+import { toast } from "sonner";
 
 const Tabs = ({ productId }) => {
   const [reviews, setReviews] = useState([]);
