@@ -21,7 +21,7 @@ const ExploreDesign = () => {
           that captivate and inspire, one project at a time.
         </p>
       </div>
-      <div className="row g-4">
+      <div className="row g-4  ">
         {/* First Column */}
         <div className="col-md">
           <div className=" border-0">

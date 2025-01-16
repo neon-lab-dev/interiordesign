@@ -95,8 +95,8 @@ const Nav = () => {
           </Link>
           <div className="nav-links d-flex align-items-center gap-3 horizontal-nav-links">
             <Link to="/bedsheets">Bedsheets</Link>
-            <Link to="/products">Chairs</Link>
-            <Link to="/products">Tables</Link>
+            {/* <Link to="/products">Chairs</Link>
+            <Link to="/products">Tables</Link> */}
           </div>
         </div>
         <div className="d-flex align-items-center gap-4 left-container">
@@ -166,8 +166,8 @@ const Nav = () => {
         )}
         <div className="sidebar-links">
           <Link to="/products" onClick={toggleSidebar}>Bedsheets</Link>
-          <Link to="/products" onClick={toggleSidebar}>Tables</Link>
-          <Link to="/products" onClick={toggleSidebar}>Chairs</Link>
+          {/* <Link to="/products" onClick={toggleSidebar}>Tables</Link>
+          <Link to="/products" onClick={toggleSidebar}>Chairs</Link> */}
         </div>
         <div className="sidebar-account">
           <Link to="/" onClick={toggleSidebar}>Profile</Link>

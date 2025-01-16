@@ -123,12 +123,12 @@ const Card = ({ product = {}, onWishlistUpdate }) => {
             <div className="d-flex align-items-center gap-1 z-2">
               <span className="price">₹ {discountedPrice}</span>
               <span className="text-muted">₹ {basePrice}</span>
-              <span className="badge">{discountedPercent}% OFF</span>
+              <span className="card-discount">{discountedPercent}% OFF</span>
             </div>
           </div>
           <div className="d-flex align-items-center gap-2 z-1">
             <button className="btn btn-secondary" onClick={handleBuyNow}>
-              <img src={ICONS.share} alt="Buy Now" />
+              <img src={ICONS.buy} alt="Buy Now" />
               <span>Buy Now</span>
             </button>
             <button className="btn btn-tertiary" onClick={handleAddToCart}>

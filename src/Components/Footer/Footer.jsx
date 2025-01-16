@@ -16,8 +16,8 @@ const Footer = () => {
             </span>
             <div className="d-flex flex-column gap-1">
               <a href="/">Home</a>
-              <a href="/">About</a>
-              <a href="/">Products</a>
+              <a href="/about-us">About</a>
+              <a href="/bedsheets">Products</a>
             </div>
           </div>
           <div className="footer-links gap-2">

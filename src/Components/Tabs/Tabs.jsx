@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ICONS } from "../../assets/Assets";
 import "./Tabs.css";
+import { toast } from "sonner";
 
 const Tabs = ({ productId }) => {
   const [reviews, setReviews] = useState([]);
@@ -48,9 +49,11 @@ const Tabs = ({ productId }) => {
       const response = await fetch(
         "https://interior-design-backend-nine.vercel.app/api/v1/review",
         {
-          method: "POST",
+          method: "PUT",
+          credentials:"include",
           headers: {
             "Content-Type": "application/json",
+
           },
           body: JSON.stringify({
             rating,
@@ -174,7 +177,7 @@ const Tabs = ({ productId }) => {
             <div className="reviews-section flex-grow-1 ">
               {reviews.map((review) => (
                 <div
-                  key={review._id}
+                  key={review?._id}
                   className="d-flex align-items-center flex-column gap-2 testimonial h-fit"
                 >
                   <div className="d-flex align-items-center justify-content-center gap-1">
@@ -183,11 +186,11 @@ const Tabs = ({ productId }) => {
                       alt=""
                       style={{ width: "24px", height: "24px" }}
                     />
-                    <span style={{ lineHeight: "0px" }}>{review.rating}</span>
-                    <span className="author">{review.name}</span>
+                    <span style={{ lineHeight: "0px" }}>{review?.rating}</span>
+                    <span className="author">{review?.name}</span>
                   </div>
                   <div className="testimonial-description">
-                    {review.comment}
+                    {review?.comment}
                   </div>
                 </div>
               ))}

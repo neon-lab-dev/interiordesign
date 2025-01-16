@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import LoginImg from "../../assets/Images/loginimg.jpeg";
 import { IMAGES } from "../../assets/Assets";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
@@ -56,7 +55,7 @@ const ChangePass = () => {
     <section className="">
       <div className="login-container d-flex  items-center justify-between login-section w-100">
         <div className="login-image-container">
-          <img src={LoginImg} alt="login" className="login-image" />
+          <img src={IMAGES.loginImage} alt="login" className="login-image" />
           <img src={IMAGES.footerLogo} alt="" className="logo-top" />
           <div className="image-overlay">
             <span className="logo-text">We Create Your Dream Home</span>

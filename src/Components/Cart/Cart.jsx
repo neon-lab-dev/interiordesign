@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const [cartProducts, setCartProducts] = useState([]);
+  const isLoggedIn = !!localStorage.getItem("user");
 
   // Load cart from localStorage on mount
   useEffect(() => {
@@ -39,6 +40,17 @@ const Cart = () => {
     window.dispatchEvent(new Event("cartUpdate"));
 
   };
+  const navigate = useNavigate();
+
+  const handleOrderNavigation = () => {
+    const isLoggedIn = !!localStorage.getItem("user"); // Check if user data exists in localStorage
+    if (isLoggedIn) {
+      navigate("/ordersummary"); // Navigate to Order Summary if logged in
+    } else {
+      navigate("/login"); // Redirect to Login page if not logged in
+    }
+  };
+  
 
   return (
     <div>
@@ -197,9 +209,12 @@ const Cart = () => {
                   </p>
                 </div>
 
-                <Link to={'/ordersummary'} className="w-100">
-                  <button className="btn btn-lg-colored w-100 py-2">Place Order</button>
-                </Link>
+                <button
+      className="btn btn-lg-colored w-100 py-2"
+      onClick={handleOrderNavigation}
+    >
+      Place Order
+    </button>
 
               </div>
             </div>
