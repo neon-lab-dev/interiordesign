@@ -30,7 +30,7 @@ import TrashBin from "../assets/Icons/TrashBin.png";
 import paymentSuccess from "../assets/Icons/success.svg";
 import address from "../assets/Icons/MapPointWave.png";
 import close from "../assets/Icons/close.svg";
-import buy from "../assets/ICONS/buy.svg"
+import buy from "../assets/Icons/buy.svg"
 
 // home (hero section)
 import bg from "../assets/Images/BG.jpg";
