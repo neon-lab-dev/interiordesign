@@ -1,4 +1,3 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./ExploreDesign.css";
 import { IMAGES } from "../../../assets/Assets";
@@ -21,7 +20,7 @@ const ExploreDesign = () => {
           that captivate and inspire, one project at a time.
         </p>
       </div>
-      <div className="row g-4">
+      <div className="row g-4  ">
         {/* First Column */}
         <div className="col-md">
           <div className=" border-0">
@@ -54,7 +53,7 @@ const ExploreDesign = () => {
           </div>
           <div className=" border-0 margint-top">
             <img
-              src={IMAGES.explore4}
+              src={IMAGES.explore7}
               className="images-style "
               style={{ height: "318px" }}
               alt="Living Room"

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { toast } from "sonner";
 import user from "../../assets/Icons/user.svg";
+import { toast } from "sonner";
 
 
 const OrderSummary = () => {
@@ -11,23 +11,25 @@ const OrderSummary = () => {
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(false);
 
+  // Load cart from localStorage on mount
+  useEffect(() => {
+    const products = JSON.parse(localStorage.getItem("cartProducts")) || [];
+    setCartProducts(products);
 
-    // Load cart from localStorage on mount
-    useEffect(() => {
-        const products = JSON.parse(localStorage.getItem("cartProducts")) || [];
-        setCartProducts(products);
+    const fetchUserData = async () => {
+      try {
+        const response = await axios.get(
+          "https://interior-design-backend-nine.vercel.app/api/v1/me",
+          { withCredentials: true }
+        );
+        setUserData(response.data);
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
 
-        const fetchUserData = async () => {
-            try {
-                const response = await axios.get("https://interior-design-backend-nine.vercel.app/api/v1/me", { withCredentials: true });
-                setUserData(response.data);
-            } catch (error) {
-                console.error("Error fetching user data:", error);
-            }
-        };
-
-        fetchUserData();
-    }, []);
+    fetchUserData();
+  }, []);
 
     const totalAmount = cartProducts
         .reduce(
@@ -120,146 +122,167 @@ const OrderSummary = () => {
                 </>
             )}
 
-            {/* Order Summary */}
-            {cartProducts.length !== 0 ? (
-                <div className="d-flex flex-column w-100 gap-1 shadow shadow-sm border-custom-light rounded-3 p-2 position-relative">
-                    <div className="w-100 d-flex align-items-center justify-content-between">
-                        <h4 className="mb-0">Order Summary</h4>
-                        <Link to={'/cart#'} className="">Edit</Link>
+      {/* Order Summary */}
+      {cartProducts.length !== 0 ? (
+        <div className="d-flex flex-column w-100 gap-1 shadow shadow-sm border-custom-light rounded-3 p-2 position-relative">
+          <div className="w-100 d-flex align-items-center justify-content-between">
+            <h4 className="mb-0">Order Summary</h4>
+            <Link to={"/cart#"} className="">
+              Edit
+            </Link>
+          </div>
+          <div className="w-100 d-flex justify-content-between gap-5 flex-lg-row flex-column ">
+            {/* Product List */}
+            <div className="flex-grow-1">
+              {cartProducts.map((product, index) => (
+                <div
+                  key={index}
+                  className="d-flex flex-md-row flex-column align-items-center gap-3 border border-secondary rounded-2 shadow shadow-md overflow-hidden p-2 mb-3"
+                  style={{ height: "280px" }}
+                >
+                  {/* Product Image */}
+                  <div className="d-flex items-center justify-center bg-image p-1 rounded-2">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="rounded-1"
+                      style={{ height: "250px" }}
+                    />
+                  </div>
+
+                  {/* Product Details */}
+                  <div className="d-flex flex-column justify-content-between h-100 items-start">
+                    <div className="d-flex flex-column">
+                      <p className="text-lg fw-normal">
+                        <span className="fw-medium">Product :</span>{" "}
+                        {product.name || "Product Name"}
+                      </p>
                     </div>
-                    <div className="w-100 d-flex justify-content-between gap-5 flex-lg-row flex-column ">
-                        {/* Product List */}
-                        <div className="flex-grow-1">
-                            {cartProducts.map((product, index) => (
-                                <div
-                                    key={index}
-                                    className="d-flex flex-md-row flex-column align-items-center gap-3 border border-secondary rounded-2 shadow shadow-md overflow-hidden p-2 mb-3"
-                                    style={{ height: "280px" }}
-                                >
-                                    {/* Product Image */}
-                                    <div className="d-flex items-center justify-center bg-image p-1 rounded-2">
-                                        <img src={product.image} alt={product.name} className="rounded-1" style={{ height: "250px" }} />
-                                    </div>
+                    {/* Pricing */}
+                    <d-flex className="flex-column gap-2">
+                      <p className="text-danger">Special Price</p>
+                      <div className="d-flex items-center gap-2">
+                        <span className="text-muted">₹{product.basePrice}</span>
+                        <span className="price">
+                          ₹
+                          {(
+                            product.basePrice -
+                            product.basePrice *
+                              (product.discountedPercent / 100)
+                          ).toFixed(2)}
+                        </span>
+                        <span className="discount">
+                          {product.discountedPercent}% off
+                        </span>
+                      </div>
+                    </d-flex>
 
-                                    {/* Product Details */}
-                                    <div className="d-flex flex-column justify-content-between h-100 items-start">
-                                        <div className="d-flex flex-column">
-                                            <p className="text-lg fw-normal">
-                                                <span className="fw-medium">Product :</span> {product.name || "Product Name"}
-                                            </p>
-                                        </div>
-                                        {/* Pricing */}
-                                        <d-flex className="flex-column gap-2">
-                                            <p className="text-danger">Special Price</p>
-                                            <div className="d-flex items-center gap-2">
-                                                <span className="text-muted">₹{product.basePrice}</span>
-                                                <span className="price">
-                                                    ₹
-                                                    {(
-                                                        product.basePrice -
-                                                        product.basePrice * (product.discountedPercent / 100)
-                                                    ).toFixed(2)}
-                                                </span>
-                                                <span className="discount">{product.discountedPercent}% off</span>
-                                            </div>
-                                        </d-flex>
-
-                                        <div className="d-flex align-items-center gap-3">
-                                            {/* Quantity Control */}
-                                            <div className="d-flex items-start flex-column gap-1 pe-2 border-end h-100 justify-content-between">
-                                                <span>
-                                                    <b>Quantity</b>
-                                                </span>
-                                                <div className="d-flex items-center">
-                                                    <button className="btn btn-transparent">{product.quantity}</button>
-                                                </div>
-                                            </div>
-                                            {/* Quantity Control */}
-                                            <div className="d-flex items-start flex-column gap-1 pe-2 border-end  h-100 justify-content-between">
-                                                <span>
-                                                    <b>Size</b>
-                                                </span>
-                                                <div className="d-flex items-center">
-                                                    <button className="btn btn-black active">{product.size}</button>
-                                                </div>
-                                            </div>
-                                            {/* Quantity Control */}
-                                            <div className="d-flex items-start flex-column gap-1  h-100 justify-content-between">
-                                                <span>
-                                                    <b>Color</b>
-                                                </span>
-                                                <div className="d-flex items-center">
-                                                    <button className="btn btn-transparent">{product.color}</button>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-
-                                    </div>
-                                </div>
-                            ))}
+                    <div className="d-flex align-items-center gap-3 quantity-control">
+                      {/* Quantity Control */}
+                      <div className="d-flex items-start flex-column gap-1 pe-2 border-end h-100 justify-content-between">
+                        <span>
+                          <b>Quantity</b>
+                        </span>
+                        <div className="d-flex items-center">
+                          <button className="btn btn-transparent">
+                            {product.quantity}
+                          </button>
                         </div>
+                      </div>
+                      {/* Quantity Control */}
+                      <div className="d-flex items-start flex-column gap-1 pe-2 border-end h-100 justify-content-between ">
+                        <span>
+                          <b>Size</b>
+                        </span>
+                        <div className="d-flex items-center">
+                          <button className="btn btn-black active">
+                            {product.size}
+                          </button>
+                        </div>
+                      </div>
+                      {/* Quantity Control */}
+                      <div className="d-flex items-start flex-column gap-1  h-100 justify-content-between">
+                        <span>
+                          <b>Color</b>
+                        </span>
+                        <div className="d-flex items-center">
+                          <button className="btn btn-transparent">
+                            {product.color}
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-                        {/* Price Details */}
-                        <div
-                            className="d-flex flex-column items-start border border-secondary rounded-2 shadow shadow-md overflow-hidden p-2 position-sticky"
+            {/* Price Details */}
+            <div
+              className="d-flex flex-column items-start border border-secondary rounded-2 shadow shadow-md overflow-hidden p-2 position-sticky"
+              style={{ minWidth: "340px", height: "fit-content", top: "20px" }}
+            >
+              <h5 className="fw-light text-uppercase border-bottom pb-1">
+                Price details
+              </h5>
 
-                            style={{ minWidth: "340px", height: "fit-content", top: '20px' }}
-                        >
-                            <h5 className="fw-light text-uppercase border-bottom pb-1">Price details</h5>
+              {/* Total Calculation */}
+              <div className="d-flex flex-column items-start gap-2 border-bottom py-2">
+                <div className="d-flex justify-content-between w-100">
+                  <span>Price ({cartProducts.length} items)</span>
+                  <span className="price">
+                    ₹
+                    {cartProducts
+                      .reduce(
+                        (total, product) =>
+                          total + product.basePrice * product.quantity,
+                        0
+                      )
+                      .toFixed(2)}
+                  </span>
+                </div>
 
-                            {/* Total Calculation */}
-                            <div className="d-flex flex-column items-start gap-2 border-bottom py-2">
-                                <div className="d-flex justify-content-between w-100">
-                                    <span>Price ({cartProducts.length} items)</span>
-                                    <span className="price">
-                                        ₹
-                                        {cartProducts
-                                            .reduce((total, product) => total + product.basePrice * product.quantity, 0)
-                                            .toFixed(2)}
-                                    </span>
-                                </div>
+                <div className="d-flex justify-content-between w-100">
+                  <span>Discount</span>
+                  <span className="discount">
+                    - ₹
+                    {cartProducts
+                      .reduce(
+                        (total, product) =>
+                          total +
+                          product.basePrice *
+                            (product.discountedPercent / 100) *
+                            product.quantity,
+                        0
+                      )
+                      .toFixed(2)}
+                  </span>
+                </div>
 
-                                <div className="d-flex justify-content-between w-100">
-                                    <span>Discount</span>
-                                    <span className="discount">
-                                        - ₹
-                                        {cartProducts
-                                            .reduce(
-                                                (total, product) =>
-                                                    total +
-                                                    (product.basePrice * (product.discountedPercent / 100)) * product.quantity,
-                                                0
-                                            )
-                                            .toFixed(2)}
-                                    </span>
-                                </div>
+                <div className="d-flex justify-content-between w-100">
+                  <span>Delivery Charges</span>
+                  <span>Free</span>
+                </div>
+              </div>
 
-                                <div className="d-flex justify-content-between w-100">
-                                    <span>Delivery Charges</span>
-                                    <span>Free</span>
-                                </div>
-                            </div>
-
-                            {/* Final Total */}
-                            <div className="d-flex justify-content-between w-100 py-2 border-bottom">
-                                <span>Total Amount</span>
-                                <span className="price">
-                                    ₹
-                                    {cartProducts
-                                        .reduce(
-                                            (total, product) =>
-                                                total +
-                                                (product.basePrice -
-                                                    product.basePrice * (product.discountedPercent / 100)) *
-                                                product.quantity,
-                                            0
-                                        )
-                                        .toFixed(2)}
-                                </span>
-                            </div>
+              {/* Final Total */}
+              <div className="d-flex justify-content-between w-100 py-2 border-bottom">
+                <span>Total Amount</span>
+                <span className="price">
+                  ₹
+                  {cartProducts
+                    .reduce(
+                      (total, product) =>
+                        total +
+                        (product.basePrice -
+                          product.basePrice *
+                            (product.discountedPercent / 100)) *
+                          product.quantity,
+                      0
+                    )
+                    .toFixed(2)}
+                </span>
+              </div>
 
                             <div className="d-flex flex-column align-items-start gap-2 pt-2">
                                 <div className="d-flex">
@@ -304,4 +327,4 @@ const OrderSummary = () => {
     )
 }
 
-export default OrderSummary
+export default OrderSummary;

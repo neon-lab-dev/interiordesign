@@ -183,6 +183,9 @@ input,
 .input-field-container{
   width: 100%;
 }
+textarea{
+  padding:  16px;
+}
 
 input:focus {
   border: 1px solid rgba(255, 255, 255, 0.6);
@@ -660,6 +663,14 @@ span.discount {
   letter-spacing: -0.2px;
   text-align: left;
 }
+span.card-discount {
+  color: #4cec96;
+  font-family: "Verdana Regular";
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  text-align: left;
+}
 
 .card button span {
   font-family: "Nunito Regular", sans-serif;
@@ -765,4 +776,8 @@ form .danger-text-neighbor{
 
 .bg-image{
   background: #252424 !important;
+}
+
+.w-fit{
+  width: fit-content !important;
 }

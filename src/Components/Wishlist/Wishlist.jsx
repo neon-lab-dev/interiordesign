@@ -46,7 +46,7 @@ const Wishlist = () => {
     <div className="w-100 d-flex items-center flex-column justify-center">
       <section className="w-100 d-flex items-center flex-column justify-content-center py-0 pt-5">
         <div className="home-sections-header d-flex align-items-center justify-content-start">
-          <h2>Your Wishlist -: {wishlistItems.length} Item(s)</h2>
+          <h2>Your Wishlist : {wishlistItems.length} Item(s)</h2>
         </div>
         <div className="wishlist-grid">
           {wishlistItems.length > 0 ? (

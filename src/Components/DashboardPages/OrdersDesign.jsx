@@ -17,7 +17,7 @@
 //             <div className="d-flex flex-column gap-2 w-100">
 //               <div className="orders-header border-gray">
 //               <NavLink to="/orderdesign" className="orders-tab" activeClassName="active">
-//                                 Recent Orders 
+//                                 Recent Orders
 //                             </NavLink>
 //                             <NavLink to="/orderhistory"  className="orders-tab" activeClassName="active">
 //                                 Order History
@@ -34,7 +34,6 @@
 // };
 
 // export default OrderDesign;
-
 
 import React, { useEffect, useState } from "react";
 import "./OrderCard.css";
@@ -94,7 +93,9 @@ const OrderDesign = () => {
                   Order History
                 </NavLink>
               {loading ? (
-                <div className="text-center">Loading...</div>
+                <div class="spinner-border mx-auto" role="status">
+                  <span class="sr-only"></span>
+                </div>
               ) : (
                 orders.map((order) => (
                   <OrderCard key={order._id} order={order} />

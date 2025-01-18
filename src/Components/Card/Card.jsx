@@ -1,7 +1,6 @@
 import { IMAGES, ICONS } from "@/assets/Assets";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -72,6 +71,30 @@ const Card = ({ product = {}, onWishlistUpdate }) => {
     window.dispatchEvent(new Event("cartUpdate"));
   };
 
+  // Buy Now functionality
+  const handleBuyNow = (e) => {
+    e.stopPropagation(); // Prevent card click event
+
+    let cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+    const isProductExist = cartProducts.find((product) => product.productId === _id);
+
+    if (isProductExist) {
+      toast.error("Product already exists in the cart!");
+    } else {
+      cartProducts.push({
+        productId: _id,
+        name: name,
+        size: size || "Default",
+        basePrice: basePrice || 0,
+        discountedPercent: discountedPercent || 0,
+        image: images[0]?.url || "",
+        quantity: 1,
+      });
+      localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
+    }
+    window.location.href = "/cart";
+  };
+
   return (
     <>
       <div
@@ -102,15 +125,13 @@ const Card = ({ product = {}, onWishlistUpdate }) => {
             <div className="d-flex align-items-center gap-1 z-2">
               <span className="price">₹ {discountedPrice}</span>
               <span className="text-muted">₹ {basePrice}</span>
-              <span className="badge">{discountedPercent}% OFF</span>
+              <span className="card-discount">{discountedPercent}% OFF</span>
             </div>
           </div>
           <div className="d-flex align-items-center gap-2 z-1">
-            <button className="btn btn-secondary">
-              <img src={ICONS.share} alt="Share" />
-              <Link to={`/product/${product._id}`}>
-                <span>Inquire Now</span>
-              </Link>
+            <button className="btn btn-secondary" onClick={handleBuyNow}>
+              <img src={ICONS.buy} alt="Buy Now" />
+              <span>Buy Now</span>
             </button>
             <button className="btn btn-tertiary" onClick={handleAddToCart}>
               <img src={ICONS.cartIconGrey} alt="Add to Cart" />
@@ -119,8 +140,6 @@ const Card = ({ product = {}, onWishlistUpdate }) => {
           </div>
         </div>
       </div>
-
-
     </>
   );
 };

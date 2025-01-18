@@ -72,6 +72,9 @@ section {
     padding: 42px 27px;
     gap: 36px;
   }
+  .div-info{
+    padding: 20px;
+  }
 }
 
 @media (max-width: 375px) {
@@ -287,4 +290,11 @@ section.Toastify {
 
 .border-custom-light{
   border: 1px solid rgba(255, 255, 255, 0.10) !important;
+}
+
+
+.quantity-control button{
+  height: 50px !important;
+  min-height: 50px !important;
+  max-height: 50px !important;
 }

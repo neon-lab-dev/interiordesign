@@ -9,8 +9,8 @@ const PaymentSuccess = () => {
 
   const [orderProducts, setOrderProducts] = useState([]);
   const [userData, setUserData] = useState(null);
-  const [loading, setLoading] = useState(true); // To show loading state
-  const [success, setSuccess] = useState(false); // To track API call success
+  const [loading, setLoading] = useState(true);
+  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     const products = JSON.parse(localStorage.getItem("orderProducts")) || [];

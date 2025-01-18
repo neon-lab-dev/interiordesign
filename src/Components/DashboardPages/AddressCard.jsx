@@ -8,7 +8,7 @@ const AddressCard = ({title, userName, address, onEdit}) => {
       <span onClick={onEdit} className="edit-icon">
         <FaRegEdit />
       </span>
-      {/* <span className="address-card-name">{userName}</span> */}
+      <span className="address-card-name mt-2 fw-bold">{userName}</span>
       {
         address ?
         <div className="address-card-details mt-2">

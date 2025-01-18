@@ -76,9 +76,9 @@ const OurServices = () => {
                 </div>
 
                 <div className="btnContainer d-flex justify-content-center">
-                    <button className="">
+                    <a className="" href="#footer">
                         Get Free Quote
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>

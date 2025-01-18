@@ -57,7 +57,12 @@ const Product = () => {
     fetchProduct();
   }, [id]);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading)
+    return (
+      <div class="spinner-border mx-auto" role="status">
+        <span class="sr-only"></span>
+      </div>
+    );
   if (error) return <div>Error: {error}</div>;
 
   return (

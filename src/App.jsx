@@ -27,8 +27,8 @@ import TandC from "./Components/TandC/TandC";
 import PrivacyPol from "./Components/PrivacyPol/PrivacyPol";
 import ShippingRefundPol from "./Components/ShippingRefundPol/ShippingRefundPol";
 import ContactUsPage from "./Components/ContactUsPage/ContactUsPage";
+import PaymentSuccess from './pages/PaymentSuccess/PaymentSuccess';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
-import PaymentSuccess from "./pages/PaymentSuccess/PaymentSuccess";
 
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/bedsheets" element={<BedSheets />} />
+        <Route path="/bedsheets" element={<BedSheets />} />   
         <Route path="/login" element={<Login />} />
         <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<Product />} /> {/* Dynamic route */}
@@ -53,12 +53,12 @@ function App() {
         </Route>
         <Route path="/orderdesign" element={<OrdersDesign />} />
         <Route path="/forgetpassword" element={<ForgetPass />} />
-        <Route path="/changepassword" element={<ChangePass />} />
+        <Route path="/reset-password/:token" element={<ChangePass />} />
         <Route path="/orderhistory" element={<OrderHistory />} />
         <Route path="/changepass" element={<ChangePassWord />}></Route>
         <Route path="/addresspage" element={<AddressPage />} />
         <Route path="/address-book" element={<AddingNewAddress />} />
-        <Route path="/changepass" element={<ChangePassWord />} />
+        <Route path="/password-reset" element={<ChangePassWord />} />
         <Route element={<ProtectedRoute />}>
         <Route path="/ordersummary" element={<OrderSummary />} />
         </Route>
