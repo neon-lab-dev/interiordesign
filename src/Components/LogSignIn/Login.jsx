@@ -74,7 +74,7 @@ const handleLogin = async (e) => {
             className="d-flex w-100 align-items-center justify-content-end text-danger"
             style={{ marginTop: "-14px" }}
           >
-            <Link to="/forgetpassword" className="text-danger">
+            <Link to="/forgot-password" className="text-danger">
               Forgot Password?
             </Link>
           </div>
