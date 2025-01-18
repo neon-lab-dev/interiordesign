@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
+/* eslint-disable react/no-unescaped-entities */
+import { useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ICONS, IMAGES } from "../../../assets/Assets";
 import "./ContactUs.css";
 import { FormProvider, useForm } from "react-hook-form";
-import { toast, Toaster } from "sonner";
+import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
 
 const ContactUs = () => {
@@ -29,10 +30,10 @@ const ContactUs = () => {
 
     emailjs
       .sendForm(
-        "service_ygoo2gq", // Replace with your service ID
-        "template_26l0mws", // Replace with your template ID
+        "service_ygoo2gq",
+        "template_26l0mws",
         form.current,
-        "8nmGK0iwW_6YgkO8f" // Replace with your public key
+        "8nmGK0iwW_6YgkO8f"
       )
       .then(
         () => {
@@ -52,7 +53,6 @@ const ContactUs = () => {
         className="container-fluid text-light py-5 g-3"
         style={{ background: "#181818", padding: "90px" }}
       >
-        <Toaster /> {/* For showing toast notifications */}
         <p className="heading mb-5">Let's create a beautiful space together!</p>
         <div className="row align-items-center h-100">
           <div className="col-md-7 d-flex align-items-center justify-content-center order-md-2">
@@ -67,14 +67,32 @@ const ContactUs = () => {
             />
           </div>
 
-          <div className="col-md-5 order-md-1">
-            <div
-              className="p-4 rounded-3 shadow h-100 d-flex flex-column justify-content-between"
-              style={{
+          <div className="col-md-5 order-md-1" style={{
                 backgroundColor: "hsl(0, 0%, 100%)",
                 backgroundImage:
                   "radial-gradient(circle farthest-side at center, hsl(0, 0%, 0%) 60%, hsl(0, 0%, 10%) 100%)",
-              }}
+              }}>
+          <div className="text-white p-4 w-full d-flex flex-column">
+            <div className="card-body">
+            <h2 className="text-style">GET IN TOUCH</h2>
+                <p className="card-text">
+                2nd floor, iWorkk, 90, Mehrauli-Gurgaon Rd, Industrial Development Area, Sector 16, Gurugram, Haryana 122007
+
+                </p>
+                <a href="tel:9953520512" className="card-text">
+                    (+91) 9953520512
+                </a>
+                <a href="emailto:spaceframe.co.in@gmail.com" className="card-text">
+                spaceframe.co.in@gmail.com
+                </a>
+                <a href="https://g.co/kgs/4zDDFJe" target="_blank" rel="noopener noreferrer" className="card-link text-white">
+                    Open in Google Maps &rarr;
+                </a>
+            </div>
+        </div>
+            <div
+              className="p-4 rounded-3 shadow h-100 d-flex flex-column justify-content-between"
+              
             >
               <h2 className="mb-4 text-style">Contact Us</h2>
               <form ref={form} onSubmit={handleSubmit(sendEmail)}>

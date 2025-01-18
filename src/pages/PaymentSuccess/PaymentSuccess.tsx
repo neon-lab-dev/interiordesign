@@ -1,9 +1,111 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ICONS } from "../../assets/Assets";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+import axios from "axios";
 
 const PaymentSuccess = () => {
-  return (
+  const searchQuery = useSearchParams()[0];
+  const referenceName = searchQuery.get("reference");
+
+  const [orderProducts, setOrderProducts] = useState([]);
+  const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    const products = JSON.parse(localStorage.getItem("orderProducts")) || [];
+    setOrderProducts(products);
+
+    const fetchUserData = async () => {
+      try {
+        const response = await axios.get("https://interior-design-backend-nine.vercel.app/api/v1/me", { withCredentials: true });
+        setUserData(response.data);
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+
+    fetchUserData();
+  }, []);
+
+  const totalAmount = orderProducts
+    .reduce(
+      (total, product) =>
+        total +
+        (product.basePrice - product.basePrice * (product.discountedPercent / 100)) * product.quantity,
+      0
+    )
+    .toFixed(2);
+
+  useEffect(() => {
+    const handlePushOrderedItems = async () => {
+      try {
+        const primaryAddress = userData?.user?.primaryaddress;
+        const secondaryaddress = userData?.user?.secondaryaddress;
+
+        const orderItems = orderProducts.map((product) => ({
+          product: product.productId,
+          quantity: product.quantity,
+          color: product.color,
+          size: product.size,
+          name: product.name,
+          image: product.image,
+          price: product.basePrice,
+        }));
+
+        const orderInfo = {
+          shippingInfo: {
+            address: primaryAddress ? primaryAddress?.address : secondaryaddress?.address,
+            state: primaryAddress ? primaryAddress?.state : secondaryaddress?.state,
+            city: primaryAddress ? primaryAddress?.city : secondaryaddress?.city,
+            landmark: primaryAddress ? primaryAddress?.landmark : secondaryaddress?.landmark,
+            pinCode: primaryAddress ? primaryAddress?.pin_code : secondaryaddress?.pin_code,
+            phoneNo: `${userData?.user?.phoneNo}`,
+          },
+          orderItems,
+          itemsPrice: totalAmount,
+          discount : "0",
+          totalPrice: totalAmount,
+          razorpay_payment_id: referenceName,
+        };
+
+        await axios.post(
+          "https://interior-design-backend-nine.vercel.app/api/v1/order/new",
+          orderInfo,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+            withCredentials: true,
+          }
+        );
+        
+
+        setSuccess(true);
+      } catch (error) {
+        console.error("Error placing order:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (userData && orderProducts.length > 0) {
+      handlePushOrderedItems();
+    }
+  }, [userData, orderProducts, totalAmount, referenceName]);
+
+  if (loading) {
+    return (
+      <div
+        className="d-flex flex-column align-items-center text-center"
+        style={{ marginTop: "3rem", marginBottom: "3rem" }}
+      >
+        <p className="text-white" style={{ fontSize: "18px" }}>Processing your order...</p>
+      </div>
+    );
+  }
+
+  return success ? (
     <div
       className="d-flex flex-column align-items-center text-center"
       style={{ marginTop: "3rem", marginBottom: "3rem" }}
@@ -21,7 +123,10 @@ const PaymentSuccess = () => {
         </span>
       </h1>
       <p className="text-white mt-2" style={{ fontSize: "18px" }}>
-        Thanks for purchasing!! We will reach out to you shortly
+        Thanks for purchasing!! We will reach out to you shortly.
+      </p>
+      <p className="text-white mt-2" style={{ fontSize: "14px" }}>
+        Your Reference ID: {referenceName}
       </p>
 
       <Link
@@ -36,6 +141,13 @@ const PaymentSuccess = () => {
       >
         Continue Shopping
       </Link>
+    </div>
+  ) : (
+    <div
+      className="d-flex flex-column align-items-center text-center"
+      style={{ marginTop: "3rem", marginBottom: "3rem" }}
+    >
+      <p className="text-danger" style={{ fontSize: "18px" }}>Failed to process your order. Please try again.</p>
     </div>
   );
 };

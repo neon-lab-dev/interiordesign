@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Card = ({ product = {}, onWishlistUpdate }) => {
-  const { name, images = [], sizes = [], _id } = product;
+  const { name,color, images = [], sizes = [], _id } = product;
   const { size, basePrice, discountedPercent } = sizes[0] || {};
   const discountedPrice = (
     basePrice - (basePrice * discountedPercent) / 100
@@ -31,6 +31,7 @@ const Card = ({ product = {}, onWishlistUpdate }) => {
         productId: _id,
         name,
         size,
+        color,
         image: images[0]?.url,
         basePrice,
         discountedPercent,
@@ -58,6 +59,7 @@ const Card = ({ product = {}, onWishlistUpdate }) => {
         productId: _id,
         name: name,
         size: size || "Default",
+        color,
         basePrice: basePrice || 0,
         discountedPercent: discountedPercent || 0,
         image: images[0]?.url || "",

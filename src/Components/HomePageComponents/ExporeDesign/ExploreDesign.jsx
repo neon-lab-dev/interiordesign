@@ -1,4 +1,3 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./ExploreDesign.css";
 import { IMAGES } from "../../../assets/Assets";
@@ -54,7 +53,7 @@ const ExploreDesign = () => {
           </div>
           <div className=" border-0 margint-top">
             <img
-              src={IMAGES.explore4}
+              src={IMAGES.explore7}
               className="images-style "
               style={{ height: "318px" }}
               alt="Living Room"

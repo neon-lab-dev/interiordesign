@@ -77,8 +77,6 @@ const Tabs = ({ productId }) => {
     }
   };
 
-  console.log(reviewCount);
-
   const handleStarClick = (index) => {
     setRating(index);
   };

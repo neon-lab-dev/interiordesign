@@ -35,8 +35,6 @@ const Payment = () => {
     setProducts(cartProducts);
   }, [productId]);
 
-  console.log(products);
-
   if (!products) {
     return (
       <div class="spinner-border" role="status">

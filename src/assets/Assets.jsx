@@ -57,6 +57,7 @@ import explore3 from "../assets/Images/explore3.jpg";
 import explore4 from "../assets/Images/explore4.jpg";
 import explore5 from "../assets/Images/explore5.jpg";
 import explore6 from "../assets/Images/explore6.jpg";
+import explore7 from "../assets/Images/Rectangle 2813.png";
 
 // contact
 import contact from "../assets/Images/contact.jpg";
@@ -96,6 +97,7 @@ export const IMAGES = {
   explore4,
   explore5,
   explore6,
+  explore7,
   contact,
   bg,
   blackRocks,

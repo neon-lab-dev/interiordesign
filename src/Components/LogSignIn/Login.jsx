@@ -27,7 +27,7 @@ const handleLogin = async (e) => {
     };
 
     localStorage.setItem("user", JSON.stringify(user));
-    navigate("/dashboard");
+    navigate("/bedsheets");
     window.location.reload();
   } catch (err) {
     console.error("Login failed:", err);

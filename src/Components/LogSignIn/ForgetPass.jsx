@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { IMAGES } from "../../assets/Assets";
 import "./Login.css";
-import { useNavigate } from "react-router-dom";
 import API from "../../utils/api";
 
 const ForgetPass = () => {
-  const [email, setEmail] = useState(""); // Changed state name to match API field
+  const [email, setEmail] = useState("");
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,14 +23,13 @@ const ForgetPass = () => {
     try {
       const response = await API.post(
         "https://interior-design-backend-nine.vercel.app/api/v1/password/forgot",
-        { email } // Updated to send only the "email" field
+        { email }
       );
 
-      setSuccess("Password reset link sent successfully!");
-      setIsLoading(false);
-
-      // Redirect after showing success message
-      setTimeout(() => navigate("/changepassword"), 2000);
+      if (response.data.success) {
+        setSuccess("Password reset link sent successfully! Please check your email.");
+        setIsLoading(false);
+      }
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong.");
       setIsLoading(false);

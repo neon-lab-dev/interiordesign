@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { IMAGES } from "../../assets/Assets";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
-import API from "../../utils/api";
+import { useLocation } from 'react-router-dom';
+import axios from 'axios';
 
 const ChangePass = () => {
   const [password, setPassword] = useState("");
@@ -10,7 +11,18 @@ const ChangePass = () => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [token, setToken] = useState('');
+  const location = useLocation();
+
+  useEffect(() => {
+    // Extract the token from the URL
+    const pathSegments = location.pathname.split('/');
+    const tokenFromUrl = pathSegments[pathSegments.length - 1];
+    setToken(tokenFromUrl);
+  }, [location.pathname]);
+
   const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -33,18 +45,29 @@ const ChangePass = () => {
       setIsLoading(false);
       return;
     }
+    const resetPasswordData = {
+      password,
+      confirmPassword
+    }
 
     try {
-      const response = await API.post("/password/reset", {
-        password,
-        confirmPassword,
-        token,
-      });
+      const response = await axios.put(
+        `https://interior-design-backend-nine.vercel.app/api/v1/password/reset/${token}`,
+        resetPasswordData,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          withCredentials: true,
+        }
+      );
 
-      setSuccess("Password changed successfully!");
-      setIsLoading(false);
+      if (response.data.success) {
+        setSuccess("Password reset successfully!");
+        setIsLoading(false);
+      }
 
-      setTimeout(() => navigate("/login"), 2000);
+      setTimeout(() => navigate("/login"), 1000);
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong.");
       setIsLoading(false);
@@ -66,7 +89,7 @@ const ChangePass = () => {
           onSubmit={handleSubmit}
           className="login-form justify-content-start py-5"
         >
-          <div className="form-title">Change Password</div>
+          <div className="form-title">Reset Password</div>
           {error && <p className="text-danger">{error}</p>}
           {success && <p className="text-success">{success}</p>}
           <div className="inp-grp">

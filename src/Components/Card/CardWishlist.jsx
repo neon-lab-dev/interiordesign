@@ -3,7 +3,7 @@ import { IMAGES, ICONS } from "@/assets/Assets";
 import { useNavigate } from "react-router-dom";
 
 const CardWishlist = ({ product, onRemove }) => {
-  const { name, image, size, productId,basePrice, discountedPercent } = product;
+  const { name, image, size, productId,basePrice, discountedPercent, color } = product;
   const discountedPrice = (
     basePrice - (basePrice * discountedPercent) / 100
   ).toFixed(2);
@@ -27,6 +27,7 @@ const CardWishlist = ({ product, onRemove }) => {
         productId,
         name,
         size,
+        color,
         basePrice,
         discountedPercent,
         image,
