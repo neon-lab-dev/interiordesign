@@ -46,7 +46,6 @@ const Product = () => {
         }
         const data = await response.json();
         setProduct(data.product);
-        console.log(data);
       } catch (err) {
         setError(err.message || "Unable to fetch product details.");
       } finally {

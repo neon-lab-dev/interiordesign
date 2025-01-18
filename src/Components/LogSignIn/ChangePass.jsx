@@ -45,6 +45,12 @@ const ChangePass = () => {
       setIsLoading(false);
       return;
     }
+    if (!token) {
+      setError("Something went wrong! Please try again.");
+      setIsLoading(false);
+      navigate("/login")
+      return;
+    }
     const resetPasswordData = {
       password,
       confirmPassword

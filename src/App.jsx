@@ -52,7 +52,7 @@ function App() {
           <Route path="/dashboard" element={<AccountDashboard />} />
         </Route>
         <Route path="/orderdesign" element={<OrdersDesign />} />
-        <Route path="/forgetpassword" element={<ForgetPass />} />
+        <Route path="/forgot-password" element={<ForgetPass />} />
         <Route path="/reset-password/:token" element={<ChangePass />} />
         <Route path="/orderhistory" element={<OrderHistory />} />
         <Route path="/changepass" element={<ChangePassWord />}></Route>
