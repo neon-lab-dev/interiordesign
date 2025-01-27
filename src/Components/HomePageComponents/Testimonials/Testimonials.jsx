@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import "./Testimonials.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -15,13 +15,43 @@ const Testimonials = () => {
   const testimonials = [
     {
       content:
-        "“ At Spaceframe, they have assembled an exceptional team of interior designers, architects, engineers, and craftsmen to turn every vision into a stunning reality. Their commitment to excellence and innovation made my dream project come to life seamlessly. ”",
-      author: "Kabir Sah",
+        "“We recently worked with Spaceframe to design our dream home, and the experience was truly exceptional. From the initial consultation to the final walk-through, their team was knowledgeable, responsive, and passionate about their work. The design they created for us is not only beautiful but also functional and tailored to our lifestyle. We're so grateful to have found Spaceframe - they truly are the best in the business!”",
+      author: "Aishwarya Mathur",
     },
     {
       content:
-        "“ I was impressed with their creativity and attention to detail. Highly recommend them for any interior projects! ”",
-      author: "Rohan Mehta",
+        "“Fantastic experience with this interior design firm! Their creativity and attention to detail transformed my space into something truly stunning. The team was professional, communicative, and delivered on time. Highly recommend for anyone looking to elevate their home or office design!”",
+      author: "Mayank Kaushik",
+    },
+    {
+      content:
+        "“Was looking for renovating my interiors especially wardrobes, and I found the team really professional and wonderful. Was satisfied with the timely finishing of the work with accurate executions of our chosen interiors. I am happy to recommend Mr Laskhay and team for interiors.”",
+      author: "Mohit Naroune",
+    },
+    {
+      content:
+        "Exceptional service and outstanding designs! The team truly understood my vision and brought it to life with elegance and style. Their professionalism and expertise are unmatched. Highly recommend!",
+      author: "Pramod Srivastav",
+    },
+    {
+      content:
+        "Absolutely loved working with this interior design firm! They transformed my space into a beautiful, functional masterpiece. Attention to detail and personalized touches were spot on. Couldn’t be happier!",
+      author: "Jivish Yadav",
+    },
+    {
+      content:
+        "5 stars! Spaceframe did an amazing job designing my home. Their team is professional, creative, and attentive to detail. Highly recommend!",
+      author: "Infinity Enterprises",
+    },
+    {
+      content:
+        "The perfect blend of innovation and practicality! They turned my ideas into reality with impeccable taste and professionalism. Thrilled with the results!",
+      author: "Prachi Bhardwaj",
+    },
+    {
+      content:
+        "Best service providers 👍👍",
+      author: "iWORKK Coworking",
     },
   ];
 

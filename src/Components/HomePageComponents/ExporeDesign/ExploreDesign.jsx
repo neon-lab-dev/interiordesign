@@ -53,7 +53,7 @@ const ExploreDesign = () => {
           </div>
           <div className=" border-0 margint-top">
             <img
-              src={IMAGES.explore7}
+              src={IMAGES.explore8}
               className="images-style "
               style={{ height: "318px" }}
               alt="Living Room"

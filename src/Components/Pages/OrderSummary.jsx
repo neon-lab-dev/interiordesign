@@ -7,9 +7,9 @@ import { toast } from "sonner";
 
 const OrderSummary = () => {
 
-    const [cartProducts, setCartProducts] = useState([]);
-    const [userData, setUserData] = useState(null);
-    const [loading, setLoading] = useState(false);
+  const [cartProducts, setCartProducts] = useState([]);
+  const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   // Load cart from localStorage on mount
   useEffect(() => {
@@ -31,96 +31,141 @@ const OrderSummary = () => {
     fetchUserData();
   }, []);
 
-    const totalAmount = cartProducts
-        .reduce(
-            (total, product) =>
-                total +
-                (product.basePrice -
-                    product.basePrice * (product.discountedPercent / 100)) *
-                product.quantity,
-            0
-        )
-        .toFixed(2)
+  const totalAmount = cartProducts
+  .reduce(
+    (total, product) =>
+      total + product.basePrice * product.quantity,
+    0
+  )
+  .toFixed(2);
 
-    const handleCheckout = async () => {
-        try {
+const discount = cartProducts
+  .reduce(
+    (total, product) =>
+      total +
+      product.basePrice *
+      (product.discountedPercent / 100) *
+      product.quantity,
+    0
+  )
+  .toFixed(2);
 
-            if (!userData?.user?.primaryaddress && !userData?.user?.secondaryaddress) {
-                toast.error('Please add a shipping address to proceed');
-                return;
-            }
+const [couponCode, setCouponCode] = useState("");
+const [couponDiscount, setCouponDiscount] = useState(0);
+const [adjustedTotal, setAdjustedTotal] = useState(0);
+useEffect(() => {
+  setAdjustedTotal(totalAmount - Number(discount));
+}, [totalAmount, discount]);
 
-            setLoading(true);
-            const keyData = await axios.get('https://interior-design-backend-nine.vercel.app/api/v1/getkey')
+const handleApplyCoupon = async () => {
+  if (!couponCode.trim()) {
+    toast.error("Please enter a valid coupon code!");
+    return;
+  }
 
-            const response = await axios.post(
-                'https://interior-design-backend-nine.vercel.app/api/v1/checkout',
-                { amount: totalAmount },
-                { withCredentials: true }
-            );
+  try {
+    const response = await axios.get(
+      `https://interior-design-backend-nine.vercel.app/api/v1/discount?code=${couponCode}`, {
+      withCredentials: true
+    });
+
+    if (response?.data?.success) {
+      const discountedValue = response?.data?.discount;
+      setCouponDiscount(discountedValue);
+
+      const newTotal = (
+        totalAmount -
+        discount -
+        discountedValue
+      ).toFixed(2);
+
+      setAdjustedTotal(newTotal); 
+      toast.success(`Coupon applied! You saved ₹${discountedValue}`);
+    } else {
+      toast.error(response?.data?.message || "Invalid coupon code!");
+    }
+  } catch (error) {
+    toast.error("Failed to apply the coupon. Please try again!", error);
+  }
+};
+
+  const handleCheckout = async () => {
+    try {
+
+      if (!userData?.user?.primaryaddress && !userData?.user?.secondaryaddress) {
+        toast.error('Please add a shipping address to proceed');
+        return;
+      }
+
+      setLoading(true);
+      const keyData = await axios.get('https://interior-design-backend-nine.vercel.app/api/v1/getkey')
+
+      const response = await axios.post(
+        'https://interior-design-backend-nine.vercel.app/api/v1/checkout',
+        { amount: Number(adjustedTotal) },
+        { withCredentials: true }
+      );
+
+      const options = {
+        key: keyData?.data?.key, // Razorpay key_id
+        amount: response?.data?.order?.amount,
+        currency: 'INR',
+        name: 'Spaceframe',
+        description: 'Test Transaction',
+        image: "https://i.ibb.co.com/SmbFbDC/footer-Logo.png",
+        order_id: response?.data?.order?.id, // the order id
+        callback_url: 'https://interior-design-backend-nine.vercel.app/api/v1/paymentverification', // success URL
+        prefill: {
+          name: userData?.user?.full_name,
+          email: userData?.user?.email,
+          contact: userData?.user?.phoneNo,
+        },
+        theme: {
+          color: '#7E77D6'
+        },
+      };
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+
+      localStorage.setItem("orderProducts", JSON.stringify(cartProducts));
+
+    } catch (error) {
+      console.error('Error during checkout:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
 
-
-            const options = {
-                key: keyData?.data?.key, // Razorpay key_id
-                amount: response?.data?.order?.amount,
-                currency: 'INR',
-                name: 'Spaceframe',
-                description: 'Test Transaction',
-                image: "https://i.ibb.co.com/SmbFbDC/footer-Logo.png",
-                order_id: response?.data?.order?.id, // the order id
-                callback_url: 'https://interior-design-backend-nine.vercel.app/api/v1/paymentverification', // success URL
-                prefill: {
-                    name: userData?.user?.full_name,
-                    email: userData?.user?.email,
-                    contact: userData?.user?.phoneNo,
-                },
-                theme: {
-                    color: '#7E77D6'
-                },
-            };
-            const rzp = new window.Razorpay(options);
-            rzp.open();
-
-            localStorage.setItem("orderProducts", JSON.stringify(cartProducts));
-
-        } catch (error) {
-            console.error('Error during checkout:', error);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-
-    return (
-        <section className="d-flex flex-column gap-5">
-            {userData && (
-                <>
-                    <div className="d-flex p-2 gap-3 flex-column align-items-start shadow shadow-sm border-custom-light rounded-3">
-                        <h4>Logged in as</h4>
-                        <div className="d-flex align-items-center">
-                            <img src={user} alt="Profile" className="profile-pic" />
-                            <h6 className="m-0">{userData.user.full_name}</h6>
-                        </div>
-                        <div className="d-flex flex-column ">
-                            <p className="m-0"> <span className="fw-bold">Email:</span> {userData.user.email}</p>
-                            <p className="m-0"> <span className="fw-bold">Phone:</span> {userData.user.phoneNo}</p>
-                        </div>
-                    </div>
-                    <div className="d-flex p-2 gap-3 flex-column align-items-start shadow shadow-sm border-custom-light rounded-3">
-                        <h4>Shipping Address</h4>
-                        <div className="d-flex flex-column ">
-                            <p className="m-0">
-                                <span className="fw-bold">Address: </span>
-                                {userData && userData.user.primaryaddress
-                                    ? `${userData.user.primaryaddress.address}, ${userData.user.primaryaddress.landmark}, ${userData.user.primaryaddress.city} - ${userData.user.primaryaddress.pin_code},  ${userData.user.primaryaddress.state}`
-                                    : "Address not available"}
-                            </p>
-                        </div>
-                        <Link to={"/address-book"} className="btn btn-primary py-2">Edit Address</Link>
-                    </div>
-                </>
-            )}
+  return (
+    <section className="d-flex flex-column gap-5">
+      {userData && (
+        <>
+          <div className="d-flex p-2 gap-3 flex-column align-items-start shadow shadow-sm border-custom-light rounded-3">
+            <h4>Logged in as</h4>
+            <div className="d-flex align-items-center">
+              <img src={user} alt="Profile" className="profile-pic" />
+              <h6 className="m-0">{userData.user.full_name}</h6>
+            </div>
+            <div className="d-flex flex-column ">
+              <p className="m-0"> <span className="fw-bold">Email:</span> {userData.user.email}</p>
+              <p className="m-0"> <span className="fw-bold">Phone:</span> {userData.user.phoneNo}</p>
+            </div>
+          </div>
+          <div className="d-flex p-2 gap-3 flex-column align-items-start shadow shadow-sm border-custom-light rounded-3">
+            <h4>Shipping Address</h4>
+            <div className="d-flex flex-column ">
+              <p className="m-0">
+                <span className="fw-bold">Address: </span>
+                {userData && userData.user.primaryaddress
+                  ? `${userData.user.primaryaddress.address}, ${userData.user.primaryaddress.landmark}, ${userData.user.primaryaddress.city} - ${userData.user.primaryaddress.pin_code},  ${userData.user.primaryaddress.state}`
+                  : "Address not available"}
+              </p>
+            </div>
+            <Link to={"/address-book"} className="btn btn-primary py-2">Edit Address</Link>
+          </div>
+        </>
+      )}
 
       {/* Order Summary */}
       {cartProducts.length !== 0 ? (
@@ -168,7 +213,7 @@ const OrderSummary = () => {
                           {(
                             product.basePrice -
                             product.basePrice *
-                              (product.discountedPercent / 100)
+                            (product.discountedPercent / 100)
                           ).toFixed(2)}
                         </span>
                         <span className="discount">
@@ -232,30 +277,25 @@ const OrderSummary = () => {
                   <span>Price ({cartProducts.length} items)</span>
                   <span className="price">
                     ₹
-                    {cartProducts
-                      .reduce(
-                        (total, product) =>
-                          total + product.basePrice * product.quantity,
-                        0
-                      )
-                      .toFixed(2)}
+                    {totalAmount}
                   </span>
                 </div>
 
+                {/* Coupon Discount */}
+                <div className="d-flex justify-content-between w-100">
+                  <span>Coupon</span>
+                  <span className="discount">
+                    - ₹
+                    {couponDiscount.toFixed(2)}
+                  </span>
+                </div>
+
+                {/* Discount */}
                 <div className="d-flex justify-content-between w-100">
                   <span>Discount</span>
                   <span className="discount">
                     - ₹
-                    {cartProducts
-                      .reduce(
-                        (total, product) =>
-                          total +
-                          product.basePrice *
-                            (product.discountedPercent / 100) *
-                            product.quantity,
-                        0
-                      )
-                      .toFixed(2)}
+                    {discount}
                   </span>
                 </div>
 
@@ -270,61 +310,72 @@ const OrderSummary = () => {
                 <span>Total Amount</span>
                 <span className="price">
                   ₹
-                  {cartProducts
-                    .reduce(
-                      (total, product) =>
-                        total +
-                        (product.basePrice -
-                          product.basePrice *
-                            (product.discountedPercent / 100)) *
-                          product.quantity,
-                      0
-                    )
-                    .toFixed(2)}
+                  {adjustedTotal}
                 </span>
               </div>
 
-                            <div className="d-flex flex-column align-items-start gap-2 pt-2">
-                                <div className="d-flex">
-                                    <p>
-                                        You will save{" "}
-                                        <span className="discount d-inline">
-                                            ₹
-                                            {cartProducts
-                                                .reduce(
-                                                    (total, product) =>
-                                                        total +
-                                                        (product.basePrice * (product.discountedPercent / 100)) *
-                                                        product.quantity,
-                                                    0
-                                                )
-                                                .toFixed(2)}
-                                        </span>{" "}
-                                        on this order
-                                    </p>
-                                </div>
-                                <button onClick={handleCheckout} className="btn btn-lg-colored w-100 py-2">
-                                    {
-                                        loading ?
-                                            <div className="d-flex justify-content-center">
-                                                <div className="spinner-border text-primary" role="status">
-                                                    <span className="visually-hidden">Loading...</span>
-                                                </div>
-                                            </div>
-                                            :
-                                            "Proceed to Pay"
-                                    }
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+              <div className="d-flex flex-column align-items-start gap-2 pt-2">
+                <div className="d-flex">
+                  <p>
+                    You will save{" "}
+                    <span className="discount d-inline">
+                      ₹
+                      {(Number(discount) + couponDiscount).toFixed(2)}
+                    </span>{" "}
+                    on this order
+                  </p>
                 </div>
-            ) : (
-                <p>Your cart is empty!</p>
-            )}
+                <div className="w-100 position-relative">
+                  <input
+                    type="text"
+                    placeholder="Enter the coupon code"
+                    className="form-control border border-secondary py-1 ps-2 pe-5 w-100 rounded-1"
+                    style={{ borderColor: "#ddd", height: "45px", backgroundColor: "#353434" }}
+                    value={couponCode}
+                    onChange={(e) => setCouponCode(e.target.value)}
+                  />
+                  <button
+                    onClick={handleApplyCoupon}
+                    disabled={couponDiscount}
+                    className="position-absolute top-0 end-0 px-3 d-flex align-items-center justify-content-center"
+                    style={{
+                      backgroundColor: "#8881EA",
+                      color: "white",
+                      border: "none",
+                      height: "45px",
+                    }}
+                  >
+                    {
+                      couponDiscount?
+                      "Applied"
+                      :
+                      "Apply"
+                    }
+                  </button>
+                </div>
 
-        </section>
-    )
+                <button onClick={handleCheckout} className="btn btn-lg-colored w-100 py-2">
+                  {
+                    loading ?
+                      <div className="d-flex justify-content-center">
+                        <div className="spinner-border text-primary" role="status">
+                          <span className="visually-hidden">Loading...</span>
+                        </div>
+                      </div>
+                      :
+                      "Proceed to Pay"
+                  }
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <p>Your cart is empty!</p>
+      )}
+
+    </section>
+  )
 }
 
 export default OrderSummary;
