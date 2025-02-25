@@ -74,6 +74,11 @@ import baker from "../assets/Images/baker.png";
 // login
 import loginImage from "../assets/Images/loginimg.jpg"
 
+// about us
+import aboutUs1 from "../assets/Images/aboutUs1.png"
+import aboutUs2 from "../assets/Images/aboutUs2.png"
+import aboutUs3 from "../assets/Images/aboutUs3.png"
+
 export const IMAGES = {
   logo,
   chair1,
@@ -107,7 +112,10 @@ export const IMAGES = {
   cevnt,
   berkdia,
   baker,
-  loginImage
+  loginImage,
+  aboutUs3,
+  aboutUs2,
+  aboutUs1,
 };
 
 export const ICONS = {
