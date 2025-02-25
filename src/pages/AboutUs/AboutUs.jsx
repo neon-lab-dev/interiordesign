@@ -6,38 +6,37 @@ import "./AboutUs.css"
 
 const Page = () => {
   return (
-    <div>
-      <div className="position-relative text-white heroImg">
+    <div style={{ backgroundColor: "#181818",}}>
+      <div className="position-relative text-white  ">
       {/* Background Image */}
       <div className="hero-background"></div>
 
       {/* Content */}
       <div className="container position-relative heroImg d-flex flex-column gap-5 justify-content-center align-items-center  ">
-        <div className="row w-100 h-100">
-          {/* Left Card - Our Aim */}
-          <div className="col-md-6  d-flex align-items-start card1style ">
-            <div className="bg-dark bg-opacity-50 text-white p-2 rounded shadow" style={{ maxWidth: "345px" }}>
-              <h4 className="fw-bold">Our Aim</h4>
-              <p className="text-light herotextarea   ">
+        <div className="row  heroImg w-100 ">
+          <div className="col-md-6 d-flex align-items-start align card1style ">
+            <div className="bg-dark bg-opacity-50 text-white p-2 rounded shadow" style={{ maxWidth: "425px" }}>
+              <h4 className="fw-bold  heroheading2 ">Our Aim</h4>
+              <p className=" herotextarea   ">
                 Our company aims to offer contemporary and unique solutions for interior spaces. We offer complete interior design and execution services/solutions.
               </p>
             </div>
           </div>
 
-          {/* Right Card - Founded By */}
           <div className="col-md-6 d-flex justify-content-end align-items-end card2style">
-            <div className="bg-dark bg-opacity-50 text-white p-2 rounded shadow">
-              <p className="text-light small herotextarea mb-1">Founded By</p>
-              <h5 className="fw-bold">Ar. Lakshay Arora</h5>
+            <div className="bg-dark bg-opacity-75 text-white p-2 rounded shadow">
+              <p className=" heroheading1 ">Founded By</p>
+              <h5 className="fw-bold heroheading3">Ar. Lakshay Arora</h5>
             </div>
           </div>
         </div>
 
         {/* About Us Heading */}
-        <h1 className="position-absolute bottom-0 text-white fw-bold mb-4">About Us</h1>
+        <h1 className="position-absolute bottom-0  fw-bold mb-4" style={{color:"##FFFFFFBF"}}>About Us</h1>
       </div>
     </div>
-      <div className="card1style" >
+
+      <div className="sectionmargin" >
         <section
           className="container-fluid"
           style={{
@@ -45,7 +44,7 @@ const Page = () => {
             padding: "40px 40px 80px 80px",
           }}
         >
-          <div className="row d-flex align-items-center ">
+          <div className="row d-flex align-items-center  ">
             {/* Left Side Content */}
             <div className="col-lg-6 col-12 mb-4 ">
               <SectionHeading
@@ -212,9 +211,30 @@ const Page = () => {
                    />
                  </div>
                </div>
-             </section>
+        </section>
       </div>
     </div>
+  //    <div>
+  //    <Section
+  //      subHeading="WHO WE ARE"
+  //      heading="get to know us"
+  //      points={points}
+  //      image={IMAGES.aboutUs1}
+  //    />
+  //    <Section
+  //      subHeading="we strive to"
+  //      heading="Our Mission"
+  //      points={points2}
+  //      image={IMAGES.aboutUs2}
+  //      reverse
+  //    />
+  //    <Section
+  //      subHeading="functional regions"
+  //      heading="Serviceable Areas"
+  //      points={points3}
+  //      image={IMAGES.aboutUs3}
+  //    />
+  //  </div>
   );
 };
 
