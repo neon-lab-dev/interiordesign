@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 export const points = [
     {
         description: (
@@ -9,7 +10,7 @@ export const points = [
     {
         description: (
             <>
-                Founded by <b style={{fontWeight:"bolder"}}>Ar. Lakshay Arora</b>, Spaceframe is built on the belief that well-designed spaces can enhance everyday experiences. With an eye for detail and a commitment to sustainability, we focus on using durable, high-quality materials that ensure our designs stand the test of time. Whether it’s a residential, commercial, or hospitality project, we collaborate closely with clients to bring their vision to life, tailoring every project to their unique needs.
+                Founded by <b style={{fontWeight:"bolder", color : "#ffffffBF"}}>Ar. Lakshay Arora</b>, Spaceframe is built on the belief that well-designed spaces can enhance everyday experiences. With an eye for detail and a commitment to sustainability, we focus on using durable, high-quality materials that ensure our designs stand the test of time. Whether it’s a residential, commercial, or hospitality project, we collaborate closely with clients to bring their vision to life, tailoring every project to their unique needs.
             </>
         )
     },
