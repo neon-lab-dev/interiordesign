@@ -79,6 +79,10 @@ import aboutUs1 from "../assets/Images/aboutUs1.png"
 import aboutUs2 from "../assets/Images/aboutUs2.png"
 import aboutUs3 from "../assets/Images/aboutUs3.png"
 
+import aboutUsHero from "../assets/Images/aboutUsHero.png"
+import aboutUsHero2 from "../assets/Images/aboutUsHero2.png"
+import aboutUsHero3 from "../assets/Images/aboutUsHero3.png"
+
 export const IMAGES = {
   logo,
   chair1,
@@ -116,6 +120,9 @@ export const IMAGES = {
   aboutUs3,
   aboutUs2,
   aboutUs1,
+  aboutUsHero,
+  aboutUsHero2,
+  aboutUsHero3,
 };
 
 export const ICONS = {
