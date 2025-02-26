@@ -43,17 +43,15 @@ export const points3 = [
     {
         description: (
             <>
-                <div className="row justify-content-center">
-        {["GURGAON", "DELHI", "NOIDA", "FARIDABAD", "GHAZIABAD"].map((city, index) => (
-          <div
-            key={index}
-            className={`col-md-2 col-5 d-flex justify-content-center mb-3 mt-3`}
-          >
-            <div className=" text-white bg-transparent ">{city}</div>
-          </div>
-        ))}
-      </div>
-            </>
+            <div className="d-flex flex-wrap justify-content-center gap-3 mt-3 mb-3">
+              {["GURGAON", "DELHI", "NOIDA", "FARIDABAD", "GHAZIABAD"].map((city, index) => (
+                <div key={index} className="bg-black text-white p-2 rounded d-flex justify-content-center">
+                  {city}
+                </div>
+              ))}
+            </div>
+          </>
+          
         )
     },
     {
