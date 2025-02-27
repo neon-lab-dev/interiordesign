@@ -30,8 +30,6 @@ import ShippingRefundPol from "./Components/ShippingRefundPol/ShippingRefundPol"
 import ContactUsPage from "./Components/ContactUsPage/ContactUsPage";
 import PaymentSuccess from './pages/PaymentSuccess/PaymentSuccess';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
-
-
 function App() {
   return (
     <>

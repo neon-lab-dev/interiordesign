@@ -1,4 +1,3 @@
-import React from "react";
 import SectionHeading from "../../Components/Reusable/SectionHeading/SectionHeading";
 import { IMAGES } from "../../assets/Assets";
 import { points, points2, points3 } from "./AboutUs.constant";
