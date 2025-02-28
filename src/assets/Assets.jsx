@@ -77,7 +77,7 @@ import loginImage from "../assets/Images/loginimg.jpg"
 // about us
 import aboutUs1 from "../assets/Images/aboutUs1.png"
 import aboutUs2 from "../assets/Images/aboutUs2.png"
-import aboutUs3 from "../assets/Images/aboutUs3.png"
+import aboutUs3 from "../assets/Images/aboutus3.png"
 
 import aboutUsHero from "../assets/Images/aboutUsHero.png"
 import aboutUsHero2 from "../assets/Images/aboutUsHero2.png"
