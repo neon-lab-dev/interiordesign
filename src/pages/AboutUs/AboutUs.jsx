@@ -6,9 +6,9 @@ import "./AboutUs.css";
 const Page = () => {
   const bgImage =
   window.innerWidth <= 525
-    ? IMAGES.aboutUsHero3
+    ? IMAGES.aboutUsHero
     : window.innerWidth <= 768
-    ? IMAGES.aboutUsHero2
+    ? IMAGES.aboutUsHero
     : IMAGES.aboutUsHero;
   return (
     <div style={{ backgroundColor: "#181818" }}>
@@ -49,7 +49,7 @@ const Page = () => {
           {/* About Us Heading */}
           <h1
             className="position-absolute bottom-0  fw-bold mb-4"
-            style={{ color: "##FFFFFFBF" }}
+            style={{ color: "#FFFFFFBF" }}
           >
             About Us
           </h1>
