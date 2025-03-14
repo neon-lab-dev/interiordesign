@@ -5,21 +5,21 @@ import "./AboutUs.css";
 
 const Page = () => {
   const bgImage =
-  window.innerWidth <= 525
-    ? IMAGES.aboutUsHero
-    : window.innerWidth <= 768
-    ? IMAGES.aboutUsHero
-    : IMAGES.aboutUsHero;
+    window.innerWidth <= 525
+      ? IMAGES.aboutUsHero3
+      : window.innerWidth <= 768
+        ? IMAGES.aboutUsHero2
+        : IMAGES.aboutUsHero2;
   return (
     <div style={{ backgroundColor: "#181818" }}>
       <div className="position-relative text-white  ">
         {/* Background Image */}
         <div
-  className="hero-background"
-  style={{
-    backgroundImage: `url(${bgImage})`,
-  }}
-></div>
+          className="hero-background"
+          style={{
+            backgroundImage: `url(${bgImage})`,
+          }}
+        ></div>
 
         {/* Content */}
         <div className="container position-relative heroImg d-flex flex-column gap-5 justify-content-center align-items-center  ">
