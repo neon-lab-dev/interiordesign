@@ -33,14 +33,14 @@ const Nav = () => {
             >
               Home
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to="/about-us"
               className={({ isActive }) =>
                 isActive ? "active-link border-bottom border-2 text-nowrap " : "inactive-link text-nowrap"
               }
             >
               About Us
-            </NavLink>
+            </NavLink> */}
             <NavLink
               to="/bedsheets"
               className={({ isActive }) =>
