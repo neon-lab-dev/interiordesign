@@ -1,4 +1,5 @@
 import AboutUsHero from "../../Components/AboutUsPage/AboutUsHero/AboutUsHero";
+import InnovationAndPersonalization from "../../Components/AboutUsPage/InnovationAndPersonalization/InnovationAndPersonalization";
 import "./AboutUs.css";
 
 const Page = () => {
@@ -7,8 +8,9 @@ const Page = () => {
       className="mx-auto d-flex flex-column px-3 custom-container"
       // style="background-color: #181818; max-width: 1300px;"
     >
-      <div className="container">
+      <div className="">
       <AboutUsHero />
+      <InnovationAndPersonalization/>
       </div>
     </div>
   );
