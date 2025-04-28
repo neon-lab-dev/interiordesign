@@ -1,6 +1,11 @@
 import AboutUsHero from "../../Components/AboutUsPage/AboutUsHero/AboutUsHero";
 import InnovationAndPersonalization from "../../Components/AboutUsPage/InnovationAndPersonalization/InnovationAndPersonalization";
+import MissionAndVision from "../../Components/AboutUsPage/MissionAndVision/MissionAndVision";
 import "./AboutUs.css";
+import WinningCollaborators from './../../Components/HomePageComponents/WinningCollaborators/WinningCollaborators';
+import ServiceArea from "../../Components/AboutUsPage/ServiceArea/ServiceArea";
+import QualityAssurance from "../../Components/AboutUsPage/QualityAssurance/QualityAssurance";
+import ContactUs from "../../Components/HomePageComponents/ContactUs/ContactUs";
 
 const Page = () => {
   return (
@@ -11,6 +16,11 @@ const Page = () => {
       <div className="">
       <AboutUsHero />
       <InnovationAndPersonalization/>
+      <MissionAndVision/>
+      <WinningCollaborators />
+      <ServiceArea/>
+      <QualityAssurance/>
+      <ContactUs />
       </div>
     </div>
   );

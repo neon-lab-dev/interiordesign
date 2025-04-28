@@ -1,0 +1,156 @@
+/* --- Base Styles --- */
+.service-area-section {
+    background-color: #1c1c1c; /* Dark background */
+    color: #e8e8e8;          /* Light text color */
+    padding: 70px 0;
+    font-family: sans-serif; /* Basic font, replace if needed */
+  }
+
+  
+  /* --- Location Pills Styles --- */
+  .service-locations {
+    display: flex;
+    flex-wrap: wrap; /* Allow pills to wrap to the next line */
+    justify-content: center; /* Center pills horizontally */
+    gap: 15px 20px; /* Row gap, Column gap */
+    margin-bottom: 60px; /* Space before the next section */
+  }
+  
+  .location-pill {
+    display: inline-block;
+    background-color: #ffffff; /* White background */
+    color: #222222;          /* Dark text */
+    padding: 12px 30px;
+    border-radius: 50px; /* Fully rounded ends */
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: default; /* Indicate they are not clickable (change if they are) */
+    transition: background-color 0.2s ease; /* Smooth hover effect (optional) */
+  }
+  
+  /* Optional hover effect */
+  /*
+  .location-pill:hover {
+    background-color: #f0f0f0;
+  }
+  */
+  
+  /* --- Content Grid --- */
+  .service-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Left column slightly smaller than right */
+    gap: 50px;
+    align-items: center; /* Vertically align content */
+  }
+  
+  /* --- Left Column: Text & Stat --- */
+  .service-text-content {
+    /* Styles for the container if needed */
+  }
+  
+  .service-text-heading {
+    font-size: 2.2rem;
+    font-weight: 700; /* Bold heading */
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Match image */
+    line-height: 1.2;
+  }
+  
+  .service-text-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #c0c0c0;
+    margin-bottom: 40px; /* Space before the stat */
+  }
+  
+  .service-stat {
+    /* Container for the stat */
+  }
+  
+  .stat-percentage {
+    display: block;
+    font-size: 5rem; /* Large percentage */
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  
+  .stat-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #b0b0b0;
+    max-width: 350px; /* Limit width of stat description */
+  }
+  
+  /* --- Right Column: Map Image --- */
+  .service-map-content {
+    width: 100%;
+  }
+  
+  .service-map-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 450px; /* Control map height */
+    object-fit: cover;
+    border-radius: 5px; /* Optional rounding */
+    border: 1px solid #444; /* Subtle border like the image */
+  }
+  
+  
+  /* --- Responsive Adjustments --- */
+  
+  /* Medium Screens (e.g., Tablets) */
+  @media (max-width: 992px) {
+    .service-text-heading {
+      font-size: 1.9rem;
+    }
+    .stat-percentage {
+      font-size: 4rem;
+    }
+    .service-content-grid {
+      grid-template-columns: 1fr 1fr; /* Make columns equal */
+      gap: 40px;
+    }
+  }
+  
+  /* Small Screens (e.g., Mobile) */
+  @media (max-width: 768px) {
+    .service-area-section {
+      padding: 50px 0;
+    }
+    .service-locations {
+        margin-bottom: 40px;
+        gap: 10px 15px;
+    }
+    .location-pill {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+  
+    .service-content-grid {
+      grid-template-columns: 1fr; /* Stack columns */
+      gap: 40px; /* Vertical gap when stacked */
+    }
+  
+    /* Center text content when stacked */
+    .service-text-content {
+        text-align: center;
+    }
+    .stat-description {
+        margin-left: auto;
+        margin-right: auto; /* Center the description text block */
+    }
+  
+    .service-text-heading {
+      font-size: 1.7rem;
+    }
+    .stat-percentage {
+      font-size: 4.5rem; /* Can stay relatively large */
+    }
+    .service-map-image {
+        max-height: 350px; /* Adjust map height for mobile */
+    }
+  }

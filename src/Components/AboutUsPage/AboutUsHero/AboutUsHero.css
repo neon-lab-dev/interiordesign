@@ -4,6 +4,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 40px 0;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
 /* For large screens and up */

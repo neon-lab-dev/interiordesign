@@ -1,4 +1,3 @@
-import React from 'react';
 import "./InnovationAndPersonalization.css"
 import { IMAGES } from '../../../assets/Assets';
 
@@ -7,7 +6,7 @@ const InnovationAndPersonalization = () => {
         <section className="innovation-section">
         <div className="container">
           {/* Text Content */}
-          <div className="innovation-text-content">
+          <div className="section-text-content">
             <p className="tagline">TAILORED SPACES, TIMELESS IMPACT</p>
             <h2 className="heading">Rooted In Innovation & Personalization</h2>
             <p className="description">
