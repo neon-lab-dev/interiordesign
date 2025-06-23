@@ -79,6 +79,7 @@ import loginImage from "../assets/Images/loginimg.jpg"
 import aboutUs1 from "../assets/Images/aboutUs1.png"
 import aboutUs2 from "../assets/Images/aboutUs2.png"
 import aboutUs3 from "../assets/Images/aboutus3.png"
+import aboutUsGroup from "../assets/Images/aboutUsGroup.png"
 
 import aboutUsHero from "../assets/Images/aboutUsHero.png"
 import aboutUsHero2 from "../assets/Images/aboutUsHero2.png"
@@ -125,6 +126,7 @@ export const IMAGES = {
   aboutUsHero2,
   aboutUsHero3,
   map,
+  aboutUsGroup
 };
 
 export const ICONS = {
