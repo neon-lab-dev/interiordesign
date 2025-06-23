@@ -27,7 +27,9 @@
   }
   
   .mission-story-block {
-    margin-bottom: 40px; /* Space between story and mission */
+    margin-bottom: 40px; 
+    background-color:yellow;
+
   }
   
   .mission-section-heading {
@@ -42,6 +44,8 @@
     font-size: 1rem;
     line-height: 1.7;
     color: #c0c0c0;
+    text-align: left;
+
   }
   
   /* --- Image Content (Right Column) --- */
@@ -83,14 +87,13 @@
     }
   
     /* Optional: Center text column content on mobile */
-    .mission-text-content {
+    /* .mission-text-content {
         text-align: center;
-    }
+    } */
     .mission-description {
         text-align: left; /* Realign paragraphs */
-        max-width: 500px; /* Limit width */
-        margin-left: auto;
-        margin-right: auto;
+        max-width: 500px; 
+
      }
   
   
@@ -98,6 +101,7 @@
       font-size: 1.6rem;
     }
     .mission-description {
+       text-align: left;
       font-size: 0.9rem;
       line-height: 1.6;
     }

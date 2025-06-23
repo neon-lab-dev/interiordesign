@@ -55,6 +55,7 @@
     margin-bottom: 15px;
     text-transform: uppercase; /* Match image */
     line-height: 1.2;
+    text-align:left;
   }
   
   .service-text-description {
