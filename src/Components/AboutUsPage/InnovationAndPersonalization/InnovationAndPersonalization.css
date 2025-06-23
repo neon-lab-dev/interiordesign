@@ -1,0 +1,202 @@
+/* --- Base Styles --- */
+.innovation-section {
+    background-color: #2d2d2d; /* Dark background */
+    color: #f0f0f0;          /* Light text color */
+    padding: 60px 0;
+    font-family: sans-serif;  /* Basic font, replace if needed */
+  }
+  
+  /* .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  } */
+  
+  /* --- Text Content Styles --- */
+  .section-text-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 50px auto; /* Center block and add bottom margin */
+  }
+  
+  .tagline {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: #a0a0a0; /* Lighter grey for tagline */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  
+  .heading {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #ffffff; /* White heading */
+    line-height: 1.2;
+    text-align: center;
+  }
+  
+  .description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #c0c0c0; /* Slightly brighter grey for description */
+  }
+  
+  .description strong {
+    color: #ffffff; /* Highlight name */
+    font-weight: 600;
+  }
+  
+  /* --- Details Grid (Images + Stats) --- */
+  .innovation-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    gap: 30px; /* Space between columns */
+    align-items: center; /* Vertically align items in the center */
+  }
+  
+  .detail-image-wrapper {
+    width: 100%;
+  }
+  
+  .detail-image {
+    display: block; /* Remove extra space below image */
+    width: 100%;
+    height: 500px;   /* Maintain aspect ratio */
+    max-height: 500px; /* Optional: Limit image height */
+    object-fit: cover; /* Cover the area nicely */
+    border-radius: 4px; /* Slight rounding if desired */
+  }
+  
+  /* --- Stats Column Styles --- */
+  .innovation-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Distribute space */
+    height: 100%; /* Try to match height of images */
+    padding-left: 20px; /* Space from the image column */
+    min-height: 400px; /* Ensure minimum height for spacing */
+  }
+  
+  .stat-item {
+    position: relative; /* For the pseudo-element line */
+    padding-left: 25px; /* Space for the line + text gap */
+    margin-bottom: 40px; /* Space between stat items */
+  }
+  
+  .stat-item:last-child {
+    margin-bottom: 0; /* No margin for the last item */
+  }
+  
+  /* Vertical line */
+  .stat-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px; /* Adjust vertical alignment of line */
+    bottom: 5px; /* Adjust vertical alignment of line */
+    width: 3px;
+    background-color: #ffffff; /* Default white line */
+    border-radius: 2px;
+  }
+  
+  /* Optional: Different line colors like the original */
+  .stat-item--secondary::before {
+     /* Example: Using a subtle purple/blue */
+     /* You might need more specific colors based on your theme */
+    background-color: #a8a8ff; /* Placeholder color */
+  }
+  .stat-item--tertiary::before {
+     /* Example: Using another color */
+    background-color: #a8a8ff; /* Placeholder color */
+  }
+  
+  
+  .stat-value {
+    display: block;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  
+  .stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    line-height: 1.4;
+  }
+  
+  /* --- Responsive Adjustments --- */
+  
+  /* Medium Screens (e.g., Tablets) */
+  @media (max-width: 992px) {
+    .heading {
+      font-size: 2rem;
+    }
+    .stat-value {
+      font-size: 2.2rem;
+    }
+    .innovation-details-grid {
+      gap: 20px; /* Reduce gap */
+    }
+    .innovation-stats {
+       padding-left: 15px;
+    }
+     .stat-item {
+       padding-left: 20px;
+     }
+  }
+  
+  /* Small Screens (e.g., Mobile) */
+  @media (max-width: 768px) {
+    .innovation-section {
+      padding: 40px 0;
+    }
+    .heading {
+      font-size: 1.8rem;
+    }
+    .description {
+      font-size: 0.9rem;
+    }
+  
+    .innovation-details-grid {
+      grid-template-columns: 1fr; /* Stack columns */
+      gap: 40px; /* Increase gap between stacked items */
+    }
+  
+    .detail-image-wrapper {
+       max-width: 100%; /* Make images slightly smaller than full width */
+       margin: 0 auto; /* Center images */
+    }
+     .detail-image {
+       max-height: none; /* Remove height constraint */
+     }
+  
+  
+    .innovation-stats {
+      padding-left: 0; /* Remove padding when stacked */
+      align-items: center; /* Center stats text */
+      text-align: center;
+      min-height: auto; /* Reset min-height */
+    }
+  
+    .stat-item {
+      padding-left: 35px; /* Adjust padding for centered text with line */
+      margin-bottom: 30px;
+      max-width: 300px; /* Constrain width of stats text */
+    }
+  
+    /* Adjust line position slightly for centered text */
+     .stat-item::before {
+       left: 10px; /* Move line slightly from edge */
+     }
+  
+    .stat-value {
+      font-size: 2rem;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+    }
+  }

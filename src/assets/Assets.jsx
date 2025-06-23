@@ -62,6 +62,7 @@ import explore8 from "../assets/Images/explore8.jpg";
 
 // contact
 import contact from "../assets/Images/contact.jpg";
+import map from "../assets/Images/map.jpeg";
 
 // Winning collabratoes-home
 import overlay from "../assets/Icons/blackRocks.svg";
@@ -123,6 +124,7 @@ export const IMAGES = {
   aboutUsHero,
   aboutUsHero2,
   aboutUsHero3,
+  map,
 };
 
 export const ICONS = {

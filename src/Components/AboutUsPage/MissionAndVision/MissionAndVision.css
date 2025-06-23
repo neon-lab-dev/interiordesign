@@ -1,0 +1,113 @@
+    /* --- Base Styles --- */
+.mission-vision-section {
+    background-color: #1a1a1a; /* Slightly different dark background */
+    color: #e0e0e0;          /* Slightly off-white text */
+    padding: 80px 0;         /* Generous padding */
+    font-family: sans-serif; /* Basic font, replace if needed */
+  }
+  
+  .container {
+    max-width: 1140px; /* Slightly narrower container */
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  
+  /* --- Content Grid --- */
+  .mission-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 50px; /* Space between columns */
+    align-items: center; /* Vertically align items in the middle */
+  }
+  
+  /* --- Text Content (Left Column) --- */
+  .mission-text-content {
+    /* No specific styles needed unless controlling spacing */
+  }
+  
+  .mission-story-block {
+    margin-bottom: 40px; /* Space between story and mission */
+  }
+  
+  .mission-section-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+  
+  .mission-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #c0c0c0;
+  }
+  
+  /* --- Image Content (Right Column) --- */
+  .mission-image-content {
+    width: 100%;
+  }
+  
+  .mission-content-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 650px; /* Prevent image from getting excessively tall */
+    object-fit: cover;
+    border-radius: 5px; /* Optional slight rounding */
+  }
+  
+  /* --- Responsive Adjustments --- */
+  
+  /* Medium Screens (e.g., Tablets) */
+  @media (max-width: 992px) {
+    .mission-section-heading {
+      font-size: 1.8rem;
+    }
+    .mission-content-grid {
+      gap: 30px;
+      align-items: start; /* Align to top might look better */
+    }
+  }
+  
+  /* Small Screens (e.g., Mobile) */
+  @media (max-width: 768px) {
+    .mission-vision-section {
+      padding: 50px 0;
+    }
+  
+    .mission-content-grid {
+      grid-template-columns: 1fr; /* Stack columns */
+      gap: 40px; /* Add gap for stacked layout */
+    }
+  
+    /* Optional: Center text column content on mobile */
+    .mission-text-content {
+        text-align: center;
+    }
+    .mission-description {
+        text-align: left; /* Realign paragraphs */
+        max-width: 500px; /* Limit width */
+        margin-left: auto;
+        margin-right: auto;
+     }
+  
+  
+    .mission-section-heading {
+      font-size: 1.6rem;
+    }
+    .mission-description {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+  
+    .mission-image-content {
+      /* Image will naturally take full width in single column grid */
+      /* Add order if you want image first: order: -1; */
+      max-width: 90%; /* Optional: don't make image fully edge-to-edge */
+      margin: 0 auto; /* Center if max-width is used */
+    }
+    .mission-content-image {
+        max-height: none; /* Remove height constraint */
+    }
+  }

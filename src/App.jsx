@@ -18,7 +18,7 @@ import AddingNewAddress from "./Components/DashboardPages/AddingNewAddress";
 import AccountDetailsPage from "./Components/DashboardPages/AccountDetailsPage";
 import Home from "./pages/Home/Home";
 import BedSheets from './pages/BedSheets/BedSheets';
-// import AboutUs from "./pages/AboutUs/AboutUs.jsx";
+import AboutUs from "./pages/AboutUs/AboutUs.jsx";
 
 import { ToastContainer } from "react-toastify";
 import OrderSummary from "./Components/Pages/OrderSummary";
@@ -35,7 +35,7 @@ function App() {
     <>
       <Routes>
       <Route path="/" element={<Home />} />
-      {/* <Route path="/about-us" element={<AboutUs />} /> */}
+      <Route path="/about-us" element={<AboutUs />} />
         <Route path="/bedsheets" element={<BedSheets />} />   
         <Route path="/login" element={<Login />} />
         <Route path="/products" element={<Products />} />
