@@ -48,7 +48,7 @@ const AboutUsHero = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      style={{ overflow: 'hidden' }}
+      className="aboutus-hero-text-container"
     >
       <motion.h1
         className="about-us-heading"
