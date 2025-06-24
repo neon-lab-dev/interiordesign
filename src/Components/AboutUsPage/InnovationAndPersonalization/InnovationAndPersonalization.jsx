@@ -32,16 +32,16 @@ const InnovationAndPersonalization = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="container">
+      <div className="container2">
         {/* Text Content */}
         <motion.div
-          className="section-text-content"
+          className="section-text-content1 px-3"
           variants={containerVariants}
         >
-          <motion.p className="tagline" variants={itemVariants}>
+          <motion.p className="tagline1" variants={itemVariants}>
             TAILORED SPACES, TIMELESS IMPACT
           </motion.p>
-          <motion.h2 className="heading" variants={itemVariants}>
+          <motion.h2 className="heading1" variants={itemVariants}>
             Rooted In Innovation & Personalization
           </motion.h2>
           <motion.p className="description" variants={itemVariants}>

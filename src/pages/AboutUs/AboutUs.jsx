@@ -10,7 +10,7 @@ import ContactUs from "../../Components/HomePageComponents/ContactUs/ContactUs";
 const Page = () => {
   return (
     <div
-      className="mx-auto d-flex flex-column px-3 custom-container"
+      className="mx-auto d-flex flex-column custom-container"
       // style="background-color: #181818; max-width: 1300px;"
     >
       <div className="">

@@ -59,16 +59,16 @@ const ServiceArea = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.15 }}
         >
-      <div className="container">
+      <div className="container2">
         {/* Header Text */}
         <motion.div
-            className="section-text-content"
+            className="section-text-content px-3"
             variants={containerVariants}
         >
-            <motion.p className="tagline" variants={slideUpItemVariants}>
+            <motion.p className="tagline1" variants={slideUpItemVariants}>
                 SERVICEABLE AREAS
             </motion.p>
-            <motion.h2 className="heading" variants={slideUpItemVariants}>
+            <motion.h2 className="heading1" variants={slideUpItemVariants}>
                 Where We Work
             </motion.h2>
             <motion.p className="description" variants={slideUpItemVariants}>
@@ -78,7 +78,7 @@ const ServiceArea = () => {
 
         {/* Location Pills */}
         <motion.div
-            className="service-locations"
+            className="service-locations px-3"
             variants={containerVariants}
         >
           {locations.map((location) => (
@@ -99,7 +99,7 @@ const ServiceArea = () => {
         >
           {/* Left Column: Text & Stat */}
           <motion.div
-            className="service-text-content"
+            className="service-text-content px-3"
             variants={containerVariants}
           >
             <motion.h3 className="service-text-heading" variants={slideLeftItemVariants}>

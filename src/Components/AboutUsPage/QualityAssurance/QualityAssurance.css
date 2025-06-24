@@ -2,15 +2,17 @@
 .quality-assurance-section {
     background-color: #2d2d2d; /* Dark background */
     color: #e8e8e8;          /* Light text color */
-    padding: 80px 0;
+    padding: 80px 0 !important; /* Top and bottom padding */
     font-family: sans-serif; /* Basic font, replace if needed */
     overflow: hidden; /* Prevent potential overflow issues */
   }
   
-  .container {
-    max-width: 1140px;
+ .container2 {
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 0px;
+    display: flex;
+    flex-direction: column;
   }
   
   /* --- Grid Layout --- */
@@ -27,10 +29,30 @@
     /* Container for text */
 
   }
+  .tagline1 {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #a0a0a0;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-family: Verdana;
+text-align: left; /* Align text to the left */
+}
+
+.heading1 {
+  font-size: 24;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #ffffff; /* White heading */
+  line-height: 1.2;
+  text-align: left;
+  font-family: Verdana; /* Use a sans-serif font */
+}
+
   
   .quality-tagline {
-    font-size: 0.8rem;
-    letter-spacing: 2px;
+    font-size: 12px;
+    letter-spacing: 1px;
     color: #a0a0a0;
     margin-bottom: 10px;
     text-transform: uppercase;
@@ -87,7 +109,7 @@
   /* Small Screens (e.g., Mobile) */
   @media (max-width: 768px) {
     .quality-assurance-section {
-      padding: 50px 0;
+      padding: 50px 0 !important; /* Reduce padding for mobile */
     }
     .quality-grid {
       grid-template-columns: 1fr; /* Stack columns */

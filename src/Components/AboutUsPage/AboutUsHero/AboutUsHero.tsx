@@ -42,13 +42,13 @@ const AboutUsHero = () => {
     },
   };
   return (
-    <div className="aboutus-hero-container">
+    <div className="aboutus-hero-container ">
       <motion.div
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      className="aboutus-hero-text-container"
+      className="aboutus-hero-text-container px-3"
     >
       <motion.h1
         className="about-us-heading"
@@ -66,7 +66,7 @@ const AboutUsHero = () => {
       </motion.p>
     </motion.div>
 
-     <div className="image-container">
+     <div className="image-container1">
         {/* Moving logo */}
       <div className="logo-wrapper">
         <div className="rotating-text">
