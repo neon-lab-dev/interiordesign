@@ -4,6 +4,8 @@ import { IMAGES } from "../../../assets/Assets";
 import { motion } from 'framer-motion';
 
 const containerVariants = {
+
+  
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -51,6 +53,11 @@ const slideRightItemVariants = {
 
 
 const ServiceArea = () => {
+
+  const address = encodeURIComponent("2nd floor, iWorkk, 90, Mehrauli-Gurgaon Rd, Industrial Development Area, Sector 16, Gurugram, Haryana 122007");
+
+  const mapsLink = `https://www.google.com/maps?q=${address}`;
+  const iframeSrc = `https://www.google.com/maps?q=${address}&output=embed`;
     const locations = ['Gurgaon', 'Delhi', 'Noida', 'Faridabad', 'Ghaziabad'];
     return (
         <motion.section
@@ -121,11 +128,23 @@ const ServiceArea = () => {
             className="service-map-content"
             variants={slideRightItemVariants}
           >
-            <img
+            {/* <img
               src={IMAGES.map}
               alt="Map showing service area location"
               className="service-map-image"
-            />
+            /> */}
+            <a href={mapsLink} target="_blank" rel="noopener noreferrer">
+      <iframe
+        title="Google Map"
+        src={iframeSrc}
+        width="100%"
+        height="450"
+        style={{ border: 0 }}
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </a>
           </motion.div>
         </motion.div>
       </div>

@@ -38,10 +38,10 @@ const InnovationAndPersonalization = () => {
           className="section-text-content1 px-3"
           variants={containerVariants}
         >
-          <motion.p className="tagline1" variants={itemVariants}>
+          <motion.p className="tagline4" variants={itemVariants}>
             TAILORED SPACES, TIMELESS IMPACT
           </motion.p>
-          <motion.h2 className="heading1" variants={itemVariants}>
+          <motion.h2 className="heading4" variants={itemVariants}>
             Rooted In Innovation & Personalization
           </motion.h2>
           <motion.p className="description" variants={itemVariants}>

@@ -39,10 +39,10 @@ const QualityAssurance = () => {
           <motion.div
             className="quality-text-content px-3"
           >
-            <motion.p className="tagline1" variants={itemVariants}>
+            <motion.p className="tagline2" variants={itemVariants}>
                 QUALITY ASSURANCE
             </motion.p>
-            <motion.h2 className="heading1" variants={itemVariants}>
+            <motion.h2 className="heading2" variants={itemVariants}>
                 Design That Meets Exacting Standards
             </motion.h2>
             <motion.div className="description">

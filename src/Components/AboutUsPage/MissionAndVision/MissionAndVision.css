@@ -32,30 +32,15 @@
 
   }
   
-  .tagline1 {
-  font-size: 12px;
-  letter-spacing: 1px;
-  color: #a0a0a0;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  font-family: Verdana;
-}
+  
 
-.heading1 {
-  font-size: 24;
-  font-weight: 500;
-  margin-bottom: 20px;
-  color: #ffffff; /* White heading */
-  line-height: 1.2;
-  text-align: center;
-  font-family: Verdana; /* Use a sans-serif font */
-}
+
   .mission-section-heading {
     font-size: 2rem;
     font-weight: 400;
     color: #ffffff;
     margin-bottom: 15px;
-    text-align:left;
+    text-align: left; /* Center the heading */
     font-family: Verdana; /* Use a sans-serif font */
   }
   .container2 {
@@ -100,6 +85,25 @@
       gap: 30px;
       align-items: start; /* Align to top might look better */
     }
+    .tagline3 {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #a0a0a0;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-family: Verdana;
+  text-align: center; /* Center the tagline */
+}
+
+.heading3 {
+  font-size: 24;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #ffffff; /* White heading */
+  line-height: 1.2;
+  text-align: center;
+  font-family: Verdana; /* Use a sans-serif font */
+}
   }
   
   /* Small Screens (e.g., Mobile) */
