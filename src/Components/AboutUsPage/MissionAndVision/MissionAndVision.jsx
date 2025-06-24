@@ -38,10 +38,10 @@ const MissionAndVision = () => {
             className="section-text-content px-3"
             variants={containerVariants}
         >
-            <motion.p className="tagline1" variants={itemVariants}>
+            <motion.p className="tagline3" variants={itemVariants}>
                 CRAFTER TO COMFORT. BUILT TO ENDURE
             </motion.p>
-            <motion.h2 className="heading1" variants={itemVariants}>
+            <motion.h2 className="heading3" variants={itemVariants}>
                 Spaces That Inspire, Nurture, Endure
             </motion.h2>
             <motion.p className="description" variants={itemVariants}>

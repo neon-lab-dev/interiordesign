@@ -29,7 +29,7 @@
     /* Container for text */
 
   }
-  .tagline1 {
+  .tagline2 {
   font-size: 12px;
   letter-spacing: 1px;
   color: #a0a0a0;
@@ -39,7 +39,7 @@
 text-align: left; /* Align text to the left */
 }
 
-.heading1 {
+.heading2 {
   font-size: 24;
   font-weight: 500;
   margin-bottom: 20px;
