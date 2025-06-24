@@ -32,16 +32,16 @@ const MissionAndVision = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
         >
-      <div className="container">
+      <div className="container2 ">
         {/* Heading Text */}
         <motion.div
-            className="section-text-content"
+            className="section-text-content px-3"
             variants={containerVariants}
         >
-            <motion.p className="tagline" variants={itemVariants}>
+            <motion.p className="tagline1" variants={itemVariants}>
                 CRAFTER TO COMFORT. BUILT TO ENDURE
             </motion.p>
-            <motion.h2 className="heading" variants={itemVariants}>
+            <motion.h2 className="heading1" variants={itemVariants}>
                 Spaces That Inspire, Nurture, Endure
             </motion.h2>
             <motion.p className="description" variants={itemVariants}>
@@ -56,7 +56,7 @@ const MissionAndVision = () => {
         >
           {/* Left Column: Text */}
           <motion.div
-            className="mission-text-content"
+            className="mission-text-content px-3"
             variants={containerVariants}
           >
             <motion.div className="mission-story-block" variants={itemVariants}>

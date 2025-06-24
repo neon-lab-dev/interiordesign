@@ -1,205 +1,215 @@
 /* --- Base Styles --- */
 .innovation-section {
-    background-color: #2d2d2d; /* Dark background */
-    color: #f0f0f0;          /* Light text color */
-    padding: 60px 0;
-    font-family: sans-serif;  /* Basic font, replace if needed */
-  }
-  
-  /* .container {
-    max-width: 1200px;
+  background-color: #2d2d2d; /* Dark background */
+  color: #f0f0f0; /* Light text color */
+  padding: 60px 12px !important; /* Remove padding for full-width effect */
+  font-family: sans-serif; margin: 0 auto; /* Center the section */
+}
+
+.container2 {
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 0 20px;
-  } */
-  
-  /* --- Text Content Styles --- */
-  .section-text-content {
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto 50px auto; /* Center block and add bottom margin */
+    padding: 0 0px;
+    display: flex;
+    flex-direction: column;
   }
-  
-  .tagline {
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    color: #a0a0a0; /* Lighter grey for tagline */
-    margin-bottom: 10px;
-    text-transform: uppercase;
-  }
-  
-  .heading {
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 20px;
-    color: #ffffff; /* White heading */
-    line-height: 1.2;
-    text-align: center;
-  }
-  
-  .description {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #c0c0c0; /* Slightly brighter grey for description */
-  }
-  
-  .description strong {
-    color: #ffffff; /* Highlight name */
-    font-weight: 600;
-  }
-  
-  /* --- Details Grid (Images + Stats) --- */
-  .innovation-details-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
-    gap: 30px; /* Space between columns */
-    align-items: center; /* Vertically align items in the center */
-  }
-  
-  .detail-image-wrapper {
-    width: 100%;
-  }
-  
-  .detail-image {
-    display: block; /* Remove extra space below image */
-    width: 100%;
-    height: 500px;   /* Maintain aspect ratio */
-    max-height: 500px; /* Optional: Limit image height */
-    object-fit: cover; /* Cover the area nicely */
-    border-radius: 4px; /* Slight rounding if desired */
-  }
-  
-  /* --- Stats Column Styles --- */
- .innovation-stats {
+
+/* --- Text Content Styles --- */
+.section-text-content1 {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 24px auto; /* Center block and add bottom margin */
+}
+
+.tagline1 {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #a0a0a0;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-family: Verdana;
+}
+
+.heading1 {
+  font-size: 24;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #ffffff; /* White heading */
+  line-height: 1.2;
+  text-align: center;
+  font-family: Verdana; /* Use a sans-serif font */
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #c0c0c0; 
+  text-align: left; /* Align text to the left */
+}
+
+.description strong {
+  color: #ffffff; /* Highlight name */
+  font-weight: 600;
+}
+
+/* --- Details Grid (Images + Stats) --- */
+.innovation-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+  gap: 30px; /* Space between columns */
+  align-items: center; /* Vertically align items in the center */
+}
+
+.detail-image-wrapper {
+  width: 100%;
+}
+
+.detail-image {
+  display: block; /* Remove extra space below image */
+  width: 100%;
+  height: 400px; /* Maintain aspect ratio */
+  max-height: 400px; /* Optional: Limit image height */
+  object-fit: cover; /* Cover the area nicely */
+  border-radius: 4px; /* Slight rounding if desired */
+}
+
+/* --- Stats Column Styles --- */
+.innovation-stats {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
-  justify-content:start;
+  align-items: flex-start;
+  justify-content: start;
   min-height: 400px;
 }
 
+.stat-item {
+  position: relative; /* For the pseudo-element line */
+  padding-left: 25px;
+  margin-bottom: 40px;
+  align-self: flex-start;
+}
 
-  
-  .stat-item {
-    position: relative; /* For the pseudo-element line */
-    padding-left: 25px; /* Space for the line + text gap */
-    margin-bottom: 40px;
-    align-self: flex-start; 
-  }
-  
-  .stat-item:last-child {
-    margin-bottom: 20px; /* No margin for the last item */
-  }
-  
-  /* Vertical line */
-  .stat-item::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 5px; /* Adjust vertical alignment of line */
-    bottom: 5px; /* Adjust vertical alignment of line */
-    width: 3px;
-    background-color: #ffffff; /* Default white line */
-    border-radius: 2px;
-  }
-  
-  /* Optional: Different line colors like the original */
-  .stat-item--secondary::before {
-     /* Example: Using a subtle purple/blue */
-     /* You might need more specific colors based on your theme */
-    background-color: #a8a8ff; /* Placeholder color */
-  }
-  .stat-item--tertiary::before {
-     /* Example: Using another color */
-    background-color: #a8a8ff; /* Placeholder color */
-  }
-  
-  
-  .stat-value {
-  display: block;              /* Optional — block is default for div/span */
+.stat-item:last-child {
+  margin-bottom: 20px; /* No margin for the last item */
+}
+
+/* Vertical line */
+.stat-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px; /* Adjust vertical alignment of line */
+  bottom: 5px; /* Adjust vertical alignment of line */
+  width: 3px;
+  background-color: #ffffff; /* Default white line */
+  border-radius: 2px;
+}
+
+/* Optional: Different line colors like the original */
+.stat-item--secondary::before {
+  /* Example: Using a subtle purple/blue */
+  /* You might need more specific colors based on your theme */
+  background-color: #a8a8ff; /* Placeholder color */
+}
+.stat-item--tertiary::before {
+  /* Example: Using another color */
+  background-color: #a8a8ff; /* Placeholder color */
+}
+
+.stat-value {
+  display: block; /* Optional — block is default for div/span */
   font-size: 2.8rem;
   font-weight: bold;
   color: #ffffff;
   line-height: 1.1;
   margin-bottom: 8px;
-  text-align: left;            /* Ensure text is aligned left */
+  text-align: left; /* Ensure text is aligned left */
+  font-family: Verdana; /* Use a sans-serif font */
 }
 
-  
-  .stat-label {
-    display: block;
+.stat-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  line-height: 1.4;
+  text-align: left;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Medium Screens (e.g., Tablets) */
+@media (max-width: 992px) {
+  .heading {
+    font-size: 2rem;
+  }
+  .stat-value {
+    font-size: 2.2rem;
+  }
+  .innovation-details-grid {
+    gap: 30px; 
+  }
+  .stat-item {
+    padding-left: 20px;
+  }
+  .detail-image {
+    height: 700px;
+    max-height: 780px; /* Slightly smaller images */
+  }
+  .innovation-section {
+    padding: 30px  0 !important;;
+
+  }
+}
+
+/* Small Screens (e.g., Mobile) */
+@media (max-width: 768px) {
+  .innovation-section {
+    padding: 38px 0 !important;
+
+  }
+  .heading {
+    font-size: 1.8rem;
+  }
+  .description {
     font-size: 0.9rem;
-    color: #b0b0b0;
-    line-height: 1.4;
-    text-align:left; 
   }
-  
-  /* --- Responsive Adjustments --- */
-  
-  /* Medium Screens (e.g., Tablets) */
-  @media (max-width: 992px) {
-    .heading {
-      font-size: 2rem;
-    }
-    .stat-value {
-      font-size: 2.2rem;
-    }
-    .innovation-details-grid {
-      gap: 20px; /* Reduce gap */
-    }
-     .stat-item {
-       padding-left: 20px;
-     }
+
+  .innovation-details-grid {
+    grid-template-columns: 1fr; /* Stack columns */
+    gap: 20px;
   }
-  
-  /* Small Screens (e.g., Mobile) */
-  @media (max-width: 768px) {
-    .innovation-section {
-      padding: 40px 0;
-    }
-    .heading {
-      font-size: 1.8rem;
-    }
-    .description {
-      font-size: 0.9rem;
-    }
-  
-    .innovation-details-grid {
-      grid-template-columns: 1fr; /* Stack columns */
-      gap: 40px; 
-      
-    }
-  
-    .detail-image-wrapper {
-       max-width: 100%; /* Make images slightly smaller than full width */
-       margin: 0 auto; /* Center images */
-    }
-     .detail-image {
-       max-height: none; /* Remove height constraint */
-     }
-  
-  
-    .innovation-stats {
-      padding-left: 0; /* Remove padding when stacked */
-      align-items: center; /* Center stats text */
-      text-align: center;
-      min-height: auto; /* Reset min-height */
-    }
-  
-    .stat-item {
-      padding-left: 35px; /* Adjust padding for centered text with line */
-      margin-bottom: 30px;
-      max-width: 300px; /* Constrain width of stats text */
-    }
-  
-    /* Adjust line position slightly for centered text */
-     .stat-item::before {
-       left: 10px; /* Move line slightly from edge */
-     }
-  
-    .stat-value {
-      font-size: 2rem;
-    }
-    .stat-label {
-      font-size: 0.85rem;
-    }
+
+  .detail-image-wrapper {
+    max-width: 100%; /* Make images slightly smaller than full width */
+    margin: 0 auto; /* Center images */
   }
+  .detail-image {
+    height: 400px;
+    max-height: 400; /* Remove height constraint */
+  }
+
+  .innovation-stats {
+    padding-left: 0; /* Remove padding when stacked */
+    align-items: center; /* Center stats text */
+    text-align: center;
+    min-height: auto; /* Reset min-height */
+  }
+
+  .stat-item {
+    padding-left: 35px; /* Adjust padding for centered text with line */
+    margin-bottom: 30px;
+    max-width: 300px; /* Constrain width of stats text */
+  }
+
+  /* Adjust line position slightly for centered text */
+  .stat-item::before {
+    left: 10px; /* Move line slightly from edge */
+  }
+
+  .stat-value {
+    font-size: 24px;
+  }
+  .stat-label {
+    font-size: 0.85rem;
+  }
+}

@@ -2,8 +2,16 @@
 .service-area-section {
     background-color: #1c1c1c; /* Dark background */
     color: #e8e8e8;          /* Light text color */
-    padding: 70px 0;
+    padding: 70px  !important; /* Top and bottom padding */
     font-family: sans-serif; /* Basic font, replace if needed */
+  }
+
+  .container2 {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 0px;
+    display: flex;
+    flex-direction: column;
   }
 
   
@@ -18,14 +26,17 @@
   
   .location-pill {
     display: inline-block;
-    background-color: #ffffff; /* White background */
-    color: #222222;          /* Dark text */
+    background-color: #ffffff40; /* White background */
+    color: #ffffff;          /* Dark text */
     padding: 12px 30px;
     border-radius: 50px; /* Fully rounded ends */
     font-size: 0.95rem;
     font-weight: 500;
     cursor: default; /* Indicate they are not clickable (change if they are) */
     transition: background-color 0.2s ease; /* Smooth hover effect (optional) */
+    border-color: #ffffff;
+    border-style: solid;
+    border-width: 1px; /* Subtle border */
   }
   
   /* Optional hover effect */
@@ -70,6 +81,24 @@
     /* Container for the stat */
      text-align:left;
   }
+  .tagline1 {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #a0a0a0;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-family: Verdana;
+}
+
+.heading1 {
+  font-size: 24;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #ffffff; /* White heading */
+  line-height: 1.2;
+  text-align: center;
+  font-family: Verdana; /* Use a sans-serif font */
+}
   
   .stat-percentage {
     display: block;
@@ -119,12 +148,15 @@
       grid-template-columns: 1fr 1fr; /* Make columns equal */
       gap: 40px;
     }
+     .service-map-image {
+        max-height: 700px; /* Adjust map height for mobile */
+    }
   }
   
   /* Small Screens (e.g., Mobile) */
   @media (max-width: 768px) {
     .service-area-section {
-      padding: 50px 0;
+      padding: 50px 0 !important; /* Reduce padding for mobile */
     }
     .service-locations {
         margin-bottom: 40px;
@@ -150,12 +182,15 @@
     }
   
     .service-text-heading {
-      font-size: 1.7rem;
+      font-size: 24px;
+      font-family: Verdana; /* Use a sans-serif font */
+      font-weight: 400;
+
     }
     .stat-percentage {
       font-size: 4.5rem; /* Can stay relatively large */
     }
     .service-map-image {
-        max-height: 350px; /* Adjust map height for mobile */
+        max-height: 400px; /* Adjust map height for mobile */
     }
   }

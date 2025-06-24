@@ -33,16 +33,16 @@ const QualityAssurance = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
         >
-      <div className="container">
+      <div className="container2 ">
         <div className="quality-grid">
           {/* Left Column: Text Content */}
           <motion.div
-            className="quality-text-content"
+            className="quality-text-content px-3"
           >
-            <motion.p className="tagline" variants={itemVariants}>
+            <motion.p className="tagline1" variants={itemVariants}>
                 QUALITY ASSURANCE
             </motion.p>
-            <motion.h2 className="quality-heading" variants={itemVariants}>
+            <motion.h2 className="heading1" variants={itemVariants}>
                 Design That Meets Exacting Standards
             </motion.h2>
             <motion.div className="description">
