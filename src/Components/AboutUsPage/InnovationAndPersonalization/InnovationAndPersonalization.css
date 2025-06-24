@@ -69,23 +69,25 @@
   }
   
   /* --- Stats Column Styles --- */
-  .innovation-stats {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around; /* Distribute space */
-    height: 100%; /* Try to match height of images */
-    padding-left: 20px; /* Space from the image column */
-    min-height: 400px; /* Ensure minimum height for spacing */
-  }
+ .innovation-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  justify-content:start;
+  min-height: 400px;
+}
+
+
   
   .stat-item {
     position: relative; /* For the pseudo-element line */
     padding-left: 25px; /* Space for the line + text gap */
-    margin-bottom: 40px; /* Space between stat items */
+    margin-bottom: 40px;
+    align-self: flex-start; 
   }
   
   .stat-item:last-child {
-    margin-bottom: 0; /* No margin for the last item */
+    margin-bottom: 20px; /* No margin for the last item */
   }
   
   /* Vertical line */
@@ -113,19 +115,22 @@
   
   
   .stat-value {
-    display: block;
-    font-size: 2.8rem;
-    font-weight: bold;
-    color: #ffffff;
-    line-height: 1.1;
-    margin-bottom: 8px;
-  }
+  display: block;              /* Optional — block is default for div/span */
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 8px;
+  text-align: left;            /* Ensure text is aligned left */
+}
+
   
   .stat-label {
     display: block;
     font-size: 0.9rem;
     color: #b0b0b0;
     line-height: 1.4;
+    text-align:left; 
   }
   
   /* --- Responsive Adjustments --- */
@@ -140,9 +145,6 @@
     }
     .innovation-details-grid {
       gap: 20px; /* Reduce gap */
-    }
-    .innovation-stats {
-       padding-left: 15px;
     }
      .stat-item {
        padding-left: 20px;
@@ -163,7 +165,8 @@
   
     .innovation-details-grid {
       grid-template-columns: 1fr; /* Stack columns */
-      gap: 40px; /* Increase gap between stacked items */
+      gap: 40px; 
+      
     }
   
     .detail-image-wrapper {

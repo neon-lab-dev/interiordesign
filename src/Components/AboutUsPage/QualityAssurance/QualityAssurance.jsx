@@ -58,7 +58,7 @@ const QualityAssurance = () => {
           {/* Right Column: Image */}
           <motion.div className="quality-image-content" variants={itemVariants}>
             <img
-              src={IMAGES.aboutUs1}
+              src={IMAGES.aboutUsGroup}
               alt="Interior design showcasing quality materials and comfort"
               className="quality-image"
             />
