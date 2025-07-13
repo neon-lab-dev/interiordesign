@@ -42,6 +42,10 @@ footer .footer-head {
   line-height: 20px;
   text-align: left;
 }
+.footer-link a ,p  {
+  width: fit-content;
+  font-family: "Verdana Regular";
+}
 
 footer .accordion button {
   background: none !important;

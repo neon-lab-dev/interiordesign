@@ -14,7 +14,7 @@ const Footer = () => {
             <span className="footer-head text-uppercase">
               EXPLORE OUR RANGE
             </span>
-            <div className="d-flex flex-column gap-1">
+            <div className="d-flex flex-column gap-1 footer-link">
               <a href="/">Home</a>
               <a href="/about-us">About</a>
               <a href="/bedsheets">Products</a>
@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
           <div className="footer-links gap-2">
             <span className="footer-head text-uppercase">Why Us</span>
-            <div className="d-flex flex-column gap-1">
+            <div className="d-flex flex-column gap-1 footer-link">
               <a href="/contact">Contact Us</a>
               <a href="/privacy">Privacy Policy</a>
               <a href="/shipping">Shipping and Refund Policy</a>
@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
           <div className="footer-links gap-2">
             <span className="footer-head text-uppercase">connect with us</span>
-            <div className="d-flex flex-column gap-1">
+            <div className="d-flex flex-column gap-1 footer-link">
               <p>
                 Email:{" "}
                 <a href="mailto:info@spaceframe.co.in">info@spaceframe.co.in</a>
@@ -43,7 +43,7 @@ const Footer = () => {
           </div>
           <div className="footer-links gap-2">
             <span className="footer-head text-uppercase">visit our store</span>
-            <div className="d-flex flex-row gap-1">
+            <div className="d-flex flex-row gap-1 footer-link">
               <img src={ICONS.address} alt="" className="address-img" />
               <p>
                 2nd floor, iWorkk, 90, Mehrauli-Gurgaon Rd, Industrial
