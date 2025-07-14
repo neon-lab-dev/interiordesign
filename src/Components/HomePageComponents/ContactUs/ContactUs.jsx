@@ -82,8 +82,8 @@ const ContactUs = () => {
                 <a href="tel:9953520512" className="card-text">
                     (+91) 9953520512
                 </a>
-                <a href="emailto:spaceframe.co.in@gmail.com" className="card-text">
-                spaceframe.co.in@gmail.com
+                <a href="emailto:info@spaceframe.co.in" className="card-text">
+                info@spaceframe.co.in
                 </a>
                 <a href="https://g.co/kgs/4zDDFJe" target="_blank" rel="noopener noreferrer" className="card-link text-white">
                     Open in Google Maps &rarr;
